@@ -116,3 +116,31 @@ export function createProjection(geoBounds: GeoBounds) {
   };
 }
 
+/**
+ * Convert normalized x/y coordinates (0-1) back to lat/lon
+ */
+export function xyToLatLon(
+  x: number,
+  y: number,
+  geoBounds: GeoBounds
+): { lat: number; lon: number } {
+  const mercatorBounds = calculateMercatorBounds(geoBounds);
+  
+  // Denormalize from 0-1 range
+  const mercatorX = mercatorBounds.minX + x * (mercatorBounds.maxX - mercatorBounds.minX);
+  const mercatorY = mercatorBounds.minY + (1 - y) * (mercatorBounds.maxY - mercatorBounds.minY);
+  
+  // Convert back from Mercator
+  const lon = (mercatorX * 180) / Math.PI;
+  const lat = (Math.atan(Math.exp(mercatorY)) - Math.PI / 4) * 2 * (180 / Math.PI);
+  
+  return { lat, lon };
+}
+
+/**
+ * Calculate map center from geographic bounds
+ */
+export function getMapCenter(geoBounds: GeoBounds): [number, number] {
+  return [(geoBounds.minLat + geoBounds.maxLat) / 2, (geoBounds.minLon + geoBounds.maxLon) / 2];
+}
+
