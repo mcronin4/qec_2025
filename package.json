@@ -1,0 +1,14 @@
+{
+  "name": "qec_2025",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "convert:geojson": "ts-node backend/geographic/scripts/convert-geojson.ts backend/geographic/export.geojson backend/geographic/graph.json"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.3.3"
+  }
+}
+

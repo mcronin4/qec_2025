@@ -1,0 +1,5898 @@
+{
+  "nodes": [
+    {
+      "id": "node_0",
+      "lat": 44.2249349,
+      "lon": -76.4905204,
+      "streetNames": [
+        "Barrie Street",
+        "Stuart Street"
+      ]
+    },
+    {
+      "id": "node_1",
+      "lat": 44.2247953,
+      "lon": -76.4916043,
+      "streetNames": [
+        "Arch Street",
+        "Stuart Street"
+      ]
+    },
+    {
+      "id": "node_2",
+      "lat": 44.2247281,
+      "lon": -76.4920893,
+      "streetNames": [
+        "George Street",
+        "Stuart Street"
+      ]
+    },
+    {
+      "id": "node_3",
+      "lat": 44.2243218,
+      "lon": -76.4950209,
+      "streetNames": [
+        "Lower University Avenue",
+        "Stuart Street"
+      ]
+    },
+    {
+      "id": "node_4",
+      "lat": 44.233714,
+      "lon": -76.4936577,
+      "streetNames": [
+        "Princess Street"
+      ]
+    },
+    {
+      "id": "node_5",
+      "lat": 44.2345043,
+      "lon": -76.4956483,
+      "streetNames": [
+        "Princess Street",
+        "University Avenue"
+      ]
+    },
+    {
+      "id": "node_6",
+      "lat": 44.2348213,
+      "lon": -76.4964119,
+      "streetNames": [
+        "Chatham Street",
+        "Princess Street"
+      ]
+    },
+    {
+      "id": "node_7",
+      "lat": 44.234982,
+      "lon": -76.4967929,
+      "streetNames": [
+        "Princess Street"
+      ]
+    },
+    {
+      "id": "node_8",
+      "lat": 44.2226623,
+      "lon": -76.4981811,
+      "streetNames": [
+        "King Street West",
+        "St. Lawrence Avenue"
+      ]
+    },
+    {
+      "id": "node_9",
+      "lat": 44.2238048,
+      "lon": -76.4983337,
+      "streetNames": [
+        "St. Lawrence Avenue",
+        "Stuart Street"
+      ]
+    },
+    {
+      "id": "node_10",
+      "lat": 44.2334502,
+      "lon": -76.4930485,
+      "streetNames": [
+        "Division Street",
+        "Princess Street"
+      ]
+    },
+    {
+      "id": "node_11",
+      "lat": 44.232857,
+      "lon": -76.4907702,
+      "streetNames": [
+        "Barrie Street",
+        "Princess Street"
+      ]
+    },
+    {
+      "id": "node_12",
+      "lat": 44.2325912,
+      "lon": -76.4890214,
+      "streetNames": [
+        "Clergy Street East",
+        "Princess Street"
+      ]
+    },
+    {
+      "id": "node_13",
+      "lat": 44.2320613,
+      "lon": -76.4855558,
+      "streetNames": [
+        "Princess Street"
+      ]
+    },
+    {
+      "id": "node_14",
+      "lat": 44.2274053,
+      "lon": -76.5094883,
+      "streetNames": [
+        "Hill Street"
+      ]
+    },
+    {
+      "id": "node_15",
+      "lat": 44.2274752,
+      "lon": -76.5085508,
+      "streetNames": [
+        "Hill Street",
+        "Traymoor Street"
+      ]
+    },
+    {
+      "id": "node_16",
+      "lat": 44.2275439,
+      "lon": -76.5076713,
+      "streetNames": [
+        "Hill Street",
+        "Willingdon Avenue"
+      ]
+    },
+    {
+      "id": "node_17",
+      "lat": 44.226855,
+      "lon": -76.4828884,
+      "streetNames": [
+        "Earl Street"
+      ]
+    },
+    {
+      "id": "node_18",
+      "lat": 44.2292026,
+      "lon": -76.4894712,
+      "streetNames": [
+        "Earl Street",
+        "West Street"
+      ]
+    },
+    {
+      "id": "node_19",
+      "lat": 44.2293064,
+      "lon": -76.4899803,
+      "streetNames": [
+        "Clergy Street East",
+        "Earl Street"
+      ]
+    },
+    {
+      "id": "node_20",
+      "lat": 44.2295464,
+      "lon": -76.4909811,
+      "streetNames": [
+        "Barrie Street",
+        "Earl Street"
+      ]
+    },
+    {
+      "id": "node_21",
+      "lat": 44.2238957,
+      "lon": -76.5047037,
+      "streetNames": [
+        "Centre Street",
+        "Edgehill Street"
+      ]
+    },
+    {
+      "id": "node_22",
+      "lat": 44.2239562,
+      "lon": -76.5035306,
+      "streetNames": [
+        "Edgehill Street",
+        "Kensington Avenue"
+      ]
+    },
+    {
+      "id": "node_23",
+      "lat": 44.2240632,
+      "lon": -76.5023275,
+      "streetNames": [
+        "Beverley Street",
+        "Edgehill Street"
+      ]
+    },
+    {
+      "id": "node_24",
+      "lat": 44.2249399,
+      "lon": -76.4985763,
+      "streetNames": [
+        "Bader Lane"
+      ]
+    },
+    {
+      "id": "node_25",
+      "lat": 44.2249556,
+      "lon": -76.4969646,
+      "streetNames": [
+        "Bader Lane"
+      ]
+    },
+    {
+      "id": "node_26",
+      "lat": 44.2384706,
+      "lon": -76.502069,
+      "streetNames": [
+        "Nelson Street",
+        "York Street"
+      ]
+    },
+    {
+      "id": "node_27",
+      "lat": 44.2385246,
+      "lon": -76.500843,
+      "streetNames": [
+        "Albert Street",
+        "York Street"
+      ]
+    },
+    {
+      "id": "node_28",
+      "lat": 44.2385995,
+      "lon": -76.4993249,
+      "streetNames": [
+        "Frontenac Street",
+        "York Street"
+      ]
+    },
+    {
+      "id": "node_29",
+      "lat": 44.2386716,
+      "lon": -76.4978229,
+      "streetNames": [
+        "Alfred Street",
+        "York Street"
+      ]
+    },
+    {
+      "id": "node_30",
+      "lat": 44.2306474,
+      "lon": -76.4956244,
+      "streetNames": [
+        "University Avenue",
+        "William Street"
+      ]
+    },
+    {
+      "id": "node_31",
+      "lat": 44.2306114,
+      "lon": -76.4943616,
+      "streetNames": [
+        "Aberdeen Street",
+        "William Street"
+      ]
+    },
+    {
+      "id": "node_32",
+      "lat": 44.2305337,
+      "lon": -76.4929987,
+      "streetNames": [
+        "Division Street",
+        "William Street"
+      ]
+    },
+    {
+      "id": "node_33",
+      "lat": 44.2302444,
+      "lon": -76.491057,
+      "streetNames": [
+        "Barrie Street",
+        "William Street"
+      ]
+    },
+    {
+      "id": "node_34",
+      "lat": 44.2286198,
+      "lon": -76.5015038,
+      "streetNames": [
+        "Collingwood Street",
+        "Couper Street"
+      ]
+    },
+    {
+      "id": "node_35",
+      "lat": 44.2286743,
+      "lon": -76.4998851,
+      "streetNames": [
+        "Albert Street",
+        "Couper Street"
+      ]
+    },
+    {
+      "id": "node_36",
+      "lat": 44.2276719,
+      "lon": -76.4918741,
+      "streetNames": [
+        "Arch Street",
+        "Union Street"
+      ]
+    },
+    {
+      "id": "node_37",
+      "lat": 44.2277948,
+      "lon": -76.4885384,
+      "streetNames": [
+        "Court Street",
+        "West Street"
+      ]
+    },
+    {
+      "id": "node_38",
+      "lat": 44.2273712,
+      "lon": -76.4907613,
+      "streetNames": [
+        "Barrie Street",
+        "Court Street"
+      ]
+    },
+    {
+      "id": "node_39",
+      "lat": 44.2229796,
+      "lon": -76.4950097,
+      "streetNames": [
+        "King Street West",
+        "Lower University Avenue"
+      ]
+    },
+    {
+      "id": "node_40",
+      "lat": 44.2246478,
+      "lon": -76.5011846,
+      "streetNames": [
+        "Collingwood Street",
+        "Queen's Crescent"
+      ]
+    },
+    {
+      "id": "node_41",
+      "lat": 44.224723,
+      "lon": -76.4994711,
+      "streetNames": [
+        "Albert Street",
+        "Queen's Crescent",
+        "Queen’s Crescent"
+      ]
+    },
+    {
+      "id": "node_42",
+      "lat": 44.2334008,
+      "lon": -76.4956851,
+      "streetNames": [
+        "Garrett Street",
+        "University Avenue"
+      ]
+    },
+    {
+      "id": "node_43",
+      "lat": 44.2329997,
+      "lon": -76.492935,
+      "streetNames": [
+        "Division Street",
+        "Garrett Street"
+      ]
+    },
+    {
+      "id": "node_44",
+      "lat": 44.2354756,
+      "lon": -76.496418,
+      "streetNames": [
+        "Chatham Street",
+        "Creighton Street"
+      ]
+    },
+    {
+      "id": "node_45",
+      "lat": 44.2360505,
+      "lon": -76.4964424,
+      "streetNames": [
+        "Chatham Street",
+        "Colborne Street"
+      ]
+    },
+    {
+      "id": "node_46",
+      "lat": 44.236905,
+      "lon": -76.4964731,
+      "streetNames": [
+        "Chatham Street",
+        "Elm Street"
+      ]
+    },
+    {
+      "id": "node_47",
+      "lat": 44.2374209,
+      "lon": -76.4964821,
+      "streetNames": [
+        "Chatham Street",
+        "Linton Street"
+      ]
+    },
+    {
+      "id": "node_48",
+      "lat": 44.2379554,
+      "lon": -76.4964938,
+      "streetNames": [
+        "Chatham Street",
+        "Hamilton Street"
+      ]
+    },
+    {
+      "id": "node_49",
+      "lat": 44.2389808,
+      "lon": -76.4965375,
+      "streetNames": [
+        "Chatham Street",
+        "York Street"
+      ]
+    },
+    {
+      "id": "node_50",
+      "lat": 44.2391952,
+      "lon": -76.4965542,
+      "streetNames": [
+        "Chatham Street",
+        "Pine Street"
+      ]
+    },
+    {
+      "id": "node_51",
+      "lat": 44.2381549,
+      "lon": -76.4977676,
+      "streetNames": [
+        "Alfred Street",
+        "Hamilton Street"
+      ]
+    },
+    {
+      "id": "node_52",
+      "lat": 44.2380664,
+      "lon": -76.4941678,
+      "streetNames": [
+        "Division Street",
+        "York Street"
+      ]
+    },
+    {
+      "id": "node_53",
+      "lat": 44.2362279,
+      "lon": -76.4968975,
+      "streetNames": [
+        "Colborne Street"
+      ]
+    },
+    {
+      "id": "node_54",
+      "lat": 44.2348994,
+      "lon": -76.4934115,
+      "streetNames": [
+        "Colborne Street",
+        "Division Street"
+      ]
+    },
+    {
+      "id": "node_55",
+      "lat": 44.2305991,
+      "lon": -76.5016585,
+      "streetNames": [
+        "Birch Avenue",
+        "Collingwood Street"
+      ]
+    },
+    {
+      "id": "node_56",
+      "lat": 44.2306515,
+      "lon": -76.5000692,
+      "streetNames": [
+        "Albert Street",
+        "Birch Avenue"
+      ]
+    },
+    {
+      "id": "node_57",
+      "lat": 44.2297833,
+      "lon": -76.4944441,
+      "streetNames": [
+        "Aberdeen Street",
+        "Earl Street"
+      ]
+    },
+    {
+      "id": "node_58",
+      "lat": 44.2314952,
+      "lon": -76.4942742,
+      "streetNames": [
+        "Aberdeen Street",
+        "Johnson Street"
+      ]
+    },
+    {
+      "id": "node_59",
+      "lat": 44.2277422,
+      "lon": -76.4929831,
+      "streetNames": [
+        "Division Street",
+        "Union Street"
+      ]
+    },
+    {
+      "id": "node_60",
+      "lat": 44.2289331,
+      "lon": -76.4930475,
+      "streetNames": [
+        "Clergy Street West",
+        "Division Street"
+      ]
+    },
+    {
+      "id": "node_61",
+      "lat": 44.2296934,
+      "lon": -76.493004,
+      "streetNames": [
+        "Division Street",
+        "Earl Street"
+      ]
+    },
+    {
+      "id": "node_62",
+      "lat": 44.2312935,
+      "lon": -76.4929655,
+      "streetNames": [
+        "Division Street",
+        "Johnson Street"
+      ]
+    },
+    {
+      "id": "node_63",
+      "lat": 44.2270112,
+      "lon": -76.5013746,
+      "streetNames": [
+        "Collingwood Street",
+        "Union Street"
+      ]
+    },
+    {
+      "id": "node_64",
+      "lat": 44.2296821,
+      "lon": -76.5015868,
+      "streetNames": [
+        "Collingwood Street",
+        "Earl Street"
+      ]
+    },
+    {
+      "id": "node_65",
+      "lat": 44.231513,
+      "lon": -76.5017299,
+      "streetNames": [
+        "Collingwood Street",
+        "Johnson Street"
+      ]
+    },
+    {
+      "id": "node_66",
+      "lat": 44.2258819,
+      "lon": -76.5037238,
+      "streetNames": [
+        "Kensington Avenue"
+      ]
+    },
+    {
+      "id": "node_67",
+      "lat": 44.2243666,
+      "lon": -76.5035733,
+      "streetNames": [
+        "Kensington Avenue"
+      ]
+    },
+    {
+      "id": "node_68",
+      "lat": 44.2217764,
+      "lon": -76.5044881,
+      "streetNames": [
+        "Centre Street",
+        "King Street West"
+      ]
+    },
+    {
+      "id": "node_69",
+      "lat": 44.2260085,
+      "lon": -76.5049294,
+      "streetNames": [
+        "Centre Street",
+        "Union Street"
+      ]
+    },
+    {
+      "id": "node_70",
+      "lat": 44.2252334,
+      "lon": -76.5074291,
+      "streetNames": [
+        "Ellerbeck Street",
+        "Union Street",
+        "Willingdon Avenue"
+      ]
+    },
+    {
+      "id": "node_71",
+      "lat": 44.2231675,
+      "lon": -76.5072871,
+      "streetNames": [
+        "Davidson Street",
+        "Ellerbeck Street"
+      ]
+    },
+    {
+      "id": "node_72",
+      "lat": 44.2217085,
+      "lon": -76.5070867,
+      "streetNames": [
+        "Ellerbeck Street"
+      ]
+    },
+    {
+      "id": "node_73",
+      "lat": 44.2249823,
+      "lon": -76.508269,
+      "streetNames": [
+        "Traymoor Street",
+        "Union Street"
+      ]
+    },
+    {
+      "id": "node_74",
+      "lat": 44.2214651,
+      "lon": -76.5083411,
+      "streetNames": [
+        "King Street West",
+        "Livingston Avenue"
+      ]
+    },
+    {
+      "id": "node_75",
+      "lat": 44.223083,
+      "lon": -76.5085033,
+      "streetNames": [
+        "Davidson Street",
+        "Livingston Avenue"
+      ]
+    },
+    {
+      "id": "node_76",
+      "lat": 44.2248602,
+      "lon": -76.5086664,
+      "streetNames": [
+        "Livingston Avenue",
+        "Union Street"
+      ]
+    },
+    {
+      "id": "node_77",
+      "lat": 44.2391308,
+      "lon": -76.4978604,
+      "streetNames": [
+        "Alfred Street",
+        "Pine Street"
+      ]
+    },
+    {
+      "id": "node_78",
+      "lat": 44.2392173,
+      "lon": -76.4960486,
+      "streetNames": [
+        "Lansdowne Street",
+        "Pine Street"
+      ]
+    },
+    {
+      "id": "node_79",
+      "lat": 44.2393134,
+      "lon": -76.4944017,
+      "streetNames": [
+        "Division Street",
+        "Pine Street"
+      ]
+    },
+    {
+      "id": "node_80",
+      "lat": 44.2395742,
+      "lon": -76.492539,
+      "streetNames": [
+        "Cherry Street",
+        "Pine Street"
+      ]
+    },
+    {
+      "id": "node_81",
+      "lat": 44.2397429,
+      "lon": -76.4913397,
+      "streetNames": [
+        "Cowdy Street",
+        "Pine Street"
+      ]
+    },
+    {
+      "id": "node_82",
+      "lat": 44.2398295,
+      "lon": -76.4907242,
+      "streetNames": [
+        "Barrie Street",
+        "Pine Street"
+      ]
+    },
+    {
+      "id": "node_83",
+      "lat": 44.2398871,
+      "lon": -76.4903145,
+      "streetNames": [
+        "Pine Street",
+        "St. Catherine Street"
+      ]
+    },
+    {
+      "id": "node_84",
+      "lat": 44.2400273,
+      "lon": -76.4893374,
+      "streetNames": [
+        "Patrick Street",
+        "Pine Street"
+      ]
+    },
+    {
+      "id": "node_85",
+      "lat": 44.2369247,
+      "lon": -76.4898169,
+      "streetNames": [
+        "Barrie Street",
+        "Raglan Road"
+      ]
+    },
+    {
+      "id": "node_86",
+      "lat": 44.2372455,
+      "lon": -76.4885067,
+      "streetNames": [
+        "Patrick Street",
+        "Raglan Road"
+      ]
+    },
+    {
+      "id": "node_87",
+      "lat": 44.2346352,
+      "lon": -76.4915872,
+      "streetNames": [
+        "Colborne Street",
+        "Main Street"
+      ]
+    },
+    {
+      "id": "node_88",
+      "lat": 44.2352099,
+      "lon": -76.4916449,
+      "streetNames": [
+        "Ellice Street",
+        "Main Street"
+      ]
+    },
+    {
+      "id": "node_89",
+      "lat": 44.2359521,
+      "lon": -76.4917181,
+      "streetNames": [
+        "Ann Street",
+        "Main Street"
+      ]
+    },
+    {
+      "id": "node_90",
+      "lat": 44.2353512,
+      "lon": -76.4925212,
+      "streetNames": [
+        "Ellice Street",
+        "Vine Street"
+      ]
+    },
+    {
+      "id": "node_91",
+      "lat": 44.2360912,
+      "lon": -76.4925885,
+      "streetNames": [
+        "Ann Street",
+        "Vine Street"
+      ]
+    },
+    {
+      "id": "node_92",
+      "lat": 44.2337373,
+      "lon": -76.4905313,
+      "streetNames": [
+        "Barrie Street",
+        "Queen Street"
+      ]
+    },
+    {
+      "id": "node_93",
+      "lat": 44.2344448,
+      "lon": -76.4903567,
+      "streetNames": [
+        "Barrie Street",
+        "Colborne Street"
+      ]
+    },
+    {
+      "id": "node_94",
+      "lat": 44.2351542,
+      "lon": -76.4901745,
+      "streetNames": [
+        "Barrie Street",
+        "Ordnance Street"
+      ]
+    },
+    {
+      "id": "node_95",
+      "lat": 44.2356461,
+      "lon": -76.4900486,
+      "streetNames": [
+        "Barrie Street",
+        "York Street"
+      ]
+    },
+    {
+      "id": "node_96",
+      "lat": 44.2382195,
+      "lon": -76.4902268,
+      "streetNames": [
+        "Barrie Street",
+        "John Street"
+      ]
+    },
+    {
+      "id": "node_97",
+      "lat": 44.2384629,
+      "lon": -76.4888686,
+      "streetNames": [
+        "John Street",
+        "Patrick Street"
+      ]
+    },
+    {
+      "id": "node_98",
+      "lat": 44.2390444,
+      "lon": -76.4858496,
+      "streetNames": [
+        "John Street"
+      ]
+    },
+    {
+      "id": "node_99",
+      "lat": 44.2386045,
+      "lon": -76.494268,
+      "streetNames": [
+        "Division Street",
+        "Quebec Street"
+      ]
+    },
+    {
+      "id": "node_100",
+      "lat": 44.2387485,
+      "lon": -76.4931604,
+      "streetNames": [
+        "Chestnut Street",
+        "Quebec Street"
+      ]
+    },
+    {
+      "id": "node_101",
+      "lat": 44.2375302,
+      "lon": -76.492732,
+      "streetNames": [
+        "Cherry Street",
+        "York Street"
+      ]
+    },
+    {
+      "id": "node_102",
+      "lat": 44.2382614,
+      "lon": -76.4921428,
+      "streetNames": [
+        "Cherry Street",
+        "Chestnut Street"
+      ]
+    },
+    {
+      "id": "node_103",
+      "lat": 44.2388682,
+      "lon": -76.4923259,
+      "streetNames": [
+        "Cherry Street",
+        "Quebec Street"
+      ]
+    },
+    {
+      "id": "node_104",
+      "lat": 44.2403455,
+      "lon": -76.4927717,
+      "streetNames": [
+        "Cherry Street"
+      ]
+    },
+    {
+      "id": "node_105",
+      "lat": 44.2406533,
+      "lon": -76.4980034,
+      "streetNames": [
+        "Adelaide Street",
+        "Alfred Street"
+      ]
+    },
+    {
+      "id": "node_106",
+      "lat": 44.2407527,
+      "lon": -76.4962068,
+      "streetNames": [
+        "Adelaide Street",
+        "Lansdowne Street"
+      ]
+    },
+    {
+      "id": "node_107",
+      "lat": 44.2397976,
+      "lon": -76.4979335,
+      "streetNames": [
+        "Alfred Street",
+        "Stanley Street"
+      ]
+    },
+    {
+      "id": "node_108",
+      "lat": 44.2398726,
+      "lon": -76.4961129,
+      "streetNames": [
+        "Lansdowne Street",
+        "Stanley Street"
+      ]
+    },
+    {
+      "id": "node_109",
+      "lat": 44.2416182,
+      "lon": -76.4962949,
+      "streetNames": [
+        "Lansdowne Street"
+      ]
+    },
+    {
+      "id": "node_110",
+      "lat": 44.226964,
+      "lon": -76.4879082,
+      "streetNames": [
+        "Bagot Street",
+        "West Street"
+      ]
+    },
+    {
+      "id": "node_111",
+      "lat": 44.240715,
+      "lon": -76.4905691,
+      "streetNames": [
+        "St. Catherine Street"
+      ]
+    },
+    {
+      "id": "node_112",
+      "lat": 44.2396984,
+      "lon": -76.5058064,
+      "streetNames": [
+        "MacDonnell Street",
+        "South Bartlett Street"
+      ]
+    },
+    {
+      "id": "node_113",
+      "lat": 44.239429,
+      "lon": -76.505187,
+      "streetNames": [
+        "Smith Street",
+        "South Bartlett Street"
+      ]
+    },
+    {
+      "id": "node_114",
+      "lat": 44.2388605,
+      "lon": -76.5032102,
+      "streetNames": [
+        "South Bartlett Street",
+        "Victoria Street"
+      ]
+    },
+    {
+      "id": "node_115",
+      "lat": 44.2300752,
+      "lon": -76.4910386,
+      "streetNames": [
+        "Barrie Street",
+        "William Street"
+      ]
+    },
+    {
+      "id": "node_116",
+      "lat": 44.2298867,
+      "lon": -76.4897418,
+      "streetNames": [
+        "Clergy Street East",
+        "William Street"
+      ]
+    },
+    {
+      "id": "node_117",
+      "lat": 44.2281226,
+      "lon": -76.4832509,
+      "streetNames": [
+        "William Street"
+      ]
+    },
+    {
+      "id": "node_118",
+      "lat": 44.2384234,
+      "lon": -76.5051269,
+      "streetNames": [
+        "Princess Street",
+        "Smith Street"
+      ]
+    },
+    {
+      "id": "node_119",
+      "lat": 44.2399563,
+      "lon": -76.5058144,
+      "streetNames": [
+        "MacDonnell Street",
+        "North Bartlett Street"
+      ]
+    },
+    {
+      "id": "node_120",
+      "lat": 44.2400278,
+      "lon": -76.5033078,
+      "streetNames": [
+        "North Bartlett Street",
+        "Victoria Street"
+      ]
+    },
+    {
+      "id": "node_121",
+      "lat": 44.2403941,
+      "lon": -76.4894395,
+      "streetNames": [
+        "James Street",
+        "Patrick Street"
+      ]
+    },
+    {
+      "id": "node_122",
+      "lat": 44.2408215,
+      "lon": -76.4871649,
+      "streetNames": [
+        "James Street"
+      ]
+    },
+    {
+      "id": "node_123",
+      "lat": 44.2395286,
+      "lon": -76.4891806,
+      "streetNames": [
+        "Charles Street",
+        "Patrick Street"
+      ]
+    },
+    {
+      "id": "node_124",
+      "lat": 44.2400494,
+      "lon": -76.4864026,
+      "streetNames": [
+        "Charles Street"
+      ]
+    },
+    {
+      "id": "node_125",
+      "lat": 44.2312865,
+      "lon": -76.5086642,
+      "streetNames": [
+        "Johnson Street"
+      ]
+    },
+    {
+      "id": "node_126",
+      "lat": 44.2313112,
+      "lon": -76.5080461,
+      "streetNames": [
+        "Johnson Street",
+        "Willingdon Avenue"
+      ]
+    },
+    {
+      "id": "node_127",
+      "lat": 44.2313208,
+      "lon": -76.5077229,
+      "streetNames": [
+        "Graham Avenue",
+        "Johnson Street"
+      ]
+    },
+    {
+      "id": "node_128",
+      "lat": 44.2313573,
+      "lon": -76.506772,
+      "streetNames": [
+        "Johnson Street",
+        "Napier Street"
+      ]
+    },
+    {
+      "id": "node_129",
+      "lat": 44.2314087,
+      "lon": -76.5049736,
+      "streetNames": [
+        "Johnson Street",
+        "MacDonnell Street"
+      ]
+    },
+    {
+      "id": "node_130",
+      "lat": 44.2314442,
+      "lon": -76.5039033,
+      "streetNames": [
+        "Johnson Street",
+        "Toronto Street"
+      ]
+    },
+    {
+      "id": "node_131",
+      "lat": 44.231447,
+      "lon": -76.5038202,
+      "streetNames": [
+        "Johnson Street",
+        "Toronto Street"
+      ]
+    },
+    {
+      "id": "node_132",
+      "lat": 44.2314827,
+      "lon": -76.5027542,
+      "streetNames": [
+        "Johnson Street",
+        "Victoria Street"
+      ]
+    },
+    {
+      "id": "node_133",
+      "lat": 44.2315207,
+      "lon": -76.5013956,
+      "streetNames": [
+        "Johnson Street",
+        "Nelson Street"
+      ]
+    },
+    {
+      "id": "node_134",
+      "lat": 44.2315639,
+      "lon": -76.5001591,
+      "streetNames": [
+        "Albert Street",
+        "Johnson Street"
+      ]
+    },
+    {
+      "id": "node_135",
+      "lat": 44.2316146,
+      "lon": -76.4986406,
+      "streetNames": [
+        "Frontenac Street",
+        "Johnson Street"
+      ]
+    },
+    {
+      "id": "node_136",
+      "lat": 44.2316706,
+      "lon": -76.4971285,
+      "streetNames": [
+        "Alfred Street",
+        "Johnson Street"
+      ]
+    },
+    {
+      "id": "node_137",
+      "lat": 44.2317002,
+      "lon": -76.4956502,
+      "streetNames": [
+        "Johnson Street",
+        "University Avenue"
+      ]
+    },
+    {
+      "id": "node_138",
+      "lat": 44.2386484,
+      "lon": -76.4931311,
+      "streetNames": [
+        "Chestnut Street",
+        "Prime Street"
+      ]
+    },
+    {
+      "id": "node_139",
+      "lat": 44.2382131,
+      "lon": -76.4920684,
+      "streetNames": [
+        "Chestnut Street",
+        "Plum Street"
+      ]
+    },
+    {
+      "id": "node_140",
+      "lat": 44.2375599,
+      "lon": -76.4911426,
+      "streetNames": [
+        "Carlisle Street",
+        "Chestnut Street"
+      ]
+    },
+    {
+      "id": "node_141",
+      "lat": 44.2356306,
+      "lon": -76.4967952,
+      "streetNames": [
+        "Creighton Street"
+      ]
+    },
+    {
+      "id": "node_142",
+      "lat": 44.2353128,
+      "lon": -76.4960116,
+      "streetNames": [
+        "Creighton Street"
+      ]
+    },
+    {
+      "id": "node_143",
+      "lat": 44.2381874,
+      "lon": -76.5067801,
+      "streetNames": [
+        "Durham Street"
+      ]
+    },
+    {
+      "id": "node_144",
+      "lat": 44.2377121,
+      "lon": -76.5055901,
+      "streetNames": [
+        "Durham Street",
+        "MacDonnell Street"
+      ]
+    },
+    {
+      "id": "node_145",
+      "lat": 44.2372422,
+      "lon": -76.504425,
+      "streetNames": [
+        "Durham Street",
+        "Toronto Street"
+      ]
+    },
+    {
+      "id": "node_146",
+      "lat": 44.236846,
+      "lon": -76.5030711,
+      "streetNames": [
+        "Durham Street",
+        "Victoria Street"
+      ]
+    },
+    {
+      "id": "node_147",
+      "lat": 44.2379191,
+      "lon": -76.4937187,
+      "streetNames": [
+        "Prime Street",
+        "York Street"
+      ]
+    },
+    {
+      "id": "node_148",
+      "lat": 44.2267455,
+      "lon": -76.5025099,
+      "streetNames": [
+        "Beverley Street",
+        "Union Street"
+      ]
+    },
+    {
+      "id": "node_149",
+      "lat": 44.2244193,
+      "lon": -76.5023487,
+      "streetNames": [
+        "Beverley Street",
+        "Queen's Crescent"
+      ]
+    },
+    {
+      "id": "node_150",
+      "lat": 44.2221627,
+      "lon": -76.5021453,
+      "streetNames": [
+        "Beverley Street",
+        "King Street West"
+      ]
+    },
+    {
+      "id": "node_151",
+      "lat": 44.2350713,
+      "lon": -76.4906366,
+      "streetNames": [
+        "Ordnance Street"
+      ]
+    },
+    {
+      "id": "node_152",
+      "lat": 44.2270515,
+      "lon": -76.5036008,
+      "streetNames": [
+        "Vandalay Crescent"
+      ]
+    },
+    {
+      "id": "node_153",
+      "lat": 44.2412494,
+      "lon": -76.5076923,
+      "streetNames": [
+        "Drayton Avenue"
+      ]
+    },
+    {
+      "id": "node_154",
+      "lat": 44.2399391,
+      "lon": -76.5087117,
+      "streetNames": [
+        "Drayton Avenue",
+        "Princess Street"
+      ]
+    },
+    {
+      "id": "node_155",
+      "lat": 44.2232911,
+      "lon": -76.4892846,
+      "streetNames": [
+        "Emily Street",
+        "King Street East"
+      ]
+    },
+    {
+      "id": "node_156",
+      "lat": 44.2225193,
+      "lon": -76.4885076,
+      "streetNames": [
+        "Emily Street"
+      ]
+    },
+    {
+      "id": "node_157",
+      "lat": 44.2261519,
+      "lon": -76.5044682,
+      "streetNames": [
+        "MacDonnell Street",
+        "Union Street"
+      ]
+    },
+    {
+      "id": "node_158",
+      "lat": 44.2277659,
+      "lon": -76.5046221,
+      "streetNames": [
+        "Hill Street",
+        "MacDonnell Street"
+      ]
+    },
+    {
+      "id": "node_159",
+      "lat": 44.2295787,
+      "lon": -76.5048002,
+      "streetNames": [
+        "Earl Street",
+        "MacDonnell Street"
+      ]
+    },
+    {
+      "id": "node_160",
+      "lat": 44.2353295,
+      "lon": -76.489561,
+      "streetNames": [
+        "Ordnance Street",
+        "York Street"
+      ]
+    },
+    {
+      "id": "node_161",
+      "lat": 44.2352841,
+      "lon": -76.4894858,
+      "streetNames": [
+        "Alma Street",
+        "Ordnance Street"
+      ]
+    },
+    {
+      "id": "node_162",
+      "lat": 44.2350722,
+      "lon": -76.4883623,
+      "streetNames": [
+        "Clergy Street East",
+        "Ordnance Street"
+      ]
+    },
+    {
+      "id": "node_163",
+      "lat": 44.234795,
+      "lon": -76.4866104,
+      "streetNames": [
+        "Ordnance Street"
+      ]
+    },
+    {
+      "id": "node_164",
+      "lat": 44.2234516,
+      "lon": -76.4916606,
+      "streetNames": [
+        "George Street",
+        "O'Kill Street"
+      ]
+    },
+    {
+      "id": "node_165",
+      "lat": 44.2231731,
+      "lon": -76.5071748,
+      "streetNames": [
+        "Davidson Street",
+        "Ellerbeck Street"
+      ]
+    },
+    {
+      "id": "node_166",
+      "lat": 44.2229972,
+      "lon": -76.5096841,
+      "streetNames": [
+        "Davidson Street"
+      ]
+    },
+    {
+      "id": "node_167",
+      "lat": 44.2328689,
+      "lon": -76.498763,
+      "streetNames": [
+        "Brock Street",
+        "Frontenac Street"
+      ]
+    },
+    {
+      "id": "node_168",
+      "lat": 44.2297958,
+      "lon": -76.4984741,
+      "streetNames": [
+        "Earl Street",
+        "Frontenac Street"
+      ]
+    },
+    {
+      "id": "node_169",
+      "lat": 44.2365598,
+      "lon": -76.5006468,
+      "streetNames": [
+        "Albert Street",
+        "Princess Street"
+      ]
+    },
+    {
+      "id": "node_170",
+      "lat": 44.2340965,
+      "lon": -76.5004171,
+      "streetNames": [
+        "Albert Street",
+        "Mack Street"
+      ]
+    },
+    {
+      "id": "node_171",
+      "lat": 44.2328194,
+      "lon": -76.5002912,
+      "streetNames": [
+        "Albert Street",
+        "Brock Street"
+      ]
+    },
+    {
+      "id": "node_172",
+      "lat": 44.2288697,
+      "lon": -76.4909072,
+      "streetNames": [
+        "Barrie Street",
+        "Clergy Street East",
+        "Clergy Street West"
+      ]
+    },
+    {
+      "id": "node_173",
+      "lat": 44.2372117,
+      "lon": -76.4976774,
+      "streetNames": [
+        "Alfred Street",
+        "Elm Street",
+        "Jenkins Street"
+      ]
+    },
+    {
+      "id": "node_174",
+      "lat": 44.23714,
+      "lon": -76.4991801,
+      "streetNames": [
+        "Frontenac Street",
+        "Jenkins Street"
+      ]
+    },
+    {
+      "id": "node_175",
+      "lat": 44.2246184,
+      "lon": -76.4992521,
+      "streetNames": [
+        "Bader Lane",
+        "Queen’s Crescent"
+      ]
+    },
+    {
+      "id": "node_176",
+      "lat": 44.2264203,
+      "lon": -76.5035561,
+      "streetNames": [
+        "Union Street",
+        "Vandalay Crescent"
+      ]
+    },
+    {
+      "id": "node_177",
+      "lat": 44.2376297,
+      "lon": -76.4970072,
+      "streetNames": [
+        "Linton Street"
+      ]
+    },
+    {
+      "id": "node_178",
+      "lat": 44.2371625,
+      "lon": -76.4958035,
+      "streetNames": [
+        "Linton Street"
+      ]
+    },
+    {
+      "id": "node_179",
+      "lat": 44.2227248,
+      "lon": -76.4926268,
+      "streetNames": [
+        "King Street West"
+      ]
+    },
+    {
+      "id": "node_180",
+      "lat": 44.222972,
+      "lon": -76.4950891,
+      "streetNames": [
+        "King Street West"
+      ]
+    },
+    {
+      "id": "node_181",
+      "lat": 44.2473231,
+      "lon": -76.4909487,
+      "streetNames": [
+        "Patrick Street"
+      ]
+    },
+    {
+      "id": "node_182",
+      "lat": 44.2393176,
+      "lon": -76.4891171,
+      "streetNames": [
+        "Patrick Street",
+        "Quebec Street"
+      ]
+    },
+    {
+      "id": "node_183",
+      "lat": 44.2366197,
+      "lon": -76.4883313,
+      "streetNames": [
+        "Alma Street",
+        "Patrick Street"
+      ]
+    },
+    {
+      "id": "node_184",
+      "lat": 44.2231482,
+      "lon": -76.4903471,
+      "streetNames": [
+        "Barrie Street"
+      ]
+    },
+    {
+      "id": "node_185",
+      "lat": 44.2227885,
+      "lon": -76.4902921,
+      "streetNames": [
+        "Barrie Street",
+        "King Street East",
+        "King Street West"
+      ]
+    },
+    {
+      "id": "node_186",
+      "lat": 44.2235443,
+      "lon": -76.4903889,
+      "streetNames": [
+        "Barrie Street",
+        "O'Kill Street"
+      ]
+    },
+    {
+      "id": "node_187",
+      "lat": 44.2278569,
+      "lon": -76.4947918,
+      "streetNames": [
+        "Union Street"
+      ]
+    },
+    {
+      "id": "node_188",
+      "lat": 44.2279388,
+      "lon": -76.4955722,
+      "streetNames": [
+        "Union Street",
+        "University Avenue"
+      ]
+    },
+    {
+      "id": "node_189",
+      "lat": 44.2415233,
+      "lon": -76.4980731,
+      "streetNames": [
+        "Alfred Street"
+      ]
+    },
+    {
+      "id": "node_190",
+      "lat": 44.2352463,
+      "lon": -76.4974849,
+      "streetNames": [
+        "Alfred Street",
+        "Princess Street"
+      ]
+    },
+    {
+      "id": "node_191",
+      "lat": 44.2341981,
+      "lon": -76.4973743,
+      "streetNames": [
+        "Alfred Street",
+        "Mack Street"
+      ]
+    },
+    {
+      "id": "node_192",
+      "lat": 44.2328652,
+      "lon": -76.4972436,
+      "streetNames": [
+        "Alfred Street",
+        "Brock Street"
+      ]
+    },
+    {
+      "id": "node_193",
+      "lat": 44.2244537,
+      "lon": -76.5011719,
+      "streetNames": [
+        "Collingwood Street",
+        "Queen's Crescent"
+      ]
+    },
+    {
+      "id": "node_194",
+      "lat": 44.2408368,
+      "lon": -76.4947385,
+      "streetNames": [
+        "Adelaide Street",
+        "Division Street"
+      ]
+    },
+    {
+      "id": "node_195",
+      "lat": 44.2412896,
+      "lon": -76.49183,
+      "streetNames": [
+        "Adelaide Street",
+        "Cowdy Street"
+      ]
+    },
+    {
+      "id": "node_196",
+      "lat": 44.2319343,
+      "lon": -76.4910257,
+      "streetNames": [
+        "Barrie Street",
+        "Brock Street"
+      ]
+    },
+    {
+      "id": "node_197",
+      "lat": 44.2263569,
+      "lon": -76.5037693,
+      "streetNames": [
+        "Kensington Avenue",
+        "Union Street"
+      ]
+    },
+    {
+      "id": "node_198",
+      "lat": 44.2339944,
+      "lon": -76.4922489,
+      "streetNames": [
+        "Chapman Street",
+        "Queen Street"
+      ]
+    },
+    {
+      "id": "node_199",
+      "lat": 44.2347024,
+      "lon": -76.4920404,
+      "streetNames": [
+        "Chapman Street",
+        "Colborne Street"
+      ]
+    },
+    {
+      "id": "node_200",
+      "lat": 44.2384676,
+      "lon": -76.4903003,
+      "streetNames": [
+        "Barrie Street",
+        "Plum Street"
+      ]
+    },
+    {
+      "id": "node_201",
+      "lat": 44.2368878,
+      "lon": -76.4918753,
+      "streetNames": [
+        "Carlisle Street",
+        "York Street"
+      ]
+    },
+    {
+      "id": "node_202",
+      "lat": 44.2341476,
+      "lon": -76.4932179,
+      "streetNames": [
+        "Division Street",
+        "Queen Street"
+      ]
+    },
+    {
+      "id": "node_203",
+      "lat": 44.234058,
+      "lon": -76.4931993,
+      "streetNames": [
+        "Division Street",
+        "Queen Street"
+      ]
+    },
+    {
+      "id": "node_204",
+      "lat": 44.2338526,
+      "lon": -76.4931568,
+      "streetNames": [
+        "Division Street"
+      ]
+    },
+    {
+      "id": "node_205",
+      "lat": 44.2321935,
+      "lon": -76.4927448,
+      "streetNames": [
+        "Brock Street",
+        "Division Street"
+      ]
+    },
+    {
+      "id": "node_206",
+      "lat": 44.2298669,
+      "lon": -76.4956106,
+      "streetNames": [
+        "Earl Street",
+        "University Avenue"
+      ]
+    },
+    {
+      "id": "node_207",
+      "lat": 44.2298468,
+      "lon": -76.4969613,
+      "streetNames": [
+        "Alfred Street",
+        "Earl Street"
+      ]
+    },
+    {
+      "id": "node_208",
+      "lat": 44.2297434,
+      "lon": -76.4999864,
+      "streetNames": [
+        "Albert Street",
+        "Earl Street"
+      ]
+    },
+    {
+      "id": "node_209",
+      "lat": 44.2296465,
+      "lon": -76.5026464,
+      "streetNames": [
+        "Earl Street",
+        "Victoria Street"
+      ]
+    },
+    {
+      "id": "node_210",
+      "lat": 44.2226942,
+      "lon": -76.4914231,
+      "streetNames": [
+        "George Street",
+        "King Street West"
+      ]
+    },
+    {
+      "id": "node_211",
+      "lat": 44.2289177,
+      "lon": -76.4955849,
+      "streetNames": [
+        "Clergy Street West",
+        "University Avenue"
+      ]
+    },
+    {
+      "id": "node_212",
+      "lat": 44.2289065,
+      "lon": -76.4950846,
+      "streetNames": [
+        "Clergy Street West"
+      ]
+    },
+    {
+      "id": "node_213",
+      "lat": 44.2279338,
+      "lon": -76.4961506,
+      "streetNames": [
+        "Union Street"
+      ]
+    },
+    {
+      "id": "node_214",
+      "lat": 44.2278712,
+      "lon": -76.4955738,
+      "streetNames": [
+        "Union Street",
+        "University Avenue"
+      ]
+    },
+    {
+      "id": "node_215",
+      "lat": 44.2276028,
+      "lon": -76.4907856,
+      "streetNames": [
+        "Barrie Street",
+        "Union Street"
+      ]
+    },
+    {
+      "id": "node_216",
+      "lat": 44.2238512,
+      "lon": -76.5119442,
+      "streetNames": [
+        "Union Street"
+      ]
+    },
+    {
+      "id": "node_217",
+      "lat": 44.2257008,
+      "lon": -76.5059279,
+      "streetNames": [
+        "Hillcroft Drive",
+        "Union Street"
+      ]
+    },
+    {
+      "id": "node_218",
+      "lat": 44.2267576,
+      "lon": -76.5024725,
+      "streetNames": [
+        "Union Street",
+        "Victoria Street"
+      ]
+    },
+    {
+      "id": "node_219",
+      "lat": 44.229808,
+      "lon": -76.4956096,
+      "streetNames": [
+        "University Avenue"
+      ]
+    },
+    {
+      "id": "node_220",
+      "lat": 44.232623,
+      "lon": -76.4956718,
+      "streetNames": [
+        "Brock Street",
+        "University Avenue"
+      ]
+    },
+    {
+      "id": "node_221",
+      "lat": 44.2253239,
+      "lon": -76.4905575,
+      "streetNames": [
+        "Bagot Street",
+        "Barrie Street"
+      ]
+    },
+    {
+      "id": "node_222",
+      "lat": 44.2310241,
+      "lon": -76.4911479,
+      "streetNames": [
+        "Barrie Street",
+        "Johnson Street"
+      ]
+    },
+    {
+      "id": "node_223",
+      "lat": 44.2327795,
+      "lon": -76.501525,
+      "streetNames": [
+        "Brock Street",
+        "Nelson Street"
+      ]
+    },
+    {
+      "id": "node_224",
+      "lat": 44.2327679,
+      "lon": -76.5028343,
+      "streetNames": [
+        "Brock Street",
+        "Victoria Street"
+      ]
+    },
+    {
+      "id": "node_225",
+      "lat": 44.2327477,
+      "lon": -76.5039654,
+      "streetNames": [
+        "Brock Street",
+        "Toronto Street"
+      ]
+    },
+    {
+      "id": "node_226",
+      "lat": 44.2327038,
+      "lon": -76.5051026,
+      "streetNames": [
+        "Brock Street",
+        "MacDonnell Street"
+      ]
+    },
+    {
+      "id": "node_227",
+      "lat": 44.2326303,
+      "lon": -76.5068944,
+      "streetNames": [
+        "Brock Street",
+        "Napier Street"
+      ]
+    },
+    {
+      "id": "node_228",
+      "lat": 44.2325893,
+      "lon": -76.5078416,
+      "streetNames": [
+        "Brock Street",
+        "Graham Avenue"
+      ]
+    },
+    {
+      "id": "node_229",
+      "lat": 44.2325556,
+      "lon": -76.5087978,
+      "streetNames": [
+        "Brock Street"
+      ]
+    },
+    {
+      "id": "node_230",
+      "lat": 44.2229736,
+      "lon": -76.4899061,
+      "streetNames": [
+        "King Street East"
+      ]
+    },
+    {
+      "id": "node_231",
+      "lat": 44.2329304,
+      "lon": -76.4852892,
+      "streetNames": [
+        "Queen Street"
+      ]
+    },
+    {
+      "id": "node_232",
+      "lat": 44.2334731,
+      "lon": -76.4887932,
+      "streetNames": [
+        "Clergy Street East",
+        "Queen Street"
+      ]
+    },
+    {
+      "id": "node_233",
+      "lat": 44.2340762,
+      "lon": -76.4927996,
+      "streetNames": [
+        "Queen Street"
+      ]
+    },
+    {
+      "id": "node_234",
+      "lat": 44.2352969,
+      "lon": -76.4935069,
+      "streetNames": [
+        "Division Street",
+        "Ellice Street"
+      ]
+    },
+    {
+      "id": "node_235",
+      "lat": 44.2391242,
+      "lon": -76.4905015,
+      "streetNames": [
+        "Barrie Street",
+        "Quebec Street"
+      ]
+    },
+    {
+      "id": "node_236",
+      "lat": 44.2276393,
+      "lon": -76.5064363,
+      "streetNames": [
+        "Hill Street",
+        "Napier Street"
+      ]
+    },
+    {
+      "id": "node_237",
+      "lat": 44.2295166,
+      "lon": -76.5066168,
+      "streetNames": [
+        "Earl Street",
+        "Napier Street"
+      ]
+    },
+    {
+      "id": "node_238",
+      "lat": 44.2294668,
+      "lon": -76.5078657,
+      "streetNames": [
+        "Earl Street",
+        "Willingdon Avenue"
+      ]
+    },
+    {
+      "id": "node_239",
+      "lat": 44.229437,
+      "lon": -76.5086821,
+      "streetNames": [
+        "Earl Street"
+      ]
+    },
+    {
+      "id": "node_240",
+      "lat": 44.2307734,
+      "lon": -76.4895008,
+      "streetNames": [
+        "Clergy Street East",
+        "Johnson Street"
+      ]
+    },
+    {
+      "id": "node_241",
+      "lat": 44.2316681,
+      "lon": -76.4892638,
+      "streetNames": [
+        "Brock Street",
+        "Clergy Street East"
+      ]
+    },
+    {
+      "id": "node_242",
+      "lat": 44.2341729,
+      "lon": -76.4885949,
+      "streetNames": [
+        "Clergy Street East",
+        "Colborne Street"
+      ]
+    },
+    {
+      "id": "node_243",
+      "lat": 44.2339045,
+      "lon": -76.4868561,
+      "streetNames": [
+        "Colborne Street"
+      ]
+    },
+    {
+      "id": "node_244",
+      "lat": 44.2365867,
+      "lon": -76.4914607,
+      "streetNames": [
+        "Raglan Road",
+        "York Street"
+      ]
+    },
+    {
+      "id": "node_245",
+      "lat": 44.2364493,
+      "lon": -76.4926246,
+      "streetNames": [
+        "Raglan Road",
+        "Vine Street"
+      ]
+    },
+    {
+      "id": "node_246",
+      "lat": 44.2364861,
+      "lon": -76.4921439,
+      "streetNames": [
+        "Main Street",
+        "Raglan Road"
+      ]
+    },
+    {
+      "id": "node_247",
+      "lat": 44.2377824,
+      "lon": -76.4941231,
+      "streetNames": [
+        "Division Street",
+        "Main Street"
+      ]
+    },
+    {
+      "id": "node_248",
+      "lat": 44.2314009,
+      "lon": -76.487477,
+      "streetNames": [
+        "Brock Street"
+      ]
+    },
+    {
+      "id": "node_249",
+      "lat": 44.2341549,
+      "lon": -76.4988943,
+      "streetNames": [
+        "Frontenac Street",
+        "Mack Street"
+      ]
+    },
+    {
+      "id": "node_250",
+      "lat": 44.2359072,
+      "lon": -76.4990681,
+      "streetNames": [
+        "Frontenac Street",
+        "Princess Street"
+      ]
+    },
+    {
+      "id": "node_251",
+      "lat": 44.2358195,
+      "lon": -76.4936456,
+      "streetNames": [
+        "Division Street",
+        "Elm Street"
+      ]
+    },
+    {
+      "id": "node_252",
+      "lat": 44.2372629,
+      "lon": -76.49401,
+      "streetNames": [
+        "Division Street",
+        "Hamilton Street"
+      ]
+    },
+    {
+      "id": "node_253",
+      "lat": 44.2399418,
+      "lon": -76.4945374,
+      "streetNames": [
+        "Division Street",
+        "Stanley Street"
+      ]
+    },
+    {
+      "id": "node_254",
+      "lat": 44.2242426,
+      "lon": -76.4955769,
+      "streetNames": [
+        "Stuart Street"
+      ]
+    },
+    {
+      "id": "node_255",
+      "lat": 44.2236819,
+      "lon": -76.4995537,
+      "streetNames": [
+        "Albert Street",
+        "Stuart Street"
+      ]
+    },
+    {
+      "id": "node_256",
+      "lat": 44.2416051,
+      "lon": -76.4949034,
+      "streetNames": [
+        "Division Street"
+      ]
+    },
+    {
+      "id": "node_257",
+      "lat": 44.2363178,
+      "lon": -76.4937681,
+      "streetNames": [
+        "Division Street",
+        "Raglan Road"
+      ]
+    },
+    {
+      "id": "node_258",
+      "lat": 44.2347359,
+      "lon": -76.4933717,
+      "streetNames": [
+        "Division Street"
+      ]
+    },
+    {
+      "id": "node_259",
+      "lat": 44.2305041,
+      "lon": -76.4876927,
+      "streetNames": [
+        "Johnson Street"
+      ]
+    },
+    {
+      "id": "node_260",
+      "lat": 44.2386814,
+      "lon": -76.5057263,
+      "streetNames": [
+        "MacDonnell Street",
+        "Princess Street"
+      ]
+    },
+    {
+      "id": "node_261",
+      "lat": 44.2402845,
+      "lon": -76.5095489,
+      "streetNames": [
+        "Princess Street"
+      ]
+    },
+    {
+      "id": "node_262",
+      "lat": 44.2275877,
+      "lon": -76.4982186,
+      "streetNames": [
+        "Frontenac Street",
+        "Union Street"
+      ]
+    },
+    {
+      "id": "node_263",
+      "lat": 44.235514,
+      "lon": -76.4981104,
+      "streetNames": [
+        "Princess Street"
+      ]
+    },
+    {
+      "id": "node_264",
+      "lat": 44.2370934,
+      "lon": -76.501953,
+      "streetNames": [
+        "Nelson Street",
+        "Princess Street"
+      ]
+    },
+    {
+      "id": "node_265",
+      "lat": 44.2375865,
+      "lon": -76.5031112,
+      "streetNames": [
+        "Princess Street",
+        "Victoria Street"
+      ]
+    },
+    {
+      "id": "node_266",
+      "lat": 44.2274482,
+      "lon": -76.498942,
+      "streetNames": [
+        "Union Street"
+      ]
+    },
+    {
+      "id": "node_267",
+      "lat": 44.2278548,
+      "lon": -76.4967324,
+      "streetNames": [
+        "Alfred Street",
+        "Union Street"
+      ]
+    },
+    {
+      "id": "node_268",
+      "lat": 44.2377134,
+      "lon": -76.5034254,
+      "streetNames": [
+        "Princess Street"
+      ]
+    },
+    {
+      "id": "node_269",
+      "lat": 44.237881,
+      "lon": -76.5031328,
+      "streetNames": [
+        "Victoria Street"
+      ]
+    },
+    {
+      "id": "node_270",
+      "lat": 44.2413072,
+      "lon": -76.5034629,
+      "streetNames": [
+        "Victoria Street"
+      ]
+    },
+    {
+      "id": "node_271",
+      "lat": 44.2243493,
+      "lon": -76.4996074,
+      "streetNames": [
+        "Albert Street",
+        "Bader Lane"
+      ]
+    },
+    {
+      "id": "node_272",
+      "lat": 44.2221933,
+      "lon": -76.5020622,
+      "streetNames": [
+        "King Street West"
+      ]
+    },
+    {
+      "id": "node_273",
+      "lat": 44.2215479,
+      "lon": -76.5070684,
+      "streetNames": [
+        "Ellerbeck Street",
+        "King Street West"
+      ]
+    },
+    {
+      "id": "node_274",
+      "lat": 44.2211455,
+      "lon": -76.5125116,
+      "streetNames": [
+        "King Street West"
+      ]
+    },
+    {
+      "id": "node_275",
+      "lat": 44.2243444,
+      "lon": -76.4872244,
+      "streetNames": [
+        "King Street East"
+      ]
+    },
+    {
+      "id": "node_276",
+      "lat": 44.2422604,
+      "lon": -76.4921284,
+      "streetNames": [
+        "Cowdy Street"
+      ]
+    },
+    {
+      "id": "node_277",
+      "lat": 44.2412422,
+      "lon": -76.5058966,
+      "streetNames": [
+        "MacDonnell Street"
+      ]
+    },
+    {
+      "id": "node_278",
+      "lat": 44.2340663,
+      "lon": -76.5016509,
+      "streetNames": [
+        "Mack Street",
+        "Nelson Street"
+      ]
+    },
+    {
+      "id": "node_279",
+      "lat": 44.2410127,
+      "lon": -76.5023294,
+      "streetNames": [
+        "Nelson Street"
+      ]
+    },
+    {
+      "id": "node_280",
+      "lat": 44.2296126,
+      "lon": -76.503722,
+      "streetNames": [
+        "Earl Street",
+        "Toronto Street"
+      ]
+    },
+    {
+      "id": "node_281",
+      "lat": 44.2355947,
+      "lon": -76.5071674,
+      "streetNames": [
+        "Carruthers Avenue",
+        "Napier Street"
+      ]
+    },
+    {
+      "id": "node_282",
+      "lat": 44.2365736,
+      "lon": -76.5072566,
+      "streetNames": [
+        "Napier Street",
+        "Scott Street"
+      ]
+    },
+    {
+      "id": "node_283",
+      "lat": 44.2358705,
+      "lon": -76.5054082,
+      "streetNames": [
+        "MacDonnell Street",
+        "Scott Street"
+      ]
+    },
+    {
+      "id": "node_284",
+      "lat": 44.2367605,
+      "lon": -76.5054931,
+      "streetNames": [
+        "MacDonnell Street",
+        "Park Street"
+      ]
+    },
+    {
+      "id": "node_285",
+      "lat": 44.2373067,
+      "lon": -76.5073216,
+      "streetNames": [
+        "Dunlop Street",
+        "Napier Street"
+      ]
+    },
+    {
+      "id": "node_286",
+      "lat": 44.2372101,
+      "lon": -76.5092587,
+      "streetNames": [
+        "Dunlop Street"
+      ]
+    },
+    {
+      "id": "node_287",
+      "lat": 44.2347761,
+      "lon": -76.504183,
+      "streetNames": [
+        "Dundas Street",
+        "Toronto Street"
+      ]
+    },
+    {
+      "id": "node_288",
+      "lat": 44.236337,
+      "lon": -76.5043332,
+      "streetNames": [
+        "Park Street",
+        "Toronto Street"
+      ]
+    },
+    {
+      "id": "node_289",
+      "lat": 44.2346497,
+      "lon": -76.5070819,
+      "streetNames": [
+        "Dundas Street",
+        "Napier Street"
+      ]
+    },
+    {
+      "id": "node_290",
+      "lat": 44.2345669,
+      "lon": -76.5089953,
+      "streetNames": [
+        "Dundas Street"
+      ]
+    },
+    {
+      "id": "node_291",
+      "lat": 44.2361965,
+      "lon": -76.5062565,
+      "streetNames": [
+        "Carruthers Avenue",
+        "Scott Street"
+      ]
+    },
+    {
+      "id": "node_292",
+      "lat": 44.2339572,
+      "lon": -76.5052261,
+      "streetNames": [
+        "MacDonnell Street",
+        "Mack Street"
+      ]
+    },
+    {
+      "id": "node_293",
+      "lat": 44.2338891,
+      "lon": -76.5070123,
+      "streetNames": [
+        "Mack Street",
+        "Napier Street"
+      ]
+    },
+    {
+      "id": "node_294",
+      "lat": 44.2347315,
+      "lon": -76.5053032,
+      "streetNames": [
+        "Dundas Street",
+        "MacDonnell Street"
+      ]
+    },
+    {
+      "id": "node_295",
+      "lat": 44.2338157,
+      "lon": -76.5089206,
+      "streetNames": [
+        "Mack Street"
+      ]
+    },
+    {
+      "id": "node_296",
+      "lat": 44.2340023,
+      "lon": -76.504092,
+      "streetNames": [
+        "Mack Street",
+        "Toronto Street"
+      ]
+    },
+    {
+      "id": "node_297",
+      "lat": 44.2355136,
+      "lon": -76.5090895,
+      "streetNames": [
+        "Carruthers Avenue"
+      ]
+    },
+    {
+      "id": "node_298",
+      "lat": 44.2364736,
+      "lon": -76.5091848,
+      "streetNames": [
+        "Scott Street"
+      ]
+    },
+    {
+      "id": "node_299",
+      "lat": 44.2377475,
+      "lon": -76.5044795,
+      "streetNames": [
+        "Toronto Street"
+      ]
+    },
+    {
+      "id": "node_300",
+      "lat": 44.2358845,
+      "lon": -76.503015,
+      "streetNames": [
+        "Park Street",
+        "Victoria Street"
+      ]
+    },
+    {
+      "id": "node_301",
+      "lat": 44.2375363,
+      "lon": -76.5073422,
+      "streetNames": [
+        "Napier Street",
+        "Park Street"
+      ]
+    },
+    {
+      "id": "node_302",
+      "lat": 44.2383755,
+      "lon": -76.5093762,
+      "streetNames": [
+        "Park Street"
+      ]
+    },
+    {
+      "id": "node_303",
+      "lat": 44.2340484,
+      "lon": -76.5029078,
+      "streetNames": [
+        "Mack Street",
+        "Victoria Street"
+      ]
+    },
+    {
+      "id": "node_304",
+      "lat": 44.2272978,
+      "lon": -76.4997423,
+      "streetNames": [
+        "Albert Street",
+        "Union Street"
+      ]
+    },
+    {
+      "id": "node_305",
+      "lat": 44.2261614,
+      "lon": -76.5062127,
+      "streetNames": [
+        "Hillcroft Drive"
+      ]
+    },
+    {
+      "id": "node_306",
+      "lat": 44.2223866,
+      "lon": -76.5010065,
+      "streetNames": [
+        "Collingwood Street",
+        "King Street West"
+      ]
+    },
+    {
+      "id": "node_307",
+      "lat": 44.2332084,
+      "lon": -76.4929859,
+      "streetNames": [
+        "Division Street"
+      ]
+    },
+    {
+      "id": "node_308",
+      "lat": 44.2274278,
+      "lon": -76.4990505,
+      "streetNames": [
+        "Union Street"
+      ]
+    },
+    {
+      "id": "node_309",
+      "lat": 44.2225384,
+      "lon": -76.4994429,
+      "streetNames": [
+        "Albert Street",
+        "King Street West"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "id": "edge_0",
+      "fromNode": "node_0",
+      "toNode": "node_1",
+      "length": 87.8,
+      "streetName": "Stuart Street"
+    },
+    {
+      "id": "edge_1",
+      "fromNode": "node_1",
+      "toNode": "node_2",
+      "length": 39.36,
+      "streetName": "Stuart Street"
+    },
+    {
+      "id": "edge_2",
+      "fromNode": "node_2",
+      "toNode": "node_3",
+      "length": 237.93,
+      "streetName": "Stuart Street"
+    },
+    {
+      "id": "edge_3",
+      "fromNode": "node_4",
+      "toNode": "node_5",
+      "length": 181.32,
+      "streetName": "Princess Street"
+    },
+    {
+      "id": "edge_4",
+      "fromNode": "node_5",
+      "toNode": "node_6",
+      "length": 70.31,
+      "streetName": "Princess Street"
+    },
+    {
+      "id": "edge_5",
+      "fromNode": "node_6",
+      "toNode": "node_7",
+      "length": 35.22,
+      "streetName": "Princess Street"
+    },
+    {
+      "id": "edge_6",
+      "fromNode": "node_8",
+      "toNode": "node_9",
+      "length": 127.65,
+      "streetName": "St. Lawrence Avenue"
+    },
+    {
+      "id": "edge_7",
+      "fromNode": "node_10",
+      "toNode": "node_11",
+      "length": 194.98,
+      "streetName": "Princess Street"
+    },
+    {
+      "id": "edge_8",
+      "fromNode": "node_11",
+      "toNode": "node_12",
+      "length": 142.43,
+      "streetName": "Princess Street"
+    },
+    {
+      "id": "edge_9",
+      "fromNode": "node_12",
+      "toNode": "node_13",
+      "length": 282.34,
+      "streetName": "Princess Street"
+    },
+    {
+      "id": "edge_10",
+      "fromNode": "node_14",
+      "toNode": "node_15",
+      "length": 75.1,
+      "streetName": "Hill Street"
+    },
+    {
+      "id": "edge_11",
+      "fromNode": "node_15",
+      "toNode": "node_16",
+      "length": 70.49,
+      "streetName": "Hill Street"
+    },
+    {
+      "id": "edge_12",
+      "fromNode": "node_17",
+      "toNode": "node_18",
+      "length": 592.04,
+      "streetName": "Earl Street"
+    },
+    {
+      "id": "edge_13",
+      "fromNode": "node_18",
+      "toNode": "node_19",
+      "length": 42.19,
+      "streetName": "Earl Street"
+    },
+    {
+      "id": "edge_14",
+      "fromNode": "node_19",
+      "toNode": "node_20",
+      "length": 84.26,
+      "streetName": "Earl Street"
+    },
+    {
+      "id": "edge_15",
+      "fromNode": "node_21",
+      "toNode": "node_22",
+      "length": 93.73,
+      "streetName": "Edgehill Street"
+    },
+    {
+      "id": "edge_16",
+      "fromNode": "node_22",
+      "toNode": "node_23",
+      "length": 96.61,
+      "streetName": "Edgehill Street"
+    },
+    {
+      "id": "edge_17",
+      "fromNode": "node_24",
+      "toNode": "node_25",
+      "length": 131.38,
+      "streetName": "Bader Lane"
+    },
+    {
+      "id": "edge_18",
+      "fromNode": "node_26",
+      "toNode": "node_27",
+      "length": 97.85,
+      "streetName": "York Street"
+    },
+    {
+      "id": "edge_19",
+      "fromNode": "node_27",
+      "toNode": "node_28",
+      "length": 121.23,
+      "streetName": "York Street"
+    },
+    {
+      "id": "edge_20",
+      "fromNode": "node_28",
+      "toNode": "node_29",
+      "length": 119.93,
+      "streetName": "York Street"
+    },
+    {
+      "id": "edge_21",
+      "fromNode": "node_30",
+      "toNode": "node_31",
+      "length": 100.7,
+      "streetName": "William Street"
+    },
+    {
+      "id": "edge_22",
+      "fromNode": "node_31",
+      "toNode": "node_32",
+      "length": 109.34,
+      "streetName": "William Street"
+    },
+    {
+      "id": "edge_23",
+      "fromNode": "node_32",
+      "toNode": "node_33",
+      "length": 158.11,
+      "streetName": "William Street"
+    },
+    {
+      "id": "edge_24",
+      "fromNode": "node_34",
+      "toNode": "node_35",
+      "length": 129.12,
+      "streetName": "Couper Street"
+    },
+    {
+      "id": "edge_25",
+      "fromNode": "node_36",
+      "toNode": "node_1",
+      "length": 320.58,
+      "streetName": "Arch Street"
+    },
+    {
+      "id": "edge_26",
+      "fromNode": "node_37",
+      "toNode": "node_38",
+      "length": 194.91,
+      "streetName": "Court Street"
+    },
+    {
+      "id": "edge_27",
+      "fromNode": "node_3",
+      "toNode": "node_39",
+      "length": 149.25,
+      "streetName": "Lower University Avenue"
+    },
+    {
+      "id": "edge_28",
+      "fromNode": "node_40",
+      "toNode": "node_41",
+      "length": 141.39,
+      "streetName": "Queen's Crescent"
+    },
+    {
+      "id": "edge_29",
+      "fromNode": "node_42",
+      "toNode": "node_43",
+      "length": 223.92,
+      "streetName": "Garrett Street"
+    },
+    {
+      "id": "edge_30",
+      "fromNode": "node_6",
+      "toNode": "node_44",
+      "length": 72.77,
+      "streetName": "Chatham Street"
+    },
+    {
+      "id": "edge_31",
+      "fromNode": "node_44",
+      "toNode": "node_45",
+      "length": 63.96,
+      "streetName": "Chatham Street"
+    },
+    {
+      "id": "edge_32",
+      "fromNode": "node_45",
+      "toNode": "node_46",
+      "length": 95.05,
+      "streetName": "Chatham Street"
+    },
+    {
+      "id": "edge_33",
+      "fromNode": "node_46",
+      "toNode": "node_47",
+      "length": 57.37,
+      "streetName": "Chatham Street"
+    },
+    {
+      "id": "edge_34",
+      "fromNode": "node_47",
+      "toNode": "node_48",
+      "length": 59.44,
+      "streetName": "Chatham Street"
+    },
+    {
+      "id": "edge_35",
+      "fromNode": "node_48",
+      "toNode": "node_49",
+      "length": 114.07,
+      "streetName": "Chatham Street"
+    },
+    {
+      "id": "edge_36",
+      "fromNode": "node_49",
+      "toNode": "node_50",
+      "length": 23.89,
+      "streetName": "Chatham Street"
+    },
+    {
+      "id": "edge_37",
+      "fromNode": "node_51",
+      "toNode": "node_48",
+      "length": 107.85,
+      "streetName": "Hamilton Street"
+    },
+    {
+      "id": "edge_38",
+      "fromNode": "node_49",
+      "toNode": "node_52",
+      "length": 215.53,
+      "streetName": "York Street"
+    },
+    {
+      "id": "edge_39",
+      "fromNode": "node_53",
+      "toNode": "node_45",
+      "length": 41.28,
+      "streetName": "Colborne Street"
+    },
+    {
+      "id": "edge_40",
+      "fromNode": "node_45",
+      "toNode": "node_54",
+      "length": 273.96,
+      "streetName": "Colborne Street"
+    },
+    {
+      "id": "edge_41",
+      "fromNode": "node_55",
+      "toNode": "node_56",
+      "length": 126.76,
+      "streetName": "Birch Avenue"
+    },
+    {
+      "id": "edge_42",
+      "fromNode": "node_57",
+      "toNode": "node_31",
+      "length": 92.32,
+      "streetName": "Aberdeen Street"
+    },
+    {
+      "id": "edge_43",
+      "fromNode": "node_31",
+      "toNode": "node_58",
+      "length": 98.53,
+      "streetName": "Aberdeen Street"
+    },
+    {
+      "id": "edge_44",
+      "fromNode": "node_59",
+      "toNode": "node_60",
+      "length": 132.58,
+      "streetName": "Division Street"
+    },
+    {
+      "id": "edge_45",
+      "fromNode": "node_60",
+      "toNode": "node_61",
+      "length": 84.63,
+      "streetName": "Division Street"
+    },
+    {
+      "id": "edge_46",
+      "fromNode": "node_61",
+      "toNode": "node_32",
+      "length": 93.44,
+      "streetName": "Division Street"
+    },
+    {
+      "id": "edge_47",
+      "fromNode": "node_32",
+      "toNode": "node_62",
+      "length": 84.59,
+      "streetName": "Division Street"
+    },
+    {
+      "id": "edge_48",
+      "fromNode": "node_63",
+      "toNode": "node_34",
+      "length": 179.17,
+      "streetName": "Collingwood Street"
+    },
+    {
+      "id": "edge_49",
+      "fromNode": "node_34",
+      "toNode": "node_64",
+      "length": 118.31,
+      "streetName": "Collingwood Street"
+    },
+    {
+      "id": "edge_50",
+      "fromNode": "node_64",
+      "toNode": "node_55",
+      "length": 102.13,
+      "streetName": "Collingwood Street"
+    },
+    {
+      "id": "edge_51",
+      "fromNode": "node_55",
+      "toNode": "node_65",
+      "length": 101.78,
+      "streetName": "Collingwood Street"
+    },
+    {
+      "id": "edge_52",
+      "fromNode": "node_66",
+      "toNode": "node_67",
+      "length": 170.83,
+      "streetName": "Kensington Avenue"
+    },
+    {
+      "id": "edge_53",
+      "fromNode": "node_68",
+      "toNode": "node_21",
+      "length": 236.3,
+      "streetName": "Centre Street"
+    },
+    {
+      "id": "edge_54",
+      "fromNode": "node_21",
+      "toNode": "node_69",
+      "length": 235.65,
+      "streetName": "Centre Street"
+    },
+    {
+      "id": "edge_55",
+      "fromNode": "node_70",
+      "toNode": "node_71",
+      "length": 230.99,
+      "streetName": "Ellerbeck Street"
+    },
+    {
+      "id": "edge_56",
+      "fromNode": "node_71",
+      "toNode": "node_72",
+      "length": 164.78,
+      "streetName": "Ellerbeck Street"
+    },
+    {
+      "id": "edge_57",
+      "fromNode": "node_73",
+      "toNode": "node_15",
+      "length": 278.55,
+      "streetName": "Traymoor Street"
+    },
+    {
+      "id": "edge_58",
+      "fromNode": "node_74",
+      "toNode": "node_75",
+      "length": 180.37,
+      "streetName": "Livingston Avenue"
+    },
+    {
+      "id": "edge_59",
+      "fromNode": "node_75",
+      "toNode": "node_76",
+      "length": 198.04,
+      "streetName": "Livingston Avenue"
+    },
+    {
+      "id": "edge_60",
+      "fromNode": "node_77",
+      "toNode": "node_50",
+      "length": 104.3,
+      "streetName": "Pine Street"
+    },
+    {
+      "id": "edge_61",
+      "fromNode": "node_50",
+      "toNode": "node_78",
+      "length": 40.35,
+      "streetName": "Pine Street"
+    },
+    {
+      "id": "edge_62",
+      "fromNode": "node_78",
+      "toNode": "node_79",
+      "length": 131.8,
+      "streetName": "Pine Street"
+    },
+    {
+      "id": "edge_63",
+      "fromNode": "node_79",
+      "toNode": "node_80",
+      "length": 151.2,
+      "streetName": "Pine Street"
+    },
+    {
+      "id": "edge_64",
+      "fromNode": "node_80",
+      "toNode": "node_81",
+      "length": 97.36,
+      "streetName": "Pine Street"
+    },
+    {
+      "id": "edge_65",
+      "fromNode": "node_81",
+      "toNode": "node_82",
+      "length": 49.97,
+      "streetName": "Pine Street"
+    },
+    {
+      "id": "edge_66",
+      "fromNode": "node_82",
+      "toNode": "node_83",
+      "length": 33.26,
+      "streetName": "Pine Street"
+    },
+    {
+      "id": "edge_67",
+      "fromNode": "node_83",
+      "toNode": "node_84",
+      "length": 79.38,
+      "streetName": "Pine Street"
+    },
+    {
+      "id": "edge_68",
+      "fromNode": "node_85",
+      "toNode": "node_86",
+      "length": 110.38,
+      "streetName": "Raglan Road"
+    },
+    {
+      "id": "edge_69",
+      "fromNode": "node_87",
+      "toNode": "node_88",
+      "length": 64.07,
+      "streetName": "Main Street"
+    },
+    {
+      "id": "edge_70",
+      "fromNode": "node_88",
+      "toNode": "node_89",
+      "length": 82.73,
+      "streetName": "Main Street"
+    },
+    {
+      "id": "edge_71",
+      "fromNode": "node_88",
+      "toNode": "node_90",
+      "length": 71.56,
+      "streetName": "Ellice Street"
+    },
+    {
+      "id": "edge_72",
+      "fromNode": "node_90",
+      "toNode": "node_91",
+      "length": 82.46,
+      "streetName": "Vine Street"
+    },
+    {
+      "id": "edge_73",
+      "fromNode": "node_92",
+      "toNode": "node_93",
+      "length": 79.89,
+      "streetName": "Barrie Street"
+    },
+    {
+      "id": "edge_74",
+      "fromNode": "node_93",
+      "toNode": "node_94",
+      "length": 80.21,
+      "streetName": "Barrie Street"
+    },
+    {
+      "id": "edge_75",
+      "fromNode": "node_94",
+      "toNode": "node_95",
+      "length": 55.61,
+      "streetName": "Barrie Street"
+    },
+    {
+      "id": "edge_76",
+      "fromNode": "node_96",
+      "toNode": "node_97",
+      "length": 111.54,
+      "streetName": "John Street"
+    },
+    {
+      "id": "edge_77",
+      "fromNode": "node_97",
+      "toNode": "node_98",
+      "length": 249.05,
+      "streetName": "John Street"
+    },
+    {
+      "id": "edge_78",
+      "fromNode": "node_99",
+      "toNode": "node_100",
+      "length": 89.68,
+      "streetName": "Quebec Street"
+    },
+    {
+      "id": "edge_79",
+      "fromNode": "node_101",
+      "toNode": "node_102",
+      "length": 93.88,
+      "streetName": "Cherry Street"
+    },
+    {
+      "id": "edge_80",
+      "fromNode": "node_102",
+      "toNode": "node_103",
+      "length": 69.03,
+      "streetName": "Cherry Street"
+    },
+    {
+      "id": "edge_81",
+      "fromNode": "node_103",
+      "toNode": "node_80",
+      "length": 80.32,
+      "streetName": "Cherry Street"
+    },
+    {
+      "id": "edge_82",
+      "fromNode": "node_80",
+      "toNode": "node_104",
+      "length": 87.75,
+      "streetName": "Cherry Street"
+    },
+    {
+      "id": "edge_83",
+      "fromNode": "node_105",
+      "toNode": "node_106",
+      "length": 143.55,
+      "streetName": "Adelaide Street"
+    },
+    {
+      "id": "edge_84",
+      "fromNode": "node_107",
+      "toNode": "node_108",
+      "length": 145.27,
+      "streetName": "Stanley Street"
+    },
+    {
+      "id": "edge_85",
+      "fromNode": "node_78",
+      "toNode": "node_108",
+      "length": 73.05,
+      "streetName": "Lansdowne Street"
+    },
+    {
+      "id": "edge_86",
+      "fromNode": "node_108",
+      "toNode": "node_106",
+      "length": 98.15,
+      "streetName": "Lansdowne Street"
+    },
+    {
+      "id": "edge_87",
+      "fromNode": "node_106",
+      "toNode": "node_109",
+      "length": 96.5,
+      "streetName": "Lansdowne Street"
+    },
+    {
+      "id": "edge_88",
+      "fromNode": "node_110",
+      "toNode": "node_37",
+      "length": 105.3,
+      "streetName": "West Street"
+    },
+    {
+      "id": "edge_89",
+      "fromNode": "node_37",
+      "toNode": "node_18",
+      "length": 173.58,
+      "streetName": "West Street"
+    },
+    {
+      "id": "edge_90",
+      "fromNode": "node_111",
+      "toNode": "node_83",
+      "length": 94.27,
+      "streetName": "St. Catherine Street"
+    },
+    {
+      "id": "edge_91",
+      "fromNode": "node_112",
+      "toNode": "node_113",
+      "length": 57.84,
+      "streetName": "South Bartlett Street"
+    },
+    {
+      "id": "edge_92",
+      "fromNode": "node_113",
+      "toNode": "node_114",
+      "length": 176.07,
+      "streetName": "South Bartlett Street"
+    },
+    {
+      "id": "edge_93",
+      "fromNode": "node_115",
+      "toNode": "node_116",
+      "length": 105.43,
+      "streetName": "William Street"
+    },
+    {
+      "id": "edge_94",
+      "fromNode": "node_116",
+      "toNode": "node_117",
+      "length": 566.29,
+      "streetName": "William Street"
+    },
+    {
+      "id": "edge_95",
+      "fromNode": "node_113",
+      "toNode": "node_118",
+      "length": 111.92,
+      "streetName": "Smith Street"
+    },
+    {
+      "id": "edge_96",
+      "fromNode": "node_119",
+      "toNode": "node_120",
+      "length": 199.84,
+      "streetName": "North Bartlett Street"
+    },
+    {
+      "id": "edge_97",
+      "fromNode": "node_121",
+      "toNode": "node_122",
+      "length": 187.39,
+      "streetName": "James Street"
+    },
+    {
+      "id": "edge_98",
+      "fromNode": "node_123",
+      "toNode": "node_124",
+      "length": 228.76,
+      "streetName": "Charles Street"
+    },
+    {
+      "id": "edge_99",
+      "fromNode": "node_125",
+      "toNode": "node_126",
+      "length": 49.32,
+      "streetName": "Johnson Street"
+    },
+    {
+      "id": "edge_100",
+      "fromNode": "node_126",
+      "toNode": "node_127",
+      "length": 25.77,
+      "streetName": "Johnson Street"
+    },
+    {
+      "id": "edge_101",
+      "fromNode": "node_127",
+      "toNode": "node_128",
+      "length": 75.87,
+      "streetName": "Johnson Street"
+    },
+    {
+      "id": "edge_102",
+      "fromNode": "node_128",
+      "toNode": "node_129",
+      "length": 143.41,
+      "streetName": "Johnson Street"
+    },
+    {
+      "id": "edge_103",
+      "fromNode": "node_129",
+      "toNode": "node_130",
+      "length": 85.37,
+      "streetName": "Johnson Street"
+    },
+    {
+      "id": "edge_104",
+      "fromNode": "node_130",
+      "toNode": "node_131",
+      "length": 6.63,
+      "streetName": "Johnson Street"
+    },
+    {
+      "id": "edge_105",
+      "fromNode": "node_131",
+      "toNode": "node_132",
+      "length": 85.03,
+      "streetName": "Johnson Street"
+    },
+    {
+      "id": "edge_106",
+      "fromNode": "node_132",
+      "toNode": "node_65",
+      "length": 81.68,
+      "streetName": "Johnson Street"
+    },
+    {
+      "id": "edge_107",
+      "fromNode": "node_65",
+      "toNode": "node_133",
+      "length": 26.65,
+      "streetName": "Johnson Street"
+    },
+    {
+      "id": "edge_108",
+      "fromNode": "node_133",
+      "toNode": "node_134",
+      "length": 98.63,
+      "streetName": "Johnson Street"
+    },
+    {
+      "id": "edge_109",
+      "fromNode": "node_134",
+      "toNode": "node_135",
+      "length": 121.12,
+      "streetName": "Johnson Street"
+    },
+    {
+      "id": "edge_110",
+      "fromNode": "node_135",
+      "toNode": "node_136",
+      "length": 120.64,
+      "streetName": "Johnson Street"
+    },
+    {
+      "id": "edge_111",
+      "fromNode": "node_136",
+      "toNode": "node_137",
+      "length": 117.92,
+      "streetName": "Johnson Street"
+    },
+    {
+      "id": "edge_112",
+      "fromNode": "node_137",
+      "toNode": "node_58",
+      "length": 111.99,
+      "streetName": "Johnson Street"
+    },
+    {
+      "id": "edge_113",
+      "fromNode": "node_58",
+      "toNode": "node_62",
+      "length": 106.65,
+      "streetName": "Johnson Street"
+    },
+    {
+      "id": "edge_114",
+      "fromNode": "node_100",
+      "toNode": "node_138",
+      "length": 11.37,
+      "streetName": "Chestnut Street"
+    },
+    {
+      "id": "edge_115",
+      "fromNode": "node_138",
+      "toNode": "node_102",
+      "length": 89.73,
+      "streetName": "Chestnut Street"
+    },
+    {
+      "id": "edge_116",
+      "fromNode": "node_102",
+      "toNode": "node_139",
+      "length": 8,
+      "streetName": "Chestnut Street"
+    },
+    {
+      "id": "edge_117",
+      "fromNode": "node_139",
+      "toNode": "node_140",
+      "length": 103.51,
+      "streetName": "Chestnut Street"
+    },
+    {
+      "id": "edge_118",
+      "fromNode": "node_141",
+      "toNode": "node_44",
+      "length": 34.64,
+      "streetName": "Creighton Street"
+    },
+    {
+      "id": "edge_119",
+      "fromNode": "node_44",
+      "toNode": "node_142",
+      "length": 37.09,
+      "streetName": "Creighton Street"
+    },
+    {
+      "id": "edge_120",
+      "fromNode": "node_143",
+      "toNode": "node_144",
+      "length": 108.54,
+      "streetName": "Durham Street"
+    },
+    {
+      "id": "edge_121",
+      "fromNode": "node_144",
+      "toNode": "node_145",
+      "length": 106.52,
+      "streetName": "Durham Street"
+    },
+    {
+      "id": "edge_122",
+      "fromNode": "node_145",
+      "toNode": "node_146",
+      "length": 118.28,
+      "streetName": "Durham Street"
+    },
+    {
+      "id": "edge_123",
+      "fromNode": "node_138",
+      "toNode": "node_147",
+      "length": 93.64,
+      "streetName": "Prime Street"
+    },
+    {
+      "id": "edge_124",
+      "fromNode": "node_148",
+      "toNode": "node_149",
+      "length": 258.98,
+      "streetName": "Beverley Street"
+    },
+    {
+      "id": "edge_125",
+      "fromNode": "node_149",
+      "toNode": "node_23",
+      "length": 39.63,
+      "streetName": "Beverley Street"
+    },
+    {
+      "id": "edge_126",
+      "fromNode": "node_23",
+      "toNode": "node_150",
+      "length": 212.56,
+      "streetName": "Beverley Street"
+    },
+    {
+      "id": "edge_127",
+      "fromNode": "node_151",
+      "toNode": "node_94",
+      "length": 37.95,
+      "streetName": "Ordnance Street"
+    },
+    {
+      "id": "edge_128",
+      "fromNode": "node_152",
+      "toNode": "node_152",
+      "length": 122.14,
+      "streetName": "Vandalay Crescent"
+    },
+    {
+      "id": "edge_129",
+      "fromNode": "node_153",
+      "toNode": "node_154",
+      "length": 166.87,
+      "streetName": "Drayton Avenue"
+    },
+    {
+      "id": "edge_130",
+      "fromNode": "node_155",
+      "toNode": "node_156",
+      "length": 105.86,
+      "streetName": "Emily Street"
+    },
+    {
+      "id": "edge_131",
+      "fromNode": "node_157",
+      "toNode": "node_158",
+      "length": 179.89,
+      "streetName": "MacDonnell Street"
+    },
+    {
+      "id": "edge_132",
+      "fromNode": "node_158",
+      "toNode": "node_159",
+      "length": 202.07,
+      "streetName": "MacDonnell Street"
+    },
+    {
+      "id": "edge_133",
+      "fromNode": "node_159",
+      "toNode": "node_129",
+      "length": 203.96,
+      "streetName": "MacDonnell Street"
+    },
+    {
+      "id": "edge_134",
+      "fromNode": "node_160",
+      "toNode": "node_161",
+      "length": 7.83,
+      "streetName": "Ordnance Street"
+    },
+    {
+      "id": "edge_135",
+      "fromNode": "node_161",
+      "toNode": "node_162",
+      "length": 92.96,
+      "streetName": "Ordnance Street"
+    },
+    {
+      "id": "edge_136",
+      "fromNode": "node_162",
+      "toNode": "node_163",
+      "length": 142.94,
+      "streetName": "Ordnance Street"
+    },
+    {
+      "id": "edge_137",
+      "fromNode": "node_2",
+      "toNode": "node_164",
+      "length": 146.23,
+      "streetName": "George Street"
+    },
+    {
+      "id": "edge_138",
+      "fromNode": "node_165",
+      "toNode": "node_71",
+      "length": 8.97,
+      "streetName": "Davidson Street"
+    },
+    {
+      "id": "edge_139",
+      "fromNode": "node_71",
+      "toNode": "node_75",
+      "length": 97.37,
+      "streetName": "Davidson Street"
+    },
+    {
+      "id": "edge_140",
+      "fromNode": "node_75",
+      "toNode": "node_166",
+      "length": 94.58,
+      "streetName": "Davidson Street"
+    },
+    {
+      "id": "edge_141",
+      "fromNode": "node_167",
+      "toNode": "node_135",
+      "length": 139.83,
+      "streetName": "Frontenac Street"
+    },
+    {
+      "id": "edge_142",
+      "fromNode": "node_135",
+      "toNode": "node_168",
+      "length": 202.68,
+      "streetName": "Frontenac Street"
+    },
+    {
+      "id": "edge_143",
+      "fromNode": "node_27",
+      "toNode": "node_169",
+      "length": 219.04,
+      "streetName": "Albert Street"
+    },
+    {
+      "id": "edge_144",
+      "fromNode": "node_169",
+      "toNode": "node_170",
+      "length": 274.53,
+      "streetName": "Albert Street"
+    },
+    {
+      "id": "edge_145",
+      "fromNode": "node_170",
+      "toNode": "node_171",
+      "length": 142.37,
+      "streetName": "Albert Street"
+    },
+    {
+      "id": "edge_146",
+      "fromNode": "node_60",
+      "toNode": "node_172",
+      "length": 170.91,
+      "streetName": "Clergy Street West"
+    },
+    {
+      "id": "edge_147",
+      "fromNode": "node_91",
+      "toNode": "node_89",
+      "length": 71.05,
+      "streetName": "Ann Street"
+    },
+    {
+      "id": "edge_148",
+      "fromNode": "node_173",
+      "toNode": "node_46",
+      "length": 102.61,
+      "streetName": "Elm Street"
+    },
+    {
+      "id": "edge_149",
+      "fromNode": "node_174",
+      "toNode": "node_173",
+      "length": 119.98,
+      "streetName": "Jenkins Street"
+    },
+    {
+      "id": "edge_150",
+      "fromNode": "node_175",
+      "toNode": "node_41",
+      "length": 21.2,
+      "streetName": "Queen’s Crescent"
+    },
+    {
+      "id": "edge_151",
+      "fromNode": "node_152",
+      "toNode": "node_176",
+      "length": 70.29,
+      "streetName": "Vandalay Crescent"
+    },
+    {
+      "id": "edge_152",
+      "fromNode": "node_177",
+      "toNode": "node_47",
+      "length": 47.84,
+      "streetName": "Linton Street"
+    },
+    {
+      "id": "edge_153",
+      "fromNode": "node_47",
+      "toNode": "node_178",
+      "length": 61.22,
+      "streetName": "Linton Street"
+    },
+    {
+      "id": "edge_154",
+      "fromNode": "node_179",
+      "toNode": "node_39",
+      "length": 195.12,
+      "streetName": "King Street West"
+    },
+    {
+      "id": "edge_155",
+      "fromNode": "node_39",
+      "toNode": "node_180",
+      "length": 6.38,
+      "streetName": "King Street West"
+    },
+    {
+      "id": "edge_156",
+      "fromNode": "node_181",
+      "toNode": "node_121",
+      "length": 781.52,
+      "streetName": "Patrick Street"
+    },
+    {
+      "id": "edge_157",
+      "fromNode": "node_121",
+      "toNode": "node_84",
+      "length": 41.59,
+      "streetName": "Patrick Street"
+    },
+    {
+      "id": "edge_158",
+      "fromNode": "node_84",
+      "toNode": "node_123",
+      "length": 56.84,
+      "streetName": "Patrick Street"
+    },
+    {
+      "id": "edge_159",
+      "fromNode": "node_123",
+      "toNode": "node_182",
+      "length": 24,
+      "streetName": "Patrick Street"
+    },
+    {
+      "id": "edge_160",
+      "fromNode": "node_182",
+      "toNode": "node_97",
+      "length": 97.08,
+      "streetName": "Patrick Street"
+    },
+    {
+      "id": "edge_161",
+      "fromNode": "node_97",
+      "toNode": "node_86",
+      "length": 138.4,
+      "streetName": "Patrick Street"
+    },
+    {
+      "id": "edge_162",
+      "fromNode": "node_86",
+      "toNode": "node_183",
+      "length": 70.97,
+      "streetName": "Patrick Street"
+    },
+    {
+      "id": "edge_163",
+      "fromNode": "node_183",
+      "toNode": "node_161",
+      "length": 174.69,
+      "streetName": "Alma Street"
+    },
+    {
+      "id": "edge_164",
+      "fromNode": "node_184",
+      "toNode": "node_185",
+      "length": 40.28,
+      "streetName": "Barrie Street"
+    },
+    {
+      "id": "edge_165",
+      "fromNode": "node_164",
+      "toNode": "node_186",
+      "length": 101.87,
+      "streetName": "O'Kill Street"
+    },
+    {
+      "id": "edge_166",
+      "fromNode": "node_187",
+      "toNode": "node_188",
+      "length": 63.2,
+      "streetName": "Union Street"
+    },
+    {
+      "id": "edge_167",
+      "fromNode": "node_189",
+      "toNode": "node_105",
+      "length": 96.9,
+      "streetName": "Alfred Street"
+    },
+    {
+      "id": "edge_168",
+      "fromNode": "node_105",
+      "toNode": "node_107",
+      "length": 95.31,
+      "streetName": "Alfred Street"
+    },
+    {
+      "id": "edge_169",
+      "fromNode": "node_107",
+      "toNode": "node_77",
+      "length": 74.37,
+      "streetName": "Alfred Street"
+    },
+    {
+      "id": "edge_170",
+      "fromNode": "node_77",
+      "toNode": "node_29",
+      "length": 51.15,
+      "streetName": "Alfred Street"
+    },
+    {
+      "id": "edge_171",
+      "fromNode": "node_29",
+      "toNode": "node_51",
+      "length": 57.62,
+      "streetName": "Alfred Street"
+    },
+    {
+      "id": "edge_172",
+      "fromNode": "node_51",
+      "toNode": "node_173",
+      "length": 105.12,
+      "streetName": "Alfred Street"
+    },
+    {
+      "id": "edge_173",
+      "fromNode": "node_173",
+      "toNode": "node_190",
+      "length": 219.08,
+      "streetName": "Alfred Street"
+    },
+    {
+      "id": "edge_174",
+      "fromNode": "node_190",
+      "toNode": "node_191",
+      "length": 116.89,
+      "streetName": "Alfred Street"
+    },
+    {
+      "id": "edge_175",
+      "fromNode": "node_191",
+      "toNode": "node_192",
+      "length": 148.58,
+      "streetName": "Alfred Street"
+    },
+    {
+      "id": "edge_176",
+      "fromNode": "node_94",
+      "toNode": "node_160",
+      "length": 52.62,
+      "streetName": "Ordnance Street"
+    },
+    {
+      "id": "edge_177",
+      "fromNode": "node_149",
+      "toNode": "node_193",
+      "length": 93.86,
+      "streetName": "Queen's Crescent"
+    },
+    {
+      "id": "edge_178",
+      "fromNode": "node_67",
+      "toNode": "node_22",
+      "length": 45.76,
+      "streetName": "Kensington Avenue"
+    },
+    {
+      "id": "edge_179",
+      "fromNode": "node_194",
+      "toNode": "node_195",
+      "length": 237.14,
+      "streetName": "Adelaide Street"
+    },
+    {
+      "id": "edge_180",
+      "fromNode": "node_196",
+      "toNode": "node_11",
+      "length": 104.6,
+      "streetName": "Barrie Street"
+    },
+    {
+      "id": "edge_181",
+      "fromNode": "node_11",
+      "toNode": "node_92",
+      "length": 99.72,
+      "streetName": "Barrie Street"
+    },
+    {
+      "id": "edge_182",
+      "fromNode": "node_197",
+      "toNode": "node_66",
+      "length": 52.96,
+      "streetName": "Kensington Avenue"
+    },
+    {
+      "id": "edge_183",
+      "fromNode": "node_198",
+      "toNode": "node_199",
+      "length": 80.46,
+      "streetName": "Chapman Street"
+    },
+    {
+      "id": "edge_184",
+      "fromNode": "node_139",
+      "toNode": "node_200",
+      "length": 143.67,
+      "streetName": "Plum Street"
+    },
+    {
+      "id": "edge_185",
+      "fromNode": "node_67",
+      "toNode": "node_66",
+      "length": 170.25,
+      "streetName": "Kensington Avenue"
+    },
+    {
+      "id": "edge_186",
+      "fromNode": "node_140",
+      "toNode": "node_201",
+      "length": 95.56,
+      "streetName": "Carlisle Street"
+    },
+    {
+      "id": "edge_187",
+      "fromNode": "node_202",
+      "toNode": "node_203",
+      "length": 10.07,
+      "streetName": "Division Street"
+    },
+    {
+      "id": "edge_188",
+      "fromNode": "node_203",
+      "toNode": "node_204",
+      "length": 23.09,
+      "streetName": "Division Street"
+    },
+    {
+      "id": "edge_189",
+      "fromNode": "node_62",
+      "toNode": "node_205",
+      "length": 101.65,
+      "streetName": "Division Street"
+    },
+    {
+      "id": "edge_190",
+      "fromNode": "node_61",
+      "toNode": "node_57",
+      "length": 115.18,
+      "streetName": "Earl Street"
+    },
+    {
+      "id": "edge_191",
+      "fromNode": "node_57",
+      "toNode": "node_206",
+      "length": 93.43,
+      "streetName": "Earl Street"
+    },
+    {
+      "id": "edge_192",
+      "fromNode": "node_206",
+      "toNode": "node_207",
+      "length": 107.87,
+      "streetName": "Earl Street"
+    },
+    {
+      "id": "edge_193",
+      "fromNode": "node_207",
+      "toNode": "node_168",
+      "length": 120.67,
+      "streetName": "Earl Street"
+    },
+    {
+      "id": "edge_194",
+      "fromNode": "node_168",
+      "toNode": "node_208",
+      "length": 120.64,
+      "streetName": "Earl Street"
+    },
+    {
+      "id": "edge_195",
+      "fromNode": "node_208",
+      "toNode": "node_64",
+      "length": 127.7,
+      "streetName": "Earl Street"
+    },
+    {
+      "id": "edge_196",
+      "fromNode": "node_64",
+      "toNode": "node_209",
+      "length": 84.52,
+      "streetName": "Earl Street"
+    },
+    {
+      "id": "edge_197",
+      "fromNode": "node_164",
+      "toNode": "node_210",
+      "length": 86.32,
+      "streetName": "George Street"
+    },
+    {
+      "id": "edge_198",
+      "fromNode": "node_211",
+      "toNode": "node_212",
+      "length": 39.92,
+      "streetName": "Clergy Street West"
+    },
+    {
+      "id": "edge_199",
+      "fromNode": "node_213",
+      "toNode": "node_214",
+      "length": 46.73,
+      "streetName": "Union Street"
+    },
+    {
+      "id": "edge_200",
+      "fromNode": "node_188",
+      "toNode": "node_213",
+      "length": 47.22,
+      "streetName": "Union Street"
+    },
+    {
+      "id": "edge_201",
+      "fromNode": "node_187",
+      "toNode": "node_59",
+      "length": 144.68,
+      "streetName": "Union Street"
+    },
+    {
+      "id": "edge_202",
+      "fromNode": "node_59",
+      "toNode": "node_36",
+      "length": 88.71,
+      "streetName": "Union Street"
+    },
+    {
+      "id": "edge_203",
+      "fromNode": "node_36",
+      "toNode": "node_215",
+      "length": 87.07,
+      "streetName": "Union Street"
+    },
+    {
+      "id": "edge_204",
+      "fromNode": "node_214",
+      "toNode": "node_187",
+      "length": 62.86,
+      "streetName": "Union Street"
+    },
+    {
+      "id": "edge_205",
+      "fromNode": "node_72",
+      "toNode": "node_165",
+      "length": 164.5,
+      "streetName": "Ellerbeck Street"
+    },
+    {
+      "id": "edge_206",
+      "fromNode": "node_165",
+      "toNode": "node_70",
+      "length": 230.85,
+      "streetName": "Ellerbeck Street"
+    },
+    {
+      "id": "edge_207",
+      "fromNode": "node_216",
+      "toNode": "node_76",
+      "length": 284.27,
+      "streetName": "Union Street"
+    },
+    {
+      "id": "edge_208",
+      "fromNode": "node_76",
+      "toNode": "node_73",
+      "length": 34.45,
+      "streetName": "Union Street"
+    },
+    {
+      "id": "edge_209",
+      "fromNode": "node_73",
+      "toNode": "node_70",
+      "length": 72.52,
+      "streetName": "Union Street"
+    },
+    {
+      "id": "edge_210",
+      "fromNode": "node_70",
+      "toNode": "node_217",
+      "length": 130.42,
+      "streetName": "Union Street"
+    },
+    {
+      "id": "edge_211",
+      "fromNode": "node_217",
+      "toNode": "node_69",
+      "length": 86.61,
+      "streetName": "Union Street"
+    },
+    {
+      "id": "edge_212",
+      "fromNode": "node_69",
+      "toNode": "node_157",
+      "length": 40.06,
+      "streetName": "Union Street"
+    },
+    {
+      "id": "edge_213",
+      "fromNode": "node_157",
+      "toNode": "node_197",
+      "length": 60.18,
+      "streetName": "Union Street"
+    },
+    {
+      "id": "edge_214",
+      "fromNode": "node_197",
+      "toNode": "node_176",
+      "length": 18.39,
+      "streetName": "Union Street"
+    },
+    {
+      "id": "edge_215",
+      "fromNode": "node_176",
+      "toNode": "node_148",
+      "length": 90.87,
+      "streetName": "Union Street"
+    },
+    {
+      "id": "edge_216",
+      "fromNode": "node_148",
+      "toNode": "node_218",
+      "length": 3.27,
+      "streetName": "Union Street"
+    },
+    {
+      "id": "edge_217",
+      "fromNode": "node_218",
+      "toNode": "node_63",
+      "length": 92.13,
+      "streetName": "Union Street"
+    },
+    {
+      "id": "edge_218",
+      "fromNode": "node_219",
+      "toNode": "node_206",
+      "length": 6.55,
+      "streetName": "University Avenue"
+    },
+    {
+      "id": "edge_219",
+      "fromNode": "node_206",
+      "toNode": "node_30",
+      "length": 86.79,
+      "streetName": "University Avenue"
+    },
+    {
+      "id": "edge_220",
+      "fromNode": "node_30",
+      "toNode": "node_137",
+      "length": 117.08,
+      "streetName": "University Avenue"
+    },
+    {
+      "id": "edge_221",
+      "fromNode": "node_137",
+      "toNode": "node_220",
+      "length": 102.63,
+      "streetName": "University Avenue"
+    },
+    {
+      "id": "edge_222",
+      "fromNode": "node_214",
+      "toNode": "node_188",
+      "length": 7.52,
+      "streetName": "University Avenue"
+    },
+    {
+      "id": "edge_223",
+      "fromNode": "node_221",
+      "toNode": "node_0",
+      "length": 43.36,
+      "streetName": "Barrie Street"
+    },
+    {
+      "id": "edge_224",
+      "fromNode": "node_196",
+      "toNode": "node_222",
+      "length": 102.23,
+      "streetName": "Barrie Street"
+    },
+    {
+      "id": "edge_225",
+      "fromNode": "node_222",
+      "toNode": "node_33",
+      "length": 87,
+      "streetName": "Barrie Street"
+    },
+    {
+      "id": "edge_226",
+      "fromNode": "node_33",
+      "toNode": "node_115",
+      "length": 18.87,
+      "streetName": "Barrie Street"
+    },
+    {
+      "id": "edge_227",
+      "fromNode": "node_115",
+      "toNode": "node_20",
+      "length": 58.98,
+      "streetName": "Barrie Street"
+    },
+    {
+      "id": "edge_228",
+      "fromNode": "node_20",
+      "toNode": "node_172",
+      "length": 75.48,
+      "streetName": "Barrie Street"
+    },
+    {
+      "id": "edge_229",
+      "fromNode": "node_172",
+      "toNode": "node_215",
+      "length": 141.21,
+      "streetName": "Barrie Street"
+    },
+    {
+      "id": "edge_230",
+      "fromNode": "node_215",
+      "toNode": "node_38",
+      "length": 25.83,
+      "streetName": "Barrie Street"
+    },
+    {
+      "id": "edge_231",
+      "fromNode": "node_38",
+      "toNode": "node_221",
+      "length": 228.23,
+      "streetName": "Barrie Street"
+    },
+    {
+      "id": "edge_232",
+      "fromNode": "node_205",
+      "toNode": "node_43",
+      "length": 91.05,
+      "streetName": "Division Street"
+    },
+    {
+      "id": "edge_233",
+      "fromNode": "node_220",
+      "toNode": "node_192",
+      "length": 128.11,
+      "streetName": "Brock Street"
+    },
+    {
+      "id": "edge_234",
+      "fromNode": "node_192",
+      "toNode": "node_167",
+      "length": 121.55,
+      "streetName": "Brock Street"
+    },
+    {
+      "id": "edge_235",
+      "fromNode": "node_167",
+      "toNode": "node_171",
+      "length": 121.9,
+      "streetName": "Brock Street"
+    },
+    {
+      "id": "edge_236",
+      "fromNode": "node_171",
+      "toNode": "node_223",
+      "length": 98.4,
+      "streetName": "Brock Street"
+    },
+    {
+      "id": "edge_237",
+      "fromNode": "node_223",
+      "toNode": "node_224",
+      "length": 104.4,
+      "streetName": "Brock Street"
+    },
+    {
+      "id": "edge_238",
+      "fromNode": "node_224",
+      "toNode": "node_225",
+      "length": 90.18,
+      "streetName": "Brock Street"
+    },
+    {
+      "id": "edge_239",
+      "fromNode": "node_225",
+      "toNode": "node_226",
+      "length": 90.74,
+      "streetName": "Brock Street"
+    },
+    {
+      "id": "edge_240",
+      "fromNode": "node_226",
+      "toNode": "node_227",
+      "length": 142.99,
+      "streetName": "Brock Street"
+    },
+    {
+      "id": "edge_241",
+      "fromNode": "node_227",
+      "toNode": "node_228",
+      "length": 75.6,
+      "streetName": "Brock Street"
+    },
+    {
+      "id": "edge_242",
+      "fromNode": "node_228",
+      "toNode": "node_229",
+      "length": 76.28,
+      "streetName": "Brock Street"
+    },
+    {
+      "id": "edge_243",
+      "fromNode": "node_185",
+      "toNode": "node_230",
+      "length": 37.01,
+      "streetName": "King Street East"
+    },
+    {
+      "id": "edge_244",
+      "fromNode": "node_184",
+      "toNode": "node_186",
+      "length": 44.17,
+      "streetName": "Barrie Street"
+    },
+    {
+      "id": "edge_245",
+      "fromNode": "node_186",
+      "toNode": "node_0",
+      "length": 154.98,
+      "streetName": "Barrie Street"
+    },
+    {
+      "id": "edge_246",
+      "fromNode": "node_231",
+      "toNode": "node_232",
+      "length": 285.62,
+      "streetName": "Queen Street"
+    },
+    {
+      "id": "edge_247",
+      "fromNode": "node_232",
+      "toNode": "node_92",
+      "length": 141.57,
+      "streetName": "Queen Street"
+    },
+    {
+      "id": "edge_248",
+      "fromNode": "node_92",
+      "toNode": "node_198",
+      "length": 139.8,
+      "streetName": "Queen Street"
+    },
+    {
+      "id": "edge_249",
+      "fromNode": "node_198",
+      "toNode": "node_233",
+      "length": 44.81,
+      "streetName": "Queen Street"
+    },
+    {
+      "id": "edge_250",
+      "fromNode": "node_234",
+      "toNode": "node_90",
+      "length": 79.93,
+      "streetName": "Ellice Street"
+    },
+    {
+      "id": "edge_251",
+      "fromNode": "node_100",
+      "toNode": "node_103",
+      "length": 67.8,
+      "streetName": "Quebec Street"
+    },
+    {
+      "id": "edge_252",
+      "fromNode": "node_103",
+      "toNode": "node_235",
+      "length": 148.1,
+      "streetName": "Quebec Street"
+    },
+    {
+      "id": "edge_253",
+      "fromNode": "node_235",
+      "toNode": "node_182",
+      "length": 112.36,
+      "streetName": "Quebec Street"
+    },
+    {
+      "id": "edge_254",
+      "fromNode": "node_16",
+      "toNode": "node_236",
+      "length": 98.97,
+      "streetName": "Hill Street"
+    },
+    {
+      "id": "edge_255",
+      "fromNode": "node_236",
+      "toNode": "node_158",
+      "length": 145.25,
+      "streetName": "Hill Street"
+    },
+    {
+      "id": "edge_256",
+      "fromNode": "node_236",
+      "toNode": "node_237",
+      "length": 209.24,
+      "streetName": "Napier Street"
+    },
+    {
+      "id": "edge_257",
+      "fromNode": "node_237",
+      "toNode": "node_128",
+      "length": 205.05,
+      "streetName": "Napier Street"
+    },
+    {
+      "id": "edge_258",
+      "fromNode": "node_237",
+      "toNode": "node_238",
+      "length": 99.66,
+      "streetName": "Earl Street"
+    },
+    {
+      "id": "edge_259",
+      "fromNode": "node_238",
+      "toNode": "node_239",
+      "length": 65.13,
+      "streetName": "Earl Street"
+    },
+    {
+      "id": "edge_260",
+      "fromNode": "node_172",
+      "toNode": "node_19",
+      "length": 88.53,
+      "streetName": "Clergy Street East"
+    },
+    {
+      "id": "edge_261",
+      "fromNode": "node_19",
+      "toNode": "node_116",
+      "length": 69.22,
+      "streetName": "Clergy Street East"
+    },
+    {
+      "id": "edge_262",
+      "fromNode": "node_116",
+      "toNode": "node_240",
+      "length": 100.45,
+      "streetName": "Clergy Street East"
+    },
+    {
+      "id": "edge_263",
+      "fromNode": "node_240",
+      "toNode": "node_241",
+      "length": 101.32,
+      "streetName": "Clergy Street East"
+    },
+    {
+      "id": "edge_264",
+      "fromNode": "node_241",
+      "toNode": "node_12",
+      "length": 104.46,
+      "streetName": "Clergy Street East"
+    },
+    {
+      "id": "edge_265",
+      "fromNode": "node_12",
+      "toNode": "node_232",
+      "length": 99.73,
+      "streetName": "Clergy Street East"
+    },
+    {
+      "id": "edge_266",
+      "fromNode": "node_232",
+      "toNode": "node_242",
+      "length": 79.41,
+      "streetName": "Clergy Street East"
+    },
+    {
+      "id": "edge_267",
+      "fromNode": "node_242",
+      "toNode": "node_162",
+      "length": 101.7,
+      "streetName": "Clergy Street East"
+    },
+    {
+      "id": "edge_268",
+      "fromNode": "node_54",
+      "toNode": "node_199",
+      "length": 111.47,
+      "streetName": "Colborne Street"
+    },
+    {
+      "id": "edge_269",
+      "fromNode": "node_199",
+      "toNode": "node_87",
+      "length": 36.87,
+      "streetName": "Colborne Street"
+    },
+    {
+      "id": "edge_270",
+      "fromNode": "node_87",
+      "toNode": "node_93",
+      "length": 100.3,
+      "streetName": "Colborne Street"
+    },
+    {
+      "id": "edge_271",
+      "fromNode": "node_93",
+      "toNode": "node_242",
+      "length": 143.58,
+      "streetName": "Colborne Street"
+    },
+    {
+      "id": "edge_272",
+      "fromNode": "node_242",
+      "toNode": "node_243",
+      "length": 141.71,
+      "streetName": "Colborne Street"
+    },
+    {
+      "id": "edge_273",
+      "fromNode": "node_95",
+      "toNode": "node_160",
+      "length": 52.43,
+      "streetName": "York Street"
+    },
+    {
+      "id": "edge_274",
+      "fromNode": "node_244",
+      "toNode": "node_95",
+      "length": 153.61,
+      "streetName": "York Street"
+    },
+    {
+      "id": "edge_275",
+      "fromNode": "node_95",
+      "toNode": "node_85",
+      "length": 143.73,
+      "streetName": "Barrie Street"
+    },
+    {
+      "id": "edge_276",
+      "fromNode": "node_85",
+      "toNode": "node_96",
+      "length": 147.63,
+      "streetName": "Barrie Street"
+    },
+    {
+      "id": "edge_277",
+      "fromNode": "node_96",
+      "toNode": "node_200",
+      "length": 28.2,
+      "streetName": "Barrie Street"
+    },
+    {
+      "id": "edge_278",
+      "fromNode": "node_200",
+      "toNode": "node_235",
+      "length": 74.75,
+      "streetName": "Barrie Street"
+    },
+    {
+      "id": "edge_279",
+      "fromNode": "node_235",
+      "toNode": "node_82",
+      "length": 80.41,
+      "streetName": "Barrie Street"
+    },
+    {
+      "id": "edge_280",
+      "fromNode": "node_203",
+      "toNode": "node_233",
+      "length": 32.26,
+      "streetName": "Queen Street"
+    },
+    {
+      "id": "edge_281",
+      "fromNode": "node_233",
+      "toNode": "node_202",
+      "length": 34.75,
+      "streetName": "Queen Street"
+    },
+    {
+      "id": "edge_282",
+      "fromNode": "node_91",
+      "toNode": "node_245",
+      "length": 39.93,
+      "streetName": "Vine Street"
+    },
+    {
+      "id": "edge_283",
+      "fromNode": "node_89",
+      "toNode": "node_246",
+      "length": 72.37,
+      "streetName": "Main Street"
+    },
+    {
+      "id": "edge_284",
+      "fromNode": "node_246",
+      "toNode": "node_247",
+      "length": 214.59,
+      "streetName": "Main Street"
+    },
+    {
+      "id": "edge_285",
+      "fromNode": "node_201",
+      "toNode": "node_244",
+      "length": 47.03,
+      "streetName": "York Street"
+    },
+    {
+      "id": "edge_286",
+      "fromNode": "node_248",
+      "toNode": "node_241",
+      "length": 145.43,
+      "streetName": "Brock Street"
+    },
+    {
+      "id": "edge_287",
+      "fromNode": "node_241",
+      "toNode": "node_196",
+      "length": 143.46,
+      "streetName": "Brock Street"
+    },
+    {
+      "id": "edge_288",
+      "fromNode": "node_196",
+      "toNode": "node_205",
+      "length": 139.97,
+      "streetName": "Brock Street"
+    },
+    {
+      "id": "edge_289",
+      "fromNode": "node_170",
+      "toNode": "node_249",
+      "length": 121.51,
+      "streetName": "Mack Street"
+    },
+    {
+      "id": "edge_290",
+      "fromNode": "node_249",
+      "toNode": "node_191",
+      "length": 121.2,
+      "streetName": "Mack Street"
+    },
+    {
+      "id": "edge_291",
+      "fromNode": "node_249",
+      "toNode": "node_250",
+      "length": 195.34,
+      "streetName": "Frontenac Street"
+    },
+    {
+      "id": "edge_292",
+      "fromNode": "node_250",
+      "toNode": "node_174",
+      "length": 137.37,
+      "streetName": "Frontenac Street"
+    },
+    {
+      "id": "edge_293",
+      "fromNode": "node_174",
+      "toNode": "node_28",
+      "length": 162.7,
+      "streetName": "Frontenac Street"
+    },
+    {
+      "id": "edge_294",
+      "fromNode": "node_46",
+      "toNode": "node_251",
+      "length": 255.58,
+      "streetName": "Elm Street"
+    },
+    {
+      "id": "edge_295",
+      "fromNode": "node_48",
+      "toNode": "node_252",
+      "length": 215.38,
+      "streetName": "Hamilton Street"
+    },
+    {
+      "id": "edge_296",
+      "fromNode": "node_52",
+      "toNode": "node_147",
+      "length": 39.68,
+      "streetName": "York Street"
+    },
+    {
+      "id": "edge_297",
+      "fromNode": "node_108",
+      "toNode": "node_253",
+      "length": 125.77,
+      "streetName": "Stanley Street"
+    },
+    {
+      "id": "edge_298",
+      "fromNode": "node_106",
+      "toNode": "node_194",
+      "length": 117.41,
+      "streetName": "Adelaide Street"
+    },
+    {
+      "id": "edge_299",
+      "fromNode": "node_147",
+      "toNode": "node_101",
+      "length": 89.75,
+      "streetName": "York Street"
+    },
+    {
+      "id": "edge_300",
+      "fromNode": "node_101",
+      "toNode": "node_201",
+      "length": 98.8,
+      "streetName": "York Street"
+    },
+    {
+      "id": "edge_301",
+      "fromNode": "node_70",
+      "toNode": "node_16",
+      "length": 257.7,
+      "streetName": "Willingdon Avenue"
+    },
+    {
+      "id": "edge_302",
+      "fromNode": "node_16",
+      "toNode": "node_238",
+      "length": 214.38,
+      "streetName": "Willingdon Avenue"
+    },
+    {
+      "id": "edge_303",
+      "fromNode": "node_238",
+      "toNode": "node_126",
+      "length": 205.6,
+      "streetName": "Willingdon Avenue"
+    },
+    {
+      "id": "edge_304",
+      "fromNode": "node_254",
+      "toNode": "node_9",
+      "length": 227.37,
+      "streetName": "Stuart Street"
+    },
+    {
+      "id": "edge_305",
+      "fromNode": "node_9",
+      "toNode": "node_255",
+      "length": 98.17,
+      "streetName": "Stuart Street"
+    },
+    {
+      "id": "edge_306",
+      "fromNode": "node_256",
+      "toNode": "node_194",
+      "length": 86.44,
+      "streetName": "Division Street"
+    },
+    {
+      "id": "edge_307",
+      "fromNode": "node_194",
+      "toNode": "node_253",
+      "length": 100.8,
+      "streetName": "Division Street"
+    },
+    {
+      "id": "edge_308",
+      "fromNode": "node_253",
+      "toNode": "node_79",
+      "length": 70.71,
+      "streetName": "Division Street"
+    },
+    {
+      "id": "edge_309",
+      "fromNode": "node_79",
+      "toNode": "node_99",
+      "length": 79.54,
+      "streetName": "Division Street"
+    },
+    {
+      "id": "edge_310",
+      "fromNode": "node_99",
+      "toNode": "node_52",
+      "length": 60.37,
+      "streetName": "Division Street"
+    },
+    {
+      "id": "edge_311",
+      "fromNode": "node_52",
+      "toNode": "node_247",
+      "length": 31.78,
+      "streetName": "Division Street"
+    },
+    {
+      "id": "edge_312",
+      "fromNode": "node_247",
+      "toNode": "node_252",
+      "length": 58.46,
+      "streetName": "Division Street"
+    },
+    {
+      "id": "edge_313",
+      "fromNode": "node_252",
+      "toNode": "node_257",
+      "length": 106.85,
+      "streetName": "Division Street"
+    },
+    {
+      "id": "edge_314",
+      "fromNode": "node_257",
+      "toNode": "node_251",
+      "length": 56.26,
+      "streetName": "Division Street"
+    },
+    {
+      "id": "edge_315",
+      "fromNode": "node_251",
+      "toNode": "node_234",
+      "length": 59.15,
+      "streetName": "Division Street"
+    },
+    {
+      "id": "edge_316",
+      "fromNode": "node_234",
+      "toNode": "node_54",
+      "length": 44.85,
+      "streetName": "Division Street"
+    },
+    {
+      "id": "edge_317",
+      "fromNode": "node_54",
+      "toNode": "node_258",
+      "length": 18.45,
+      "streetName": "Division Street"
+    },
+    {
+      "id": "edge_318",
+      "fromNode": "node_62",
+      "toNode": "node_222",
+      "length": 147.88,
+      "streetName": "Johnson Street"
+    },
+    {
+      "id": "edge_319",
+      "fromNode": "node_222",
+      "toNode": "node_240",
+      "length": 134.16,
+      "streetName": "Johnson Street"
+    },
+    {
+      "id": "edge_320",
+      "fromNode": "node_240",
+      "toNode": "node_259",
+      "length": 147.15,
+      "streetName": "Johnson Street"
+    },
+    {
+      "id": "edge_321",
+      "fromNode": "node_260",
+      "toNode": "node_154",
+      "length": 275.91,
+      "streetName": "Princess Street"
+    },
+    {
+      "id": "edge_322",
+      "fromNode": "node_154",
+      "toNode": "node_261",
+      "length": 76.96,
+      "streetName": "Princess Street"
+    },
+    {
+      "id": "edge_323",
+      "fromNode": "node_168",
+      "toNode": "node_262",
+      "length": 246.6,
+      "streetName": "Frontenac Street"
+    },
+    {
+      "id": "edge_324",
+      "fromNode": "node_263",
+      "toNode": "node_250",
+      "length": 87.94,
+      "streetName": "Princess Street"
+    },
+    {
+      "id": "edge_325",
+      "fromNode": "node_250",
+      "toNode": "node_169",
+      "length": 145.22,
+      "streetName": "Princess Street"
+    },
+    {
+      "id": "edge_326",
+      "fromNode": "node_169",
+      "toNode": "node_264",
+      "length": 119.79,
+      "streetName": "Princess Street"
+    },
+    {
+      "id": "edge_327",
+      "fromNode": "node_264",
+      "toNode": "node_265",
+      "length": 107.33,
+      "streetName": "Princess Street"
+    },
+    {
+      "id": "edge_328",
+      "fromNode": "node_263",
+      "toNode": "node_190",
+      "length": 58.06,
+      "streetName": "Princess Street"
+    },
+    {
+      "id": "edge_329",
+      "fromNode": "node_7",
+      "toNode": "node_190",
+      "length": 62.48,
+      "streetName": "Princess Street"
+    },
+    {
+      "id": "edge_330",
+      "fromNode": "node_188",
+      "toNode": "node_211",
+      "length": 108.85,
+      "streetName": "University Avenue"
+    },
+    {
+      "id": "edge_331",
+      "fromNode": "node_266",
+      "toNode": "node_262",
+      "length": 59.69,
+      "streetName": "Union Street"
+    },
+    {
+      "id": "edge_332",
+      "fromNode": "node_262",
+      "toNode": "node_267",
+      "length": 122.09,
+      "streetName": "Union Street"
+    },
+    {
+      "id": "edge_333",
+      "fromNode": "node_267",
+      "toNode": "node_213",
+      "length": 47.22,
+      "streetName": "Union Street"
+    },
+    {
+      "id": "edge_334",
+      "fromNode": "node_10",
+      "toNode": "node_4",
+      "length": 56.75,
+      "streetName": "Princess Street"
+    },
+    {
+      "id": "edge_335",
+      "fromNode": "node_204",
+      "toNode": "node_10",
+      "length": 45.58,
+      "streetName": "Division Street"
+    },
+    {
+      "id": "edge_336",
+      "fromNode": "node_268",
+      "toNode": "node_118",
+      "length": 156.87,
+      "streetName": "Princess Street"
+    },
+    {
+      "id": "edge_337",
+      "fromNode": "node_118",
+      "toNode": "node_260",
+      "length": 55.71,
+      "streetName": "Princess Street"
+    },
+    {
+      "id": "edge_338",
+      "fromNode": "node_265",
+      "toNode": "node_268",
+      "length": 28.73,
+      "streetName": "Princess Street"
+    },
+    {
+      "id": "edge_339",
+      "fromNode": "node_269",
+      "toNode": "node_265",
+      "length": 32.79,
+      "streetName": "Victoria Street"
+    },
+    {
+      "id": "edge_340",
+      "fromNode": "node_270",
+      "toNode": "node_120",
+      "length": 143.75,
+      "streetName": "Victoria Street"
+    },
+    {
+      "id": "edge_341",
+      "fromNode": "node_120",
+      "toNode": "node_114",
+      "length": 130.03,
+      "streetName": "Victoria Street"
+    },
+    {
+      "id": "edge_342",
+      "fromNode": "node_114",
+      "toNode": "node_269",
+      "length": 109.09,
+      "streetName": "Victoria Street"
+    },
+    {
+      "id": "edge_343",
+      "fromNode": "node_271",
+      "toNode": "node_175",
+      "length": 41.28,
+      "streetName": "Bader Lane"
+    },
+    {
+      "id": "edge_344",
+      "fromNode": "node_271",
+      "toNode": "node_255",
+      "length": 74.47,
+      "streetName": "Albert Street"
+    },
+    {
+      "id": "edge_345",
+      "fromNode": "node_41",
+      "toNode": "node_271",
+      "length": 42.99,
+      "streetName": "Albert Street"
+    },
+    {
+      "id": "edge_346",
+      "fromNode": "node_258",
+      "toNode": "node_202",
+      "length": 66.57,
+      "streetName": "Division Street"
+    },
+    {
+      "id": "edge_347",
+      "fromNode": "node_272",
+      "toNode": "node_150",
+      "length": 7.44,
+      "streetName": "King Street West"
+    },
+    {
+      "id": "edge_348",
+      "fromNode": "node_150",
+      "toNode": "node_68",
+      "length": 193.65,
+      "streetName": "King Street West"
+    },
+    {
+      "id": "edge_349",
+      "fromNode": "node_68",
+      "toNode": "node_273",
+      "length": 207.18,
+      "streetName": "King Street West"
+    },
+    {
+      "id": "edge_350",
+      "fromNode": "node_273",
+      "toNode": "node_74",
+      "length": 101.84,
+      "streetName": "King Street West"
+    },
+    {
+      "id": "edge_351",
+      "fromNode": "node_74",
+      "toNode": "node_274",
+      "length": 334.3,
+      "streetName": "King Street West"
+    },
+    {
+      "id": "edge_352",
+      "fromNode": "node_155",
+      "toNode": "node_230",
+      "length": 60.82,
+      "streetName": "King Street East"
+    },
+    {
+      "id": "edge_353",
+      "fromNode": "node_275",
+      "toNode": "node_155",
+      "length": 201.67,
+      "streetName": "King Street East"
+    },
+    {
+      "id": "edge_354",
+      "fromNode": "node_244",
+      "toNode": "node_85",
+      "length": 136.3,
+      "streetName": "Raglan Road"
+    },
+    {
+      "id": "edge_355",
+      "fromNode": "node_257",
+      "toNode": "node_245",
+      "length": 92.27,
+      "streetName": "Raglan Road"
+    },
+    {
+      "id": "edge_356",
+      "fromNode": "node_245",
+      "toNode": "node_246",
+      "length": 38.78,
+      "streetName": "Raglan Road"
+    },
+    {
+      "id": "edge_357",
+      "fromNode": "node_246",
+      "toNode": "node_244",
+      "length": 56.13,
+      "streetName": "Raglan Road"
+    },
+    {
+      "id": "edge_358",
+      "fromNode": "node_276",
+      "toNode": "node_195",
+      "length": 110.54,
+      "streetName": "Cowdy Street"
+    },
+    {
+      "id": "edge_359",
+      "fromNode": "node_195",
+      "toNode": "node_81",
+      "length": 176.36,
+      "streetName": "Cowdy Street"
+    },
+    {
+      "id": "edge_360",
+      "fromNode": "node_218",
+      "toNode": "node_209",
+      "length": 321.53,
+      "streetName": "Victoria Street"
+    },
+    {
+      "id": "edge_361",
+      "fromNode": "node_209",
+      "toNode": "node_132",
+      "length": 204.36,
+      "streetName": "Victoria Street"
+    },
+    {
+      "id": "edge_362",
+      "fromNode": "node_129",
+      "toNode": "node_226",
+      "length": 144.37,
+      "streetName": "MacDonnell Street"
+    },
+    {
+      "id": "edge_363",
+      "fromNode": "node_112",
+      "toNode": "node_119",
+      "length": 28.68,
+      "streetName": "MacDonnell Street"
+    },
+    {
+      "id": "edge_364",
+      "fromNode": "node_260",
+      "toNode": "node_112",
+      "length": 113.64,
+      "streetName": "MacDonnell Street"
+    },
+    {
+      "id": "edge_365",
+      "fromNode": "node_119",
+      "toNode": "node_277",
+      "length": 143.27,
+      "streetName": "MacDonnell Street"
+    },
+    {
+      "id": "edge_366",
+      "fromNode": "node_278",
+      "toNode": "node_170",
+      "length": 98.54,
+      "streetName": "Mack Street"
+    },
+    {
+      "id": "edge_367",
+      "fromNode": "node_264",
+      "toNode": "node_26",
+      "length": 153.55,
+      "streetName": "Nelson Street"
+    },
+    {
+      "id": "edge_368",
+      "fromNode": "node_26",
+      "toNode": "node_279",
+      "length": 283.43,
+      "streetName": "Nelson Street"
+    },
+    {
+      "id": "edge_369",
+      "fromNode": "node_280",
+      "toNode": "node_130",
+      "length": 204.18,
+      "streetName": "Toronto Street"
+    },
+    {
+      "id": "edge_370",
+      "fromNode": "node_281",
+      "toNode": "node_282",
+      "length": 109.08,
+      "streetName": "Napier Street"
+    },
+    {
+      "id": "edge_371",
+      "fromNode": "node_283",
+      "toNode": "node_284",
+      "length": 99.19,
+      "streetName": "MacDonnell Street"
+    },
+    {
+      "id": "edge_372",
+      "fromNode": "node_285",
+      "toNode": "node_286",
+      "length": 154.7,
+      "streetName": "Dunlop Street"
+    },
+    {
+      "id": "edge_373",
+      "fromNode": "node_287",
+      "toNode": "node_288",
+      "length": 173.98,
+      "streetName": "Toronto Street"
+    },
+    {
+      "id": "edge_374",
+      "fromNode": "node_289",
+      "toNode": "node_290",
+      "length": 152.72,
+      "streetName": "Dundas Street"
+    },
+    {
+      "id": "edge_375",
+      "fromNode": "node_278",
+      "toNode": "node_264",
+      "length": 337.46,
+      "streetName": "Nelson Street"
+    },
+    {
+      "id": "edge_376",
+      "fromNode": "node_144",
+      "toNode": "node_260",
+      "length": 108.58,
+      "streetName": "MacDonnell Street"
+    },
+    {
+      "id": "edge_377",
+      "fromNode": "node_289",
+      "toNode": "node_281",
+      "length": 105.3,
+      "streetName": "Napier Street"
+    },
+    {
+      "id": "edge_378",
+      "fromNode": "node_291",
+      "toNode": "node_281",
+      "length": 137.31,
+      "streetName": "Carruthers Avenue"
+    },
+    {
+      "id": "edge_379",
+      "fromNode": "node_226",
+      "toNode": "node_292",
+      "length": 139.72,
+      "streetName": "MacDonnell Street"
+    },
+    {
+      "id": "edge_380",
+      "fromNode": "node_292",
+      "toNode": "node_293",
+      "length": 142.51,
+      "streetName": "Mack Street"
+    },
+    {
+      "id": "edge_381",
+      "fromNode": "node_291",
+      "toNode": "node_282",
+      "length": 90.1,
+      "streetName": "Scott Street"
+    },
+    {
+      "id": "edge_382",
+      "fromNode": "node_293",
+      "toNode": "node_289",
+      "length": 84.76,
+      "streetName": "Napier Street"
+    },
+    {
+      "id": "edge_383",
+      "fromNode": "node_294",
+      "toNode": "node_289",
+      "length": 142,
+      "streetName": "Dundas Street"
+    },
+    {
+      "id": "edge_384",
+      "fromNode": "node_131",
+      "toNode": "node_225",
+      "length": 145.09,
+      "streetName": "Toronto Street"
+    },
+    {
+      "id": "edge_385",
+      "fromNode": "node_293",
+      "toNode": "node_295",
+      "length": 152.26,
+      "streetName": "Mack Street"
+    },
+    {
+      "id": "edge_386",
+      "fromNode": "node_282",
+      "toNode": "node_285",
+      "length": 81.68,
+      "streetName": "Napier Street"
+    },
+    {
+      "id": "edge_387",
+      "fromNode": "node_296",
+      "toNode": "node_292",
+      "length": 90.49,
+      "streetName": "Mack Street"
+    },
+    {
+      "id": "edge_388",
+      "fromNode": "node_281",
+      "toNode": "node_297",
+      "length": 153.4,
+      "streetName": "Carruthers Avenue"
+    },
+    {
+      "id": "edge_389",
+      "fromNode": "node_132",
+      "toNode": "node_224",
+      "length": 143.05,
+      "streetName": "Victoria Street"
+    },
+    {
+      "id": "edge_390",
+      "fromNode": "node_282",
+      "toNode": "node_298",
+      "length": 154.02,
+      "streetName": "Scott Street"
+    },
+    {
+      "id": "edge_391",
+      "fromNode": "node_133",
+      "toNode": "node_223",
+      "length": 140.35,
+      "streetName": "Nelson Street"
+    },
+    {
+      "id": "edge_392",
+      "fromNode": "node_145",
+      "toNode": "node_299",
+      "length": 56.42,
+      "streetName": "Toronto Street"
+    },
+    {
+      "id": "edge_393",
+      "fromNode": "node_296",
+      "toNode": "node_287",
+      "length": 86.35,
+      "streetName": "Toronto Street"
+    },
+    {
+      "id": "edge_394",
+      "fromNode": "node_223",
+      "toNode": "node_278",
+      "length": 143.44,
+      "streetName": "Nelson Street"
+    },
+    {
+      "id": "edge_395",
+      "fromNode": "node_300",
+      "toNode": "node_288",
+      "length": 116.45,
+      "streetName": "Park Street"
+    },
+    {
+      "id": "edge_396",
+      "fromNode": "node_301",
+      "toNode": "node_302",
+      "length": 187.01,
+      "streetName": "Park Street"
+    },
+    {
+      "id": "edge_397",
+      "fromNode": "node_146",
+      "toNode": "node_265",
+      "length": 82.4,
+      "streetName": "Victoria Street"
+    },
+    {
+      "id": "edge_398",
+      "fromNode": "node_278",
+      "toNode": "node_303",
+      "length": 100.41,
+      "streetName": "Mack Street"
+    },
+    {
+      "id": "edge_399",
+      "fromNode": "node_288",
+      "toNode": "node_284",
+      "length": 104.09,
+      "streetName": "Park Street"
+    },
+    {
+      "id": "edge_400",
+      "fromNode": "node_300",
+      "toNode": "node_146",
+      "length": 107.01,
+      "streetName": "Victoria Street"
+    },
+    {
+      "id": "edge_401",
+      "fromNode": "node_288",
+      "toNode": "node_145",
+      "length": 100.96,
+      "streetName": "Toronto Street"
+    },
+    {
+      "id": "edge_402",
+      "fromNode": "node_128",
+      "toNode": "node_227",
+      "length": 141.89,
+      "streetName": "Napier Street"
+    },
+    {
+      "id": "edge_403",
+      "fromNode": "node_283",
+      "toNode": "node_291",
+      "length": 76.69,
+      "streetName": "Scott Street"
+    },
+    {
+      "id": "edge_404",
+      "fromNode": "node_127",
+      "toNode": "node_228",
+      "length": 141.37,
+      "streetName": "Graham Avenue"
+    },
+    {
+      "id": "edge_405",
+      "fromNode": "node_287",
+      "toNode": "node_294",
+      "length": 89.38,
+      "streetName": "Dundas Street"
+    },
+    {
+      "id": "edge_406",
+      "fromNode": "node_292",
+      "toNode": "node_294",
+      "length": 86.32,
+      "streetName": "MacDonnell Street"
+    },
+    {
+      "id": "edge_407",
+      "fromNode": "node_294",
+      "toNode": "node_283",
+      "length": 126.93,
+      "streetName": "MacDonnell Street"
+    },
+    {
+      "id": "edge_408",
+      "fromNode": "node_224",
+      "toNode": "node_303",
+      "length": 142.51,
+      "streetName": "Victoria Street"
+    },
+    {
+      "id": "edge_409",
+      "fromNode": "node_284",
+      "toNode": "node_144",
+      "length": 106.1,
+      "streetName": "MacDonnell Street"
+    },
+    {
+      "id": "edge_410",
+      "fromNode": "node_225",
+      "toNode": "node_296",
+      "length": 139.87,
+      "streetName": "Toronto Street"
+    },
+    {
+      "id": "edge_411",
+      "fromNode": "node_285",
+      "toNode": "node_301",
+      "length": 25.58,
+      "streetName": "Napier Street"
+    },
+    {
+      "id": "edge_412",
+      "fromNode": "node_303",
+      "toNode": "node_300",
+      "length": 204.34,
+      "streetName": "Victoria Street"
+    },
+    {
+      "id": "edge_413",
+      "fromNode": "node_303",
+      "toNode": "node_296",
+      "length": 94.49,
+      "streetName": "Mack Street"
+    },
+    {
+      "id": "edge_414",
+      "fromNode": "node_284",
+      "toNode": "node_301",
+      "length": 170.99,
+      "streetName": "Park Street"
+    },
+    {
+      "id": "edge_415",
+      "fromNode": "node_171",
+      "toNode": "node_134",
+      "length": 140.02,
+      "streetName": "Albert Street"
+    },
+    {
+      "id": "edge_416",
+      "fromNode": "node_134",
+      "toNode": "node_56",
+      "length": 101.71,
+      "streetName": "Albert Street"
+    },
+    {
+      "id": "edge_417",
+      "fromNode": "node_56",
+      "toNode": "node_208",
+      "length": 101.19,
+      "streetName": "Albert Street"
+    },
+    {
+      "id": "edge_418",
+      "fromNode": "node_208",
+      "toNode": "node_35",
+      "length": 119.15,
+      "streetName": "Albert Street"
+    },
+    {
+      "id": "edge_419",
+      "fromNode": "node_35",
+      "toNode": "node_304",
+      "length": 153.51,
+      "streetName": "Albert Street"
+    },
+    {
+      "id": "edge_420",
+      "fromNode": "node_192",
+      "toNode": "node_136",
+      "length": 133.15,
+      "streetName": "Alfred Street"
+    },
+    {
+      "id": "edge_421",
+      "fromNode": "node_136",
+      "toNode": "node_207",
+      "length": 203.23,
+      "streetName": "Alfred Street"
+    },
+    {
+      "id": "edge_422",
+      "fromNode": "node_207",
+      "toNode": "node_267",
+      "length": 222.59,
+      "streetName": "Alfred Street"
+    },
+    {
+      "id": "edge_423",
+      "fromNode": "node_217",
+      "toNode": "node_305",
+      "length": 56.03,
+      "streetName": "Hillcroft Drive"
+    },
+    {
+      "id": "edge_424",
+      "fromNode": "node_305",
+      "toNode": "node_305",
+      "length": 303.8,
+      "streetName": "Hillcroft Drive"
+    },
+    {
+      "id": "edge_425",
+      "fromNode": "node_304",
+      "toNode": "node_41",
+      "length": 293.59,
+      "streetName": "Albert Street"
+    },
+    {
+      "id": "edge_426",
+      "fromNode": "node_306",
+      "toNode": "node_193",
+      "length": 230.24,
+      "streetName": "Collingwood Street"
+    },
+    {
+      "id": "edge_427",
+      "fromNode": "node_193",
+      "toNode": "node_40",
+      "length": 21.61,
+      "streetName": "Collingwood Street"
+    },
+    {
+      "id": "edge_428",
+      "fromNode": "node_40",
+      "toNode": "node_63",
+      "length": 263.23,
+      "streetName": "Collingwood Street"
+    },
+    {
+      "id": "edge_429",
+      "fromNode": "node_20",
+      "toNode": "node_61",
+      "length": 162.58,
+      "streetName": "Earl Street"
+    },
+    {
+      "id": "edge_430",
+      "fromNode": "node_72",
+      "toNode": "node_273",
+      "length": 17.92,
+      "streetName": "Ellerbeck Street"
+    },
+    {
+      "id": "edge_431",
+      "fromNode": "node_110",
+      "toNode": "node_221",
+      "length": 279.17,
+      "streetName": "Bagot Street"
+    },
+    {
+      "id": "edge_432",
+      "fromNode": "node_43",
+      "toNode": "node_307",
+      "length": 23.56,
+      "streetName": "Division Street"
+    },
+    {
+      "id": "edge_433",
+      "fromNode": "node_307",
+      "toNode": "node_10",
+      "length": 27.35,
+      "streetName": "Division Street"
+    },
+    {
+      "id": "edge_434",
+      "fromNode": "node_175",
+      "toNode": "node_24",
+      "length": 65,
+      "streetName": "Bader Lane"
+    },
+    {
+      "id": "edge_435",
+      "fromNode": "node_220",
+      "toNode": "node_42",
+      "length": 86.49,
+      "streetName": "University Avenue"
+    },
+    {
+      "id": "edge_436",
+      "fromNode": "node_42",
+      "toNode": "node_5",
+      "length": 123.9,
+      "streetName": "University Avenue"
+    },
+    {
+      "id": "edge_437",
+      "fromNode": "node_3",
+      "toNode": "node_254",
+      "length": 45.17,
+      "streetName": "Stuart Street"
+    },
+    {
+      "id": "edge_438",
+      "fromNode": "node_205",
+      "toNode": "node_220",
+      "length": 238.05,
+      "streetName": "Brock Street"
+    },
+    {
+      "id": "edge_439",
+      "fromNode": "node_63",
+      "toNode": "node_304",
+      "length": 133.91,
+      "streetName": "Union Street"
+    },
+    {
+      "id": "edge_440",
+      "fromNode": "node_304",
+      "toNode": "node_308",
+      "length": 56.99,
+      "streetName": "Union Street"
+    },
+    {
+      "id": "edge_441",
+      "fromNode": "node_308",
+      "toNode": "node_266",
+      "length": 8.94,
+      "streetName": "Union Street"
+    },
+    {
+      "id": "edge_442",
+      "fromNode": "node_309",
+      "toNode": "node_306",
+      "length": 125.74,
+      "streetName": "King Street West"
+    },
+    {
+      "id": "edge_443",
+      "fromNode": "node_306",
+      "toNode": "node_272",
+      "length": 87.46,
+      "streetName": "King Street West"
+    },
+    {
+      "id": "edge_444",
+      "fromNode": "node_255",
+      "toNode": "node_309",
+      "length": 127.46,
+      "streetName": "Albert Street"
+    },
+    {
+      "id": "edge_445",
+      "fromNode": "node_211",
+      "toNode": "node_219",
+      "length": 99.02,
+      "streetName": "University Avenue"
+    },
+    {
+      "id": "edge_446",
+      "fromNode": "node_180",
+      "toNode": "node_8",
+      "length": 248.79,
+      "streetName": "King Street West"
+    },
+    {
+      "id": "edge_447",
+      "fromNode": "node_8",
+      "toNode": "node_309",
+      "length": 101.49,
+      "streetName": "King Street West"
+    },
+    {
+      "id": "edge_448",
+      "fromNode": "node_185",
+      "toNode": "node_210",
+      "length": 90.86,
+      "streetName": "King Street West"
+    },
+    {
+      "id": "edge_449",
+      "fromNode": "node_210",
+      "toNode": "node_179",
+      "length": 96.82,
+      "streetName": "King Street West"
+    },
+    {
+      "id": "edge_450",
+      "fromNode": "node_209",
+      "toNode": "node_280",
+      "length": 85.78,
+      "streetName": "Earl Street"
+    },
+    {
+      "id": "edge_451",
+      "fromNode": "node_280",
+      "toNode": "node_159",
+      "length": 85.99,
+      "streetName": "Earl Street"
+    },
+    {
+      "id": "edge_452",
+      "fromNode": "node_159",
+      "toNode": "node_237",
+      "length": 144.91,
+      "streetName": "Earl Street"
+    }
+  ]
+}
