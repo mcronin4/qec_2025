@@ -4,11 +4,13 @@ from typing import Dict
 
 from backend.policies.base import BasePolicy
 from backend.policies.naive import NaivePolicy
+from backend.policies.finite_horizon_greedy import FiniteHorizonGreedyPolicy
 
 
 # Policy registry mapping policy names to instances
 POLICY_REGISTRY: Dict[str, BasePolicy] = {
     "naive": NaivePolicy(),
+    "finite_horizon_greedy": FiniteHorizonGreedyPolicy(),
 }
 
 
