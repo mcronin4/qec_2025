@@ -120,8 +120,8 @@ class FiniteHorizonGreedyPolicy(BasePolicy):
             # Use edge travel_time for path planning
             time_map[edge.id] = edge.travel_time
             
-            # Use actual snow depth from edge, fallback to default if not provided
-            snow_map[edge.id] = edge.snow_depth if edge.snow_depth > 0 else self.default_snow
+            # Use actual snow depth from edge (defensive against negative values)
+            snow_map[edge.id] = max(0.0, edge.snow_depth)
             
             # Use default importance (could be extended to come from edge attributes)
             importance_map[edge.id] = self.default_importance

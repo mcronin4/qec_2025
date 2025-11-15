@@ -7,6 +7,7 @@ interface GraphCanvasProps {
   edges: Edge[];
   plow: SnowplowState;
   storm: StormState;
+  backgroundImage?: string; // optional path to background map image
 }
 
 export default function GraphCanvas({
@@ -14,6 +15,7 @@ export default function GraphCanvas({
   edges,
   plow,
   storm,
+  backgroundImage,
 }: GraphCanvasProps) {
   const getNode = (id: string) => nodes.find(n => n.id === id)!;
 
@@ -49,6 +51,19 @@ export default function GraphCanvas({
           </feMerge>
         </filter>
       </defs>
+
+      {/* Optional background map image */}
+      {backgroundImage && (
+        <image
+          href={backgroundImage}
+          x={0}
+          y={0}
+          width={1}
+          height={1}
+          preserveAspectRatio="xMidYMid slice"
+          opacity={0.6}
+        />
+      )}
 
       {/* Heatmap edges with glow effect for high snow */}
       {edges.map(edge => {

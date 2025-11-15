@@ -9,6 +9,8 @@ interface ControlPanelProps {
   onReset: () => void;
   policy: string;
   onPolicyChange: (policy: string) => void;
+  tickSpeedMs: number;
+  onTickSpeedChange: (speedMs: number) => void;
 }
 
 export default function ControlPanel({
@@ -17,6 +19,8 @@ export default function ControlPanel({
   onReset,
   policy,
   onPolicyChange,
+  tickSpeedMs,
+  onTickSpeedChange,
 }: ControlPanelProps) {
   return (
     <div className="space-y-3">
@@ -61,6 +65,25 @@ export default function ControlPanel({
           <option value="naive">Naive</option>
           <option value="finite_horizon_greedy">Finite Horizon Greedy</option>
         </select>
+      </div>
+      <div className="space-y-2">
+        <label htmlFor="tick-speed" className="text-sm font-medium">
+          Tick Speed: {tickSpeedMs}ms
+        </label>
+        <input
+          id="tick-speed"
+          type="range"
+          min="100"
+          max="3000"
+          step="100"
+          value={tickSpeedMs}
+          onChange={(e) => onTickSpeedChange(Number(e.target.value))}
+          className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-blue-500"
+        />
+        <div className="flex justify-between text-xs text-gray-500">
+          <span>Fast (100ms)</span>
+          <span>Slow (3s)</span>
+        </div>
       </div>
     </div>
   );

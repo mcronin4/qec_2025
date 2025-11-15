@@ -14,14 +14,12 @@ import ControlPanel from './ControlPanel';
 import StatsPanel from './StatsPanel';
 import HeatmapLegend from './HeatmapLegend';
 
-const TICK_MS = 150;
-
 const initialStorm: StormState = {
   centerX: 0.4,
   centerY: 0.4,
   radius: 0.25,
-  vx: 0.015,
-  vy: 0.012,
+  vx: 0.003,  // Reduced from 0.015 - slower movement
+  vy: 0.002,  // Reduced from 0.012 - slower movement
 };
 
 export default function SnowplowSimulator() {
@@ -32,6 +30,7 @@ export default function SnowplowSimulator() {
   const [isRunning, setIsRunning] = useState(false);
   const [tick, setTick] = useState(0);
   const [policy, setPolicy] = useState<string>('naive');
+  const [tickSpeedMs, setTickSpeedMs] = useState<number>(1000);
   const [isWaitingForBackend, setIsWaitingForBackend] = useState(false);
   
   // Refs to track latest state values for use in effects
@@ -57,9 +56,9 @@ export default function SnowplowSimulator() {
     if (!isRunning) return;
     const id = setInterval(() => {
       setTick(t => t + 1);
-    }, TICK_MS);
+    }, tickSpeedMs);
     return () => clearInterval(id);
-  }, [isRunning]);
+  }, [isRunning, tickSpeedMs]);
 
   // Request next move from backend
   const requestNextMove = useCallback(
@@ -170,6 +169,8 @@ export default function SnowplowSimulator() {
             onReset={handleReset}
             policy={policy}
             onPolicyChange={setPolicy}
+            tickSpeedMs={tickSpeedMs}
+            onTickSpeedChange={setTickSpeedMs}
           />
           <HeatmapLegend />
           <StatsPanel edges={edges} />
