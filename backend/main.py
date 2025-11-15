@@ -20,6 +20,11 @@ except ImportError:
 # Load environment variables from .env file (if it exists)
 load_dotenv()
 
+# Debug: Print environment info
+import sys
+print(f"Python version: {sys.version}")
+print(f"Python path: {sys.path}")
+
 app = FastAPI(
     title="Snow Plow Routing API",
     description="API for snow plow routing decisions using pluggable policies",
