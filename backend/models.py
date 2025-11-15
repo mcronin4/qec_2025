@@ -15,12 +15,12 @@ class Edge(BaseModel):
     id: str
     from_node: str
     to_node: str
-    weight: float = Field(description="Weight is agnostic - can represent snow amount, distance, etc.")
+    travel_time: float = Field(description="Time to traverse this edge")
+    snow_depth: float = Field(default=0.0, description="Current snow amount on this edge")
 
 
 class PlowState(BaseModel):
     """Represents the current state of a snow plow."""
-    id: str
     current_node_id: str
 
 

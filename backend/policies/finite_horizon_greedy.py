@@ -117,12 +117,13 @@ class FiniteHorizonGreedyPolicy(BasePolicy):
         edges = self._get_edges_from_graph(graph)
         
         for edge in edges:
-            # Use edge weight as travel time
-            time_map[edge.id] = edge.weight
+            # Use edge travel_time for path planning
+            time_map[edge.id] = edge.travel_time
             
-            # Use defaults for snow and importance
-            # In a real system, these could come from context or edge attributes
-            snow_map[edge.id] = self.default_snow
+            # Use actual snow depth from edge (defensive against negative values)
+            snow_map[edge.id] = max(0.0, edge.snow_depth)
+            
+            # Use default importance (could be extended to come from edge attributes)
             importance_map[edge.id] = self.default_importance
             
             # Build bidirectional neighbor map (undirected graph)
