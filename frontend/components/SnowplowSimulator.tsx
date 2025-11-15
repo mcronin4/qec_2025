@@ -9,7 +9,7 @@ import {
   moveToNode,
   clearSnowOnEdge,
 } from '@/lib/simulation';
-import GraphCanvas from './GraphCanvas';
+import MapWithGraphOverlay from './MapWithGraphOverlay';
 import ControlPanel from './ControlPanel';
 import StatsPanel from './StatsPanel';
 import HeatmapLegend from './HeatmapLegend';
@@ -159,13 +159,12 @@ export default function SnowplowSimulator() {
   };
 
   return (
-    <div className="container mx-auto p-4 space-y-3 max-w-4xl">
-      <h1 className="text-2xl font-bold text-center">Snowplow Path Finding Simulation</h1>
-      <div className="flex flex-col md:flex-row gap-3">
-        <div className="flex-1">
-          <GraphCanvas nodes={nodes} edges={edges} plow={plow} storm={storm} />
+    <div className="container mx-auto p-2 max-w-[1800px]">
+      <div className="flex flex-col lg:flex-row gap-2">
+        <div className="w-full lg:w-3/4">
+          <MapWithGraphOverlay nodes={nodes} edges={edges} plow={plow} storm={storm} />
         </div>
-        <div className="w-full md:w-56 space-y-3">
+        <div className="w-full lg:w-1/4 space-y-3">
           <ControlPanel
             isRunning={isRunning}
             onToggle={() => setIsRunning(!isRunning)}
