@@ -17,7 +17,7 @@ import HeatmapLegend from './HeatmapLegend';
 const initialStorm: StormState = {
   centerX: 0.4,
   centerY: 0.4,
-  radius: 0.25,
+  radius: 0.5,
   vx: 0.003,  // Reduced from 0.015 - slower movement
   vy: 0.002,  // Reduced from 0.012 - slower movement
 };
@@ -28,134 +28,132 @@ export default function SnowplowSimulator() {
   const [plow, setPlow] = useState<SnowplowState>(initialPlow);
   const [storm, setStorm] = useState<StormState>(initialStorm);
   const [isRunning, setIsRunning] = useState(false);
-  const [tick, setTick] = useState(0);
   const [policy, setPolicy] = useState<string>('naive');
   const [tickSpeedMs, setTickSpeedMs] = useState<number>(1000);
-  const [isWaitingForBackend, setIsWaitingForBackend] = useState(false);
-  
-  // Refs to track latest state values for use in effects
+
+  // Refs to track latest state values and control loop
+  const stormRef = useRef(storm);
   const edgesRef = useRef(edges);
   const plowRef = useRef(plow);
-  const stormRef = useRef(storm);
-  
-  // Keep refs in sync with state
-  useEffect(() => {
-    edgesRef.current = edges;
-  }, [edges]);
-  
-  useEffect(() => {
-    plowRef.current = plow;
-  }, [plow]);
-  
-  useEffect(() => {
-    stormRef.current = storm;
-  }, [storm]);
+  const isRunningRef = useRef(isRunning);
+  const tickSpeedRef = useRef(tickSpeedMs);
 
-  // Game loop timer
-  useEffect(() => {
-    if (!isRunning) return;
-    const id = setInterval(() => {
-      setTick(t => t + 1);
-    }, tickSpeedMs);
-    return () => clearInterval(id);
-  }, [isRunning, tickSpeedMs]);
+  // Update refs whenever state changes
+  useEffect(() => { stormRef.current = storm; }, [storm]);
+  useEffect(() => { edgesRef.current = edges; }, [edges]);
+  useEffect(() => { plowRef.current = plow; }, [plow]);
+  useEffect(() => { isRunningRef.current = isRunning; }, [isRunning]);
+  useEffect(() => { tickSpeedRef.current = tickSpeedMs; }, [tickSpeedMs]);
 
   // Request next move from backend
   const requestNextMove = useCallback(
-    async (currentPlow: SnowplowState, currentEdges: Edge[]) => {
-      if (isWaitingForBackend) return;
+    async (currentPlow: SnowplowState, currentEdges: Edge[]): Promise<string | null> => {
+      // Convert edge length (meters) to travel time (seconds)
+      // Snowplow speed: 20 km/h = 5.556 m/s
+      const SNOWPLOW_SPEED_MS = 20000 / 3600; // 20 km/h in m/s
       
-      setIsWaitingForBackend(true);
+      const backendEdges = currentEdges.map(edge => ({
+        id: edge.id,
+        from_node: edge.from_node,
+        to_node: edge.to_node,
+        travel_time: edge.length / SNOWPLOW_SPEED_MS, // Convert meters to seconds
+        length: edge.length, // Length in meters for reward calculation
+        snow_depth: edge.snowDepth,
+      }));
+
+      // Get backend URL from environment variable, fallback to localhost for development
+      const backendUrl = process.env.NEXT_PUBLIC_BACKEND_URL || 'http://localhost:8000';
       
-      try {
-        // Step 2: Send current snapshot to backend
-        const backendEdges = currentEdges.map(edge => ({
-          id: edge.id,
-          from_node: edge.from_node,
-          to_node: edge.to_node,
-          travel_time: edge.length,
-          snow_depth: edge.snowDepth,
-        }));
+      const res = await fetch(`${backendUrl}/next_node`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          plow: {
+            current_node_id: currentPlow.currentNodeId,
+          },
+          nodes: nodes,
+          edges: backendEdges,
+          policy: policy,
+        }),
+      });
 
-        // Get backend URL from environment variable, fallback to localhost for development
-        const backendUrl = process.env.NEXT_PUBLIC_BACKEND_URL || 'http://localhost:8000';
-        
-        const res = await fetch(`${backendUrl}/next_node`, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            plow: {
-              current_node_id: currentPlow.currentNodeId,
-            },
-            nodes: nodes,
-            edges: backendEdges,
-            policy: policy,
-          }),
-        });
-
-        if (!res.ok) {
-          throw new Error(`Backend returned ${res.status}`);
-        }
-
-        // Step 3: Backend returns decision
-        const data = await res.json();
-        if (data.target_node_id) {
-          const oldNodeId = currentPlow.currentNodeId;
-          const newNodeId = data.target_node_id;
-          
-          // Step 4a: Move plow to target node
-          setPlow(moveToNode(currentPlow, newNodeId));
-          
-          // Step 4b: Clear snow on the edge that was just traversed
-          setEdges(prevEdges => clearSnowOnEdge(prevEdges, oldNodeId, newNodeId));
-        }
-      } catch (error) {
-        console.error('Error requesting next move:', error);
-      } finally {
-        setIsWaitingForBackend(false);
+      if (!res.ok) {
+        throw new Error(`Backend returned ${res.status}`);
       }
+
+      const data = await res.json();
+      return data.target_node_id || null;
     },
-    [nodes, policy, isWaitingForBackend]
+    [nodes, policy]
   );
 
-  // Simulation logic - correct order:
-  // 1. Add snow (if storm overlays the edge)
-  // 2. Send snapshot to backend
-  // 3. Backend decides next node
-  // 4. Simulate step (move plow + clear snow) - happens in requestNextMove callback
+  // Self-scheduling simulation loop
   useEffect(() => {
     if (!isRunning) return;
 
-    // Update storm position
-    setStorm(prevStorm => {
-      const updatedStorm = updateStorm(prevStorm);
-      stormRef.current = updatedStorm;
-      return updatedStorm;
-    });
-    
-    // Step 1: Add snow from storm
-    setEdges(prevEdges => {
-      const edgesWithSnow = addSnowFromStorm(prevEdges, stormRef.current, nodes);
-      return edgesWithSnow;
-    });
-    
-    // Step 2-4: Request next move (backend decides, then we simulate)
-    if (!isWaitingForBackend) {
-      requestNextMove(plowRef.current, edgesRef.current);
-    }
-  }, [tick, isRunning, nodes, requestNextMove, isWaitingForBackend]);
+    let timeoutId: NodeJS.Timeout;
+
+    const runSimulationLoop = async () => {
+      const stepStartTime = Date.now();
+
+      try {
+        // 1. Update storm position
+        const updatedStorm = updateStorm(stormRef.current);
+        setStorm(updatedStorm);
+        
+        // 2. Add snow from storm
+        const edgesWithSnow = addSnowFromStorm(edgesRef.current, updatedStorm, nodes);
+        setEdges(edgesWithSnow);
+        
+        // 3. Get backend decision
+        const nextNodeId = await requestNextMove(plowRef.current, edgesWithSnow);
+        
+        // 4. Move plow and clear snow on traversed edge
+        if (nextNodeId) {
+          setPlow(moveToNode(plowRef.current, nextNodeId));
+          setEdges(prev => clearSnowOnEdge(prev, plowRef.current.currentNodeId, nextNodeId));
+        }
+      } catch (error) {
+        console.error('Step error:', error);
+      }
+
+      // Calculate how long this step took
+      const stepDuration = Date.now() - stepStartTime;
+      // Wait for remaining time to meet tickSpeedMs (or 0 if already exceeded)
+      const waitTime = Math.max(0, tickSpeedRef.current - stepDuration);
+
+      // Schedule next step only if still running
+      if (isRunningRef.current) {
+        timeoutId = setTimeout(runSimulationLoop, waitTime);
+      }
+    };
+
+    // Start the loop
+    runSimulationLoop();
+
+    // Cleanup: cancel scheduled timeout when stopping
+    return () => {
+      if (timeoutId) {
+        clearTimeout(timeoutId);
+      }
+    };
+  }, [isRunning, nodes, requestNextMove]);
 
   const handleReset = () => {
+    // Stop simulation first
+    setIsRunning(false);
+    
+    // Reset all state
     const resetEdges = initialEdges.map(e => ({ ...e, snowDepth: 0 }));
     setEdges(resetEdges);
     setPlow(initialPlow);
     setStorm(initialStorm);
-    setIsWaitingForBackend(false);
+    
+    // Reset refs to match state
     edgesRef.current = resetEdges;
     plowRef.current = initialPlow;
     stormRef.current = initialStorm;
-    setTick(0);
-    setIsRunning(false);
+    isRunningRef.current = false;
   };
 
   return (
