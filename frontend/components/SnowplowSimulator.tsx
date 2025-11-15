@@ -105,7 +105,8 @@ export default function SnowplowSimulator() {
           const oldNodeId = currentPlow.currentNodeId;
           const newNodeId = data.target_node_id;
           
-          // Update next node ID for navigation display
+          // Set nextNodeId BEFORE moving so navigation can show the instruction
+          // for the edge we're about to traverse
           setNextNodeId(newNodeId);
           
           // Step 4a: Move plow to target node

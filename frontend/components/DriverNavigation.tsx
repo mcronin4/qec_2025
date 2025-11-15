@@ -78,7 +78,12 @@ export default function DriverNavigation({
   nextNodeId,
 }: DriverNavigationProps) {
   const [movementHistory, setMovementHistory] = useState<string[]>([]);
-  const [currentInstruction, setCurrentInstruction] = useState<NavigationInstruction | null>(null);
+  const [currentInstruction, setCurrentInstruction] = useState<NavigationInstruction>({
+    type: 'straight',
+    streetName: null,
+    distance: 0,
+    description: 'Waiting for route...',
+  });
 
   // Track movement history - add current node when it changes
   useEffect(() => {
@@ -96,7 +101,13 @@ export default function DriverNavigation({
   // Calculate current instruction
   useEffect(() => {
     if (!nextNodeId) {
-      setCurrentInstruction(null);
+      // Show a default message when waiting for next move
+      setCurrentInstruction({
+        type: 'straight',
+        streetName: null,
+        distance: 0,
+        description: 'Waiting for route...',
+      });
       return;
     }
 
@@ -104,14 +115,67 @@ export default function DriverNavigation({
     const nextNode = nodes.find(n => n.id === nextNodeId);
     
     if (!currentNode || !nextNode) {
-      setCurrentInstruction(null);
+      setCurrentInstruction({
+        type: 'straight',
+        streetName: null,
+        distance: 0,
+        description: `Invalid route: ${!currentNode ? 'current node not found' : 'next node not found'}`,
+      });
       return;
     }
 
-    // Get the edge we're about to traverse
+    // If nextNodeId is the same as current, we might have just moved
+    // Try to find the edge using the previous position from history
+    if (nextNodeId === plow.currentNodeId) {
+      // If we have history, use the previous position to find the edge we just traversed
+      if (movementHistory.length >= 2) {
+        const prevNodeId = movementHistory[movementHistory.length - 2];
+        const edge = getEdgeBetween(nodes, edges, prevNodeId, plow.currentNodeId);
+        if (edge) {
+          const streetName = edge.streetName || 'unnamed street';
+          setCurrentInstruction({
+            type: 'straight',
+            streetName: edge.streetName,
+            distance: edge.length,
+            description: `Just arrived on ${streetName}`,
+          });
+          return;
+        }
+      }
+      // Otherwise, we're waiting
+      setCurrentInstruction({
+        type: 'straight',
+        streetName: null,
+        distance: 0,
+        description: 'Waiting for next move...',
+      });
+      return;
+    }
+
+    // Get the edge we're about to traverse (from current position to next)
     const nextEdge = getEdgeBetween(nodes, edges, plow.currentNodeId, nextNodeId);
     if (!nextEdge) {
-      setCurrentInstruction(null);
+      // Debug: log what we're looking for
+      console.log('Edge lookup failed:', {
+        fromId: plow.currentNodeId,
+        toId: nextNodeId,
+        history: movementHistory,
+        totalEdges: edges.length,
+        matchingEdges: edges.filter(e => 
+          e.from_node === plow.currentNodeId || e.to_node === plow.currentNodeId ||
+          e.from_node === nextNodeId || e.to_node === nextNodeId
+        ).slice(0, 5).map(e => ({ 
+          id: e.id, 
+          from: e.from_node, 
+          to: e.to_node,
+        })),
+      });
+      setCurrentInstruction({
+        type: 'straight',
+        streetName: null,
+        distance: 0,
+        description: `No edge found`,
+      });
       return;
     }
 
@@ -156,10 +220,6 @@ export default function DriverNavigation({
     });
   }, [plow.currentNodeId, nextNodeId, nodes, edges, movementHistory]);
 
-  if (!currentInstruction) {
-    return null;
-  }
-
   // Get icon for turn type
   const getIcon = () => {
     switch (currentInstruction.type) {
@@ -183,7 +243,7 @@ export default function DriverNavigation({
   };
 
   return (
-    <div className="fixed bottom-4 right-4 bg-white rounded-lg shadow-xl p-4 max-w-xs border-2 border-blue-500 z-50">
+    <div className="fixed bottom-4 right-4 bg-white rounded-lg shadow-xl p-4 max-w-xs border-2 border-blue-500 z-[1001]">
       <div className="flex items-start gap-3">
         <div className="text-5xl flex-shrink-0">{getIcon()}</div>
         <div className="flex-1 min-w-0">
