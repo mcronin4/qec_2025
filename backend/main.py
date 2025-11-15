@@ -1,9 +1,14 @@
+import os
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
+from dotenv import load_dotenv
 
 from backend.models import NextNodeRequest, NextNodeResponse
 from backend.graph import GraphState
 from backend.policies import get_policy
+
+# Load environment variables from .env file (if it exists)
+load_dotenv()
 
 app = FastAPI(
     title="Snow Plow Routing API",
@@ -11,10 +16,15 @@ app = FastAPI(
     version="1.0.0"
 )
 
+# Get allowed origins from environment variable
+# Format: comma-separated list of URLs (e.g., "http://localhost:3000,https://your-app.vercel.app")
+allowed_origins_str = os.getenv("ALLOWED_ORIGINS", "http://localhost:3000,http://127.0.0.1:3000")
+allowed_origins = [origin.strip() for origin in allowed_origins_str.split(",")]
+
 # Add CORS middleware to allow requests from Next.js frontend
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000"],
+    allow_origins=allowed_origins,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
