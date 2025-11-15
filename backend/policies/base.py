@@ -1,8 +1,13 @@
 from abc import ABC, abstractmethod
 from typing import Dict, Tuple
 
-from backend.graph import GraphState
-from backend.models import PlowState, DecisionContext
+# Handle imports for both local development and Vercel deployment
+try:
+    from backend.graph import GraphState
+    from backend.models import PlowState, DecisionContext
+except ImportError:
+    from graph import GraphState
+    from models import PlowState, DecisionContext
 
 
 class BasePolicy(ABC):

@@ -3,9 +3,15 @@
 import random
 from typing import Dict, Tuple
 
-from backend.policies.base import BasePolicy
-from backend.graph import GraphState
-from backend.models import PlowState, DecisionContext
+# Handle imports for both local development and Vercel deployment
+try:
+    from backend.policies.base import BasePolicy
+    from backend.graph import GraphState
+    from backend.models import PlowState, DecisionContext
+except ImportError:
+    from policies.base import BasePolicy
+    from graph import GraphState
+    from models import PlowState, DecisionContext
 
 
 class NaivePolicy(BasePolicy):

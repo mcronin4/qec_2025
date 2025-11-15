@@ -1,7 +1,12 @@
 """GraphState domain class for managing graph structure and queries."""
 
 from typing import Dict, List
-from backend.models import Node, Edge
+
+# Handle imports for both local development and Vercel deployment
+try:
+    from backend.models import Node, Edge
+except ImportError:
+    from models import Node, Edge
 
 
 class GraphState:

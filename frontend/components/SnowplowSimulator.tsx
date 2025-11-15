@@ -57,18 +57,21 @@ export default function SnowplowSimulator() {
         snow_depth: edge.snowDepth,
       }));
 
-      const res = await fetch('http://localhost:8000/next_node', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          plow: {
-            current_node_id: currentPlow.currentNodeId,
-          },
-          nodes: nodes,
-          edges: backendEdges,
-          policy: policy,
-        }),
-      });
+        // Get backend URL from environment variable, fallback to localhost for development
+        const backendUrl = process.env.NEXT_PUBLIC_BACKEND_URL || 'http://localhost:8000';
+        
+        const res = await fetch(`${backendUrl}/next_node`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            plow: {
+              current_node_id: currentPlow.currentNodeId,
+            },
+            nodes: nodes,
+            edges: backendEdges,
+            policy: policy,
+          }),
+        });
 
       if (!res.ok) {
         throw new Error(`Backend returned ${res.status}`);
