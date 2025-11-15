@@ -69,6 +69,6 @@ export { initialNodes, initialEdges };
 
 // Initial plow position (first node in the graph)
 export const initialPlow: SnowplowState = {
-  currentNodeId: initialNodes[0].id,
+  currentNodeId: initialNodes[20].id,
 };
 

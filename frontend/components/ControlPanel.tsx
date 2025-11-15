@@ -63,7 +63,9 @@ export default function ControlPanel({
           className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 disabled:opacity-50 disabled:cursor-not-allowed"
         >
           <option value="naive">Naive</option>
+          <option value="one_step_greedy">One Step Greedy</option>
           <option value="finite_horizon_greedy">Finite Horizon Greedy</option>
+          <option value="high_traffic_priority">High-Traffic Priority</option>
         </select>
       </div>
       <div className="space-y-2">

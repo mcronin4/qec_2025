@@ -41,12 +41,12 @@ export function addSnowFromStorm(
 
     // Max snow rate at center, decreasing to 0 at edge
     // Using intensity^2 for smoother falloff
-    const maxSnowRate = 0.2; // maximum snow per tick at center
+    const maxSnowRate = 0.1; // maximum snow per tick at center
     const extraSnow = intensity * intensity * maxSnowRate;
     
     return {
       ...edge,
-      snowDepth: Math.min(edge.snowDepth + extraSnow, 5), // clamp
+      snowDepth: Math.min(edge.snowDepth + extraSnow, 10), // clamp
     };
   });
 }
