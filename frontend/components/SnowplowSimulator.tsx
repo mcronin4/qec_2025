@@ -13,15 +13,19 @@ import MapWithGraphOverlay from './MapWithGraphOverlay';
 import ControlPanel from './ControlPanel';
 import StatsPanel from './StatsPanel';
 import HeatmapLegend from './HeatmapLegend';
-import DriverNavigation from './DriverNavigation';
 
 const initialStorm: StormState = {
   centerX: 0.4,
   centerY: 0.4,
   radius: 0.5,
-  vx: 0.003,  // Reduced from 0.015 - slower movement
-  vy: 0.002,  // Reduced from 0.012 - slower movement
+  vx: 0.006,
+  vy: 0.006, 
 };
+
+interface HistoryEntry {
+  tick: number;
+  totalSnowCleared: number;
+}
 
 export default function SnowplowSimulator() {
   const [nodes] = useState<Node[]>(initialNodes);
@@ -31,7 +35,9 @@ export default function SnowplowSimulator() {
   const [isRunning, setIsRunning] = useState(false);
   const [policy, setPolicy] = useState<string>('naive');
   const [tickSpeedMs, setTickSpeedMs] = useState<number>(1000);
-  const [nextNodeId, setNextNodeId] = useState<string | null>(null);
+  const [history, setHistory] = useState<HistoryEntry[]>([{ tick: 0, totalSnowCleared: 0 }]);
+  const [tick, setTick] = useState<number>(0);
+  const [cumulativeSnowCleared, setCumulativeSnowCleared] = useState<number>(0);
 
   // Refs to track latest state values and control loop
   const stormRef = useRef(storm);
@@ -39,6 +45,8 @@ export default function SnowplowSimulator() {
   const plowRef = useRef(plow);
   const isRunningRef = useRef(isRunning);
   const tickSpeedRef = useRef(tickSpeedMs);
+  const tickRef = useRef(tick);
+  const cumulativeSnowClearedRef = useRef(cumulativeSnowCleared);
 
   // Update refs whenever state changes
   useEffect(() => { stormRef.current = storm; }, [storm]);
@@ -46,6 +54,8 @@ export default function SnowplowSimulator() {
   useEffect(() => { plowRef.current = plow; }, [plow]);
   useEffect(() => { isRunningRef.current = isRunning; }, [isRunning]);
   useEffect(() => { tickSpeedRef.current = tickSpeedMs; }, [tickSpeedMs]);
+  useEffect(() => { tickRef.current = tick; }, [tick]);
+  useEffect(() => { cumulativeSnowClearedRef.current = cumulativeSnowCleared; }, [cumulativeSnowCleared]);
 
   // Request next move from backend
   const requestNextMove = useCallback(
@@ -61,6 +71,7 @@ export default function SnowplowSimulator() {
         travel_time: edge.length / SNOWPLOW_SPEED_MS, // Convert meters to seconds
         length: edge.length, // Length in meters for reward calculation
         snow_depth: edge.snowDepth,
+        streetName: edge.streetName,
       }));
 
       // Get backend URL from environment variable, fallback to localhost for development
@@ -110,21 +121,34 @@ export default function SnowplowSimulator() {
         // 3. Get backend decision
         const nextNodeId = await requestNextMove(plowRef.current, edgesWithSnow);
         
-        // 4. Move plow and clear snow on traversed edge
+        // 4. Calculate snow cleared on this move and update cumulative total
+        let snowClearedThisTick = 0;
         if (nextNodeId) {
-          const oldNodeId = plowRef.current.currentNodeId;
+          // Find the edge being traversed
+          const traversedEdge = edgesWithSnow.find(edge =>
+            (edge.from_node === plowRef.current.currentNodeId && edge.to_node === nextNodeId) ||
+            (edge.from_node === nextNodeId && edge.to_node === plowRef.current.currentNodeId)
+          );
           
-          // Set nextNodeId BEFORE moving so navigation can show the instruction
-          setNextNodeId(nextNodeId);
+          // Only count snow if it's above the visual threshold (0.1)
+          // This matches what's displayed on the map
+          if (traversedEdge && traversedEdge.snowDepth > 0.1) {
+            // Add length * snowDepth to cumulative total
+            snowClearedThisTick = traversedEdge.length * traversedEdge.snowDepth;
+          }
           
-          // Move plow to target node
           setPlow(moveToNode(plowRef.current, nextNodeId));
-          
-          // Clear snow on the edge that was just traversed
-          setEdges(prev => clearSnowOnEdge(prev, oldNodeId, nextNodeId));
-        } else {
-          setNextNodeId(null);
+          setEdges(prev => clearSnowOnEdge(prev, plowRef.current.currentNodeId, nextNodeId));
         }
+
+        // 5. Track history
+        const newTick = tickRef.current + 1;
+        setTick(newTick);
+        
+        const newCumulative = cumulativeSnowClearedRef.current + snowClearedThisTick;
+        setCumulativeSnowCleared(newCumulative);
+        
+        setHistory(prev => [...prev, { tick: newTick, totalSnowCleared: newCumulative }]);
       } catch (error) {
         console.error('Step error:', error);
       }
@@ -160,13 +184,17 @@ export default function SnowplowSimulator() {
     setEdges(resetEdges);
     setPlow(initialPlow);
     setStorm(initialStorm);
+    setHistory([{ tick: 0, totalSnowCleared: 0 }]);
+    setTick(0);
+    setCumulativeSnowCleared(0);
     
     // Reset refs to match state
-    setNextNodeId(null);
     edgesRef.current = resetEdges;
     plowRef.current = initialPlow;
     stormRef.current = initialStorm;
     isRunningRef.current = false;
+    tickRef.current = 0;
+    cumulativeSnowClearedRef.current = 0;
   };
 
   return (
@@ -175,7 +203,7 @@ export default function SnowplowSimulator() {
         <div className="w-full lg:w-3/4">
           <MapWithGraphOverlay nodes={nodes} edges={edges} plow={plow} storm={storm} />
         </div>
-        <div className="w-full lg:w-1/4 space-y-1.5">
+        <div className="w-full lg:w-1/4 space-y-3">
           <ControlPanel
             isRunning={isRunning}
             onToggle={() => setIsRunning(!isRunning)}
@@ -186,13 +214,7 @@ export default function SnowplowSimulator() {
             onTickSpeedChange={setTickSpeedMs}
           />
           <HeatmapLegend />
-          <StatsPanel edges={edges} />
-          <DriverNavigation
-            nodes={nodes}
-            edges={edges}
-            plow={plow}
-            nextNodeId={nextNodeId}
-          />
+          <StatsPanel edges={edges} history={history} />
         </div>
       </div>
     </div>

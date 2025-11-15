@@ -18,6 +18,7 @@ class Edge(BaseModel):
     travel_time: float = Field(description="Time to traverse this edge")
     length: float = Field(description="Length of the edge in meters")
     snow_depth: float = Field(default=0.0, description="Current snow amount on this edge")
+    streetName: str | None = Field(default=None, description="Name of the street this edge is on")
 
 
 class PlowState(BaseModel):
