@@ -21,13 +21,12 @@ interface StrategyResult {
 
 const AVAILABLE_POLICIES = [
   { id: 'naive', name: 'Naive (Random)' },
-  { id: 'one_step_greedy', name: 'One-Step Greedy' },
   { id: 'finite_horizon_greedy', name: 'Finite Horizon Greedy' },
   { id: 'high_traffic_priority', name: 'High Traffic Priority' },
 ];
 
 export default function StrategyComparison() {
-  const [selectedPolicies, setSelectedPolicies] = useState<string[]>(['naive', 'one_step_greedy']);
+  const [selectedPolicies, setSelectedPolicies] = useState<string[]>(['naive', 'finite_horizon_greedy']);
   const [maxSteps, setMaxSteps] = useState<number>(50);
   const [results, setResults] = useState<StrategyResult[]>([]);
   const [chartData, setChartData] = useState<StrategyDataPoint[]>([]);
@@ -188,7 +187,6 @@ export default function StrategyComparison() {
   // Color palette for different strategies
   const POLICY_COLORS: { [key: string]: string } = {
     naive: '#ef4444',
-    one_step_greedy: '#3b82f6',
     finite_horizon_greedy: '#10b981',
     high_traffic_priority: '#f59e0b',
   };
