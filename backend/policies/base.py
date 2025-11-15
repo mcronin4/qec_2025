@@ -1,5 +1,3 @@
-"""Base policy class for snow plow routing decisions."""
-
 from abc import ABC, abstractmethod
 from typing import Dict, Tuple
 
@@ -29,7 +27,7 @@ class BasePolicy(ABC):
             A tuple of (target_node_id, debug_info_dict)
             
         Raises:
-            ValueError: If the current node has no neighbors or other decision errors
+            ValueError: would happen if current node has no neighbours or we're in some other weird state
         """
         pass
 

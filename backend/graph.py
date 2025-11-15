@@ -21,6 +21,10 @@ class GraphState:
         # Store nodes in a dictionary for O(1) lookup
         self._nodes: Dict[str, Node] = {node.id: node for node in nodes}
         
+        # Store edges for access by policies
+        self._edges: List[Edge] = edges
+        self._edges_by_id: Dict[str, Edge] = {edge.id: edge for edge in edges}
+        
         # Build adjacency map for undirected graph
         self._adjacency: Dict[str, List[str]] = {node.id: [] for node in nodes}
         
@@ -80,4 +84,30 @@ class GraphState:
             True if the node exists, False otherwise
         """
         return node_id in self._nodes
+    
+    def get_edges(self) -> List[Edge]:
+        """
+        Get all edges in the graph.
+        
+        Returns:
+            List of all Edge objects
+        """
+        return self._edges
+    
+    def get_edge(self, edge_id: str) -> Edge:
+        """
+        Get an Edge object by its ID.
+        
+        Args:
+            edge_id: The ID of the edge to retrieve
+            
+        Returns:
+            The Edge object
+            
+        Raises:
+            KeyError: If edge_id doesn't exist in the graph
+        """
+        if edge_id not in self._edges_by_id:
+            raise KeyError(f"Edge {edge_id} not found in graph")
+        return self._edges_by_id[edge_id]
 
