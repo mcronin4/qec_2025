@@ -1,7 +1,8 @@
 'use client';
 
 import { Button } from '@/components/ui/button';
-import { Play, Pause, RotateCcw } from 'lucide-react';
+import { Play, Pause, RotateCcw, BarChart3 } from 'lucide-react';
+import Link from 'next/link';
 
 interface ControlPanelProps {
   isRunning: boolean;
@@ -24,6 +25,12 @@ export default function ControlPanel({
 }: ControlPanelProps) {
   return (
     <div className="space-y-3">
+      <Link href="/compare">
+        <Button variant="outline" className="w-full mb-2">
+          <BarChart3 className="mr-2 h-4 w-4" />
+          Compare Strategies
+        </Button>
+      </Link>
       <div className="flex gap-2">
         <Button
           onClick={onToggle}
