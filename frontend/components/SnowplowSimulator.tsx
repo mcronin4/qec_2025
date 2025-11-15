@@ -112,8 +112,18 @@ export default function SnowplowSimulator() {
         
         // 4. Move plow and clear snow on traversed edge
         if (nextNodeId) {
+          const oldNodeId = plowRef.current.currentNodeId;
+          
+          // Set nextNodeId BEFORE moving so navigation can show the instruction
+          setNextNodeId(nextNodeId);
+          
+          // Move plow to target node
           setPlow(moveToNode(plowRef.current, nextNodeId));
-          setEdges(prev => clearSnowOnEdge(prev, plowRef.current.currentNodeId, nextNodeId));
+          
+          // Clear snow on the edge that was just traversed
+          setEdges(prev => clearSnowOnEdge(prev, oldNodeId, nextNodeId));
+        } else {
+          setNextNodeId(null);
         }
       } catch (error) {
         console.error('Step error:', error);
@@ -165,7 +175,7 @@ export default function SnowplowSimulator() {
         <div className="w-full lg:w-3/4">
           <MapWithGraphOverlay nodes={nodes} edges={edges} plow={plow} storm={storm} />
         </div>
-        <div className="w-full lg:w-1/4 space-y-3">
+        <div className="w-full lg:w-1/4 space-y-1.5">
           <ControlPanel
             isRunning={isRunning}
             onToggle={() => setIsRunning(!isRunning)}
@@ -177,14 +187,14 @@ export default function SnowplowSimulator() {
           />
           <HeatmapLegend />
           <StatsPanel edges={edges} />
+          <DriverNavigation
+            nodes={nodes}
+            edges={edges}
+            plow={plow}
+            nextNodeId={nextNodeId}
+          />
         </div>
       </div>
-      <DriverNavigation
-        nodes={nodes}
-        edges={edges}
-        plow={plow}
-        nextNodeId={nextNodeId}
-      />
     </div>
   );
 }

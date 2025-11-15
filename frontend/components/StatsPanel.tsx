@@ -43,21 +43,21 @@ export default function StatsPanel({ edges }: StatsPanelProps) {
 
   return (
     <Card className="w-full">
-      <CardHeader>
-        <CardTitle className="text-lg">Statistics</CardTitle>
+      <CardHeader className="pb-2">
+        <CardTitle className="text-sm">Statistics</CardTitle>
       </CardHeader>
-      <CardContent>
-        <div className="grid grid-cols-2 gap-4">
+      <CardContent className="pt-0">
+        <div className="grid grid-cols-2 gap-2">
           {stats.map((stat) => {
             const Icon = stat.icon;
             return (
               <div
                 key={stat.label}
-                className="flex flex-col items-center justify-center p-3 rounded-lg bg-muted/50 hover:bg-muted transition-colors"
+                className="flex flex-col items-center justify-center p-2 rounded-lg bg-muted/50 hover:bg-muted transition-colors"
               >
-                <Icon className={`h-5 w-5 mb-2 ${stat.color}`} />
-                <div className="text-2xl font-bold">{stat.value}</div>
-                <div className="text-xs text-muted-foreground text-center mt-1">
+                <Icon className={`h-4 w-4 mb-1 ${stat.color}`} />
+                <div className="text-lg font-bold">{stat.value}</div>
+                <div className="text-[10px] text-muted-foreground text-center">
                   {stat.label}
                 </div>
               </div>

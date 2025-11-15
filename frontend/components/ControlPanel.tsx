@@ -23,7 +23,7 @@ export default function ControlPanel({
   onTickSpeedChange,
 }: ControlPanelProps) {
   return (
-    <div className="space-y-3">
+    <div className="space-y-2">
       <div className="flex gap-2">
         <Button
           onClick={onToggle}
@@ -51,8 +51,8 @@ export default function ControlPanel({
           Reset
         </Button>
       </div>
-      <div className="space-y-2">
-        <label htmlFor="policy-select" className="text-sm font-medium">
+      <div className="space-y-1">
+        <label htmlFor="policy-select" className="text-xs font-medium">
           Routing Policy
         </label>
         <select
@@ -60,14 +60,14 @@ export default function ControlPanel({
           value={policy}
           onChange={(e) => onPolicyChange(e.target.value)}
           disabled={isRunning}
-          className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 disabled:opacity-50 disabled:cursor-not-allowed"
+          className="w-full px-2 py-1.5 text-sm border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 disabled:opacity-50 disabled:cursor-not-allowed"
         >
           <option value="naive">Naive</option>
           <option value="finite_horizon_greedy">Finite Horizon Greedy</option>
         </select>
       </div>
-      <div className="space-y-2">
-        <label htmlFor="tick-speed" className="text-sm font-medium">
+      <div className="space-y-1">
+        <label htmlFor="tick-speed" className="text-xs font-medium">
           Tick Speed: {tickSpeedMs}ms
         </label>
         <input
@@ -78,11 +78,11 @@ export default function ControlPanel({
           step="100"
           value={tickSpeedMs}
           onChange={(e) => onTickSpeedChange(Number(e.target.value))}
-          className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-blue-500"
+          className="w-full h-1.5 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-blue-500"
         />
-        <div className="flex justify-between text-xs text-gray-500">
-          <span>Fast (100ms)</span>
-          <span>Slow (3s)</span>
+        <div className="flex justify-between text-[10px] text-gray-500">
+          <span>Fast</span>
+          <span>Slow</span>
         </div>
       </div>
     </div>

@@ -98,111 +98,86 @@ export default function DriverNavigation({
     });
   }, [plow.currentNodeId]);
 
-  // Calculate current instruction
+  // Calculate current instruction based on the turn we just completed
   useEffect(() => {
-    if (!nextNodeId) {
-      // Show a default message when waiting for next move
-      setCurrentInstruction({
-        type: 'straight',
-        streetName: null,
-        distance: 0,
-        description: 'Waiting for route...',
-      });
-      return;
-    }
-
     const currentNode = nodes.find(n => n.id === plow.currentNodeId);
-    const nextNode = nodes.find(n => n.id === nextNodeId);
     
-    if (!currentNode || !nextNode) {
+    if (!currentNode) {
       setCurrentInstruction({
         type: 'straight',
         streetName: null,
         distance: 0,
-        description: `Invalid route: ${!currentNode ? 'current node not found' : 'next node not found'}`,
+        description: 'Invalid route data...',
       });
       return;
     }
 
-    // If nextNodeId is the same as current, we might have just moved
-    // Try to find the edge using the previous position from history
-    if (nextNodeId === plow.currentNodeId) {
-      // If we have history, use the previous position to find the edge we just traversed
-      if (movementHistory.length >= 2) {
-        const prevNodeId = movementHistory[movementHistory.length - 2];
-        const edge = getEdgeBetween(nodes, edges, prevNodeId, plow.currentNodeId);
-        if (edge) {
-          const streetName = edge.streetName || 'unnamed street';
-          setCurrentInstruction({
-            type: 'straight',
-            streetName: edge.streetName,
-            distance: edge.length,
-            description: `Just arrived on ${streetName}`,
-          });
-          return;
-        }
-      }
-      // Otherwise, we're waiting
+    // We need at least 2 nodes in history to show a completed move
+    // History format: [node1, node2, node3, ...] where the last entry is the current node
+    if (movementHistory.length < 2) {
+      // Not enough history yet - just starting
       setCurrentInstruction({
         type: 'straight',
         streetName: null,
         distance: 0,
-        description: 'Waiting for next move...',
+        description: 'Starting route...',
       });
       return;
     }
 
-    // Get the edge we're about to traverse (from current position to next)
-    const nextEdge = getEdgeBetween(nodes, edges, plow.currentNodeId, nextNodeId);
-    if (!nextEdge) {
-      // Debug: log what we're looking for
-      console.log('Edge lookup failed:', {
-        fromId: plow.currentNodeId,
-        toId: nextNodeId,
-        history: movementHistory,
-        totalEdges: edges.length,
-        matchingEdges: edges.filter(e => 
-          e.from_node === plow.currentNodeId || e.to_node === plow.currentNodeId ||
-          e.from_node === nextNodeId || e.to_node === nextNodeId
-        ).slice(0, 5).map(e => ({ 
-          id: e.id, 
-          from: e.from_node, 
-          to: e.to_node,
-        })),
-      });
+    // Get the edge we just traversed (from previous node to current node)
+    const prevNodeId = movementHistory[movementHistory.length - 2];
+    const prevNode = nodes.find(n => n.id === prevNodeId);
+    
+    if (!prevNode) {
       setCurrentInstruction({
         type: 'straight',
         streetName: null,
         distance: 0,
-        description: `No edge found`,
+        description: 'Route data error...',
       });
       return;
     }
 
-    // Determine if this is a turn or straight
-    if (movementHistory.length >= 1) {
-      const prevNodeId = movementHistory[movementHistory.length - 1];
-      const prevNode = nodes.find(n => n.id === prevNodeId);
+    // Find the edge we just traversed
+    const lastEdge = getEdgeBetween(nodes, edges, prevNodeId, plow.currentNodeId);
+    if (!lastEdge) {
+      setCurrentInstruction({
+        type: 'straight',
+        streetName: null,
+        distance: 0,
+        description: 'No edge data...',
+      });
+      return;
+    }
+
+    // Calculate turn direction if we have at least 3 nodes (can calculate angle)
+    // History: [X, A, B] where B is current
+    // We calculate turn from X->A->B
+    if (movementHistory.length >= 3) {
+      const nodeBeforePrevId = movementHistory[movementHistory.length - 3];
+      const nodeBeforePrev = nodes.find(n => n.id === nodeBeforePrevId);
       
-      if (prevNode) {
-        const angle = calculateTurnAngle(prevNode, currentNode, nextNode);
+      if (nodeBeforePrev) {
+        // Calculate the turn angle: from (nodeBeforePrev -> prevNode -> currentNode)
+        const angle = calculateTurnAngle(nodeBeforePrev, prevNode, currentNode);
         const turnType = getTurnDirection(angle);
         
-        const streetName = nextEdge.streetName || 'unnamed street';
-        const distance = nextEdge.length;
+        const streetName = lastEdge.streetName || 'unnamed street';
+        const distance = lastEdge.length;
         
         let description = '';
         if (turnType === 'straight') {
-          description = `Continue straight on ${streetName}`;
+          description = `Continued straight on ${streetName}`;
         } else if (turnType === 'turn-left') {
-          description = `Turn left onto ${streetName}`;
+          description = `Turned left onto ${streetName}`;
         } else {
-          description = `Turn right onto ${streetName}`;
+          description = `Turned right onto ${streetName}`;
         }
         
         setCurrentInstruction({
           type: turnType,
-          streetName: nextEdge.streetName,
+          streetName: lastEdge.streetName,
           distance,
           description,
         });
@@ -210,15 +185,15 @@ export default function DriverNavigation({
       }
     }
 
-    // If no history, just show the street name and distance
-    const streetName = nextEdge.streetName || 'unnamed street';
+    // If we only have 2 nodes, we can't calculate a turn yet, just show the street
+    const streetName = lastEdge.streetName || 'unnamed street';
     setCurrentInstruction({
       type: 'straight',
-      streetName: nextEdge.streetName,
-      distance: nextEdge.length,
-      description: `Head on ${streetName}`,
+      streetName: lastEdge.streetName,
+      distance: lastEdge.length,
+      description: `On ${streetName}`,
     });
-  }, [plow.currentNodeId, nextNodeId, nodes, edges, movementHistory]);
+  }, [plow.currentNodeId, nodes, edges, movementHistory]);
 
   // Get icon for turn type
   const getIcon = () => {
@@ -234,30 +209,27 @@ export default function DriverNavigation({
     }
   };
 
-  // Format distance
+  // Format distance (always in meters)
   const formatDistance = (distance: number): string => {
-    if (distance < 1) {
-      return `${Math.round(distance * 1000)}m`;
-    }
-    return `${distance.toFixed(2)}km`;
+    return `${Math.round(distance)}m`;
   };
 
   return (
-    <div className="fixed bottom-4 right-4 bg-white rounded-lg shadow-xl p-4 max-w-xs border-2 border-blue-500 z-[1001]">
-      <div className="flex items-start gap-3">
-        <div className="text-5xl flex-shrink-0">{getIcon()}</div>
+    <div className="bg-white rounded-lg shadow-xl p-2 border-2 border-blue-500">
+      <div className="flex items-start gap-2">
+        <div className="text-3xl flex-shrink-0">{getIcon()}</div>
         <div className="flex-1 min-w-0">
-          <div className="font-bold text-lg text-gray-900 leading-tight">
+          <div className="font-bold text-sm text-gray-900 leading-tight">
             {currentInstruction.description}
           </div>
           {currentInstruction.distance > 0 && (
-            <div className="text-sm text-gray-500 mt-2 font-medium">
+            <div className="text-xs text-gray-500 mt-1 font-medium">
               Distance: {formatDistance(currentInstruction.distance)}
             </div>
           )}
         </div>
       </div>
-      <div className="mt-2 text-xs text-gray-400 italic">
+      <div className="mt-1 text-[10px] text-gray-400 italic">
         Driver Navigation
       </div>
     </div>
