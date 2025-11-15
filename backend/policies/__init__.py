@@ -17,7 +17,7 @@ except ImportError:
 POLICY_REGISTRY: Dict[str, BasePolicy] = {
     "naive": NaivePolicy(),
     "finite_horizon_greedy": FiniteHorizonGreedyPolicy(
-        T_max=120.0  # 2 minute lookahead horizon (in seconds)
+        T_max=60.0  # 2 minute lookahead horizon (in seconds)
     ),
 }
 

@@ -28,29 +28,22 @@ export default function SnowplowSimulator() {
   const [plow, setPlow] = useState<SnowplowState>(initialPlow);
   const [storm, setStorm] = useState<StormState>(initialStorm);
   const [isRunning, setIsRunning] = useState(false);
-  const [tick, setTick] = useState(0);
   const [policy, setPolicy] = useState<string>('naive');
   const [tickSpeedMs, setTickSpeedMs] = useState<number>(1000);
-  const [isStepping, setIsStepping] = useState(false);
 
-  // Refs to track latest state values without causing effect re-runs
+  // Refs to track latest state values and control loop
   const stormRef = useRef(storm);
   const edgesRef = useRef(edges);
   const plowRef = useRef(plow);
+  const isRunningRef = useRef(isRunning);
+  const tickSpeedRef = useRef(tickSpeedMs);
 
   // Update refs whenever state changes
   useEffect(() => { stormRef.current = storm; }, [storm]);
   useEffect(() => { edgesRef.current = edges; }, [edges]);
   useEffect(() => { plowRef.current = plow; }, [plow]);
-
-  // Game loop timer
-  useEffect(() => {
-    if (!isRunning) return;
-    const id = setInterval(() => {
-      setTick(t => t + 1);
-    }, tickSpeedMs);
-    return () => clearInterval(id);
-  }, [isRunning, tickSpeedMs]);
+  useEffect(() => { isRunningRef.current = isRunning; }, [isRunning]);
+  useEffect(() => { tickSpeedRef.current = tickSpeedMs; }, [tickSpeedMs]);
 
   // Request next move from backend
   const requestNextMove = useCallback(
@@ -64,24 +57,25 @@ export default function SnowplowSimulator() {
         from_node: edge.from_node,
         to_node: edge.to_node,
         travel_time: edge.length / SNOWPLOW_SPEED_MS, // Convert meters to seconds
+        length: edge.length, // Length in meters for reward calculation
         snow_depth: edge.snowDepth,
       }));
 
-        // Get backend URL from environment variable, fallback to localhost for development
-        const backendUrl = process.env.NEXT_PUBLIC_BACKEND_URL || 'http://localhost:8000';
-        
-        const res = await fetch(`${backendUrl}/next_node`, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            plow: {
-              current_node_id: currentPlow.currentNodeId,
-            },
-            nodes: nodes,
-            edges: backendEdges,
-            policy: policy,
-          }),
-        });
+      // Get backend URL from environment variable, fallback to localhost for development
+      const backendUrl = process.env.NEXT_PUBLIC_BACKEND_URL || 'http://localhost:8000';
+      
+      const res = await fetch(`${backendUrl}/next_node`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          plow: {
+            current_node_id: currentPlow.currentNodeId,
+          },
+          nodes: nodes,
+          edges: backendEdges,
+          policy: policy,
+        }),
+      });
 
       if (!res.ok) {
         throw new Error(`Backend returned ${res.status}`);
@@ -93,15 +87,16 @@ export default function SnowplowSimulator() {
     [nodes, policy]
   );
 
-  // Simulation step - runs on each tick
+  // Self-scheduling simulation loop
   useEffect(() => {
-    if (!isRunning || isStepping || tick === 0) return; // Guard: skip if not running or already stepping
-    
-    const performStep = async () => {
-      setIsStepping(true); // Mark that we're processing this step
-      
+    if (!isRunning) return;
+
+    let timeoutId: NodeJS.Timeout;
+
+    const runSimulationLoop = async () => {
+      const stepStartTime = Date.now();
+
       try {
-        // Use refs to get current values without adding dependencies
         // 1. Update storm position
         const updatedStorm = updateStorm(stormRef.current);
         setStorm(updatedStorm);
@@ -120,28 +115,45 @@ export default function SnowplowSimulator() {
         }
       } catch (error) {
         console.error('Step error:', error);
-        // Skip this tick on error - next tick will retry from same state
-      } finally {
-        setIsStepping(false); // Always mark done, even on error
+      }
+
+      // Calculate how long this step took
+      const stepDuration = Date.now() - stepStartTime;
+      // Wait for remaining time to meet tickSpeedMs (or 0 if already exceeded)
+      const waitTime = Math.max(0, tickSpeedRef.current - stepDuration);
+
+      // Schedule next step only if still running
+      if (isRunningRef.current) {
+        timeoutId = setTimeout(runSimulationLoop, waitTime);
       }
     };
-    
-    performStep();
-  }, [tick, isRunning, isStepping, nodes, requestNextMove]);
+
+    // Start the loop
+    runSimulationLoop();
+
+    // Cleanup: cancel scheduled timeout when stopping
+    return () => {
+      if (timeoutId) {
+        clearTimeout(timeoutId);
+      }
+    };
+  }, [isRunning, nodes, requestNextMove]);
 
   const handleReset = () => {
+    // Stop simulation first
+    setIsRunning(false);
+    
+    // Reset all state
     const resetEdges = initialEdges.map(e => ({ ...e, snowDepth: 0 }));
     setEdges(resetEdges);
     setPlow(initialPlow);
     setStorm(initialStorm);
-    setIsStepping(false);
-    setTick(0);
-    setIsRunning(false);
     
     // Reset refs to match state
     edgesRef.current = resetEdges;
     plowRef.current = initialPlow;
     stormRef.current = initialStorm;
+    isRunningRef.current = false;
   };
 
   return (

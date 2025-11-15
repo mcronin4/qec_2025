@@ -59,7 +59,7 @@ class FiniteHorizonGreedyPolicy(BasePolicy):
         start_node = plow.current_node_id
         
         # Build neighbor structure and extract edge attributes
-        neighbors_map, edge_map, time_map, snow_map, importance_map = self._build_graph_data(graph, context)
+        neighbors_map, edge_map, time_map, snow_map, importance_map, length_map = self._build_graph_data(graph, context)
         
         # Check if we have any neighbors
         if not neighbors_map.get(start_node):
@@ -72,7 +72,8 @@ class FiniteHorizonGreedyPolicy(BasePolicy):
             neighbors_map,
             time_map,
             snow_map,
-            importance_map
+            importance_map,
+            length_map
         )
         
         # The next node is the second node in the best path (first is current node)
@@ -99,23 +100,25 @@ class FiniteHorizonGreedyPolicy(BasePolicy):
         self,
         graph: GraphState,
         context: DecisionContext | None
-    ) -> Tuple[Dict[str, List[Tuple[str, str]]], Dict, Dict[str, float], Dict[str, float], Dict[str, float]]:
+    ) -> Tuple[Dict[str, List[Tuple[str, str]]], Dict, Dict[str, float], Dict[str, float], Dict[str, float], Dict[str, float]]:
         """
         Build the data structures needed for the algorithm from the graph.
         
         Returns:
-            A tuple of (neighbors_map, edge_map, time_map, snow_map, importance_map)
+            A tuple of (neighbors_map, edge_map, time_map, snow_map, importance_map, length_map)
             - neighbors_map: Dict[node_id, List[Tuple[neighbor_id, edge_id]]]
             - edge_map: Dict mapping (from_node, to_node) to edge_id
             - time_map: Dict[edge_id, time]
             - snow_map: Dict[edge_id, snow_amount]
             - importance_map: Dict[edge_id, importance]
+            - length_map: Dict[edge_id, length_in_meters]
         """
         neighbors_map: Dict[str, List[Tuple[str, str]]] = {}
         edge_map: Dict[Tuple[str, str], str] = {}
         time_map: Dict[str, float] = {}
         snow_map: Dict[str, float] = {}
         importance_map: Dict[str, float] = {}
+        length_map: Dict[str, float] = {}
         
         # Get all edges from the graph by accessing the internal structure
         # Note: This is a bit hacky, but we need access to edges
@@ -132,6 +135,9 @@ class FiniteHorizonGreedyPolicy(BasePolicy):
             # Use default importance (could be extended to come from edge attributes)
             importance_map[edge.id] = self.default_importance
             
+            # Store edge length in meters for reward calculation
+            length_map[edge.id] = edge.length
+            
             # Build bidirectional neighbor map (undirected graph)
             if edge.from_node not in neighbors_map:
                 neighbors_map[edge.from_node] = []
@@ -145,7 +151,7 @@ class FiniteHorizonGreedyPolicy(BasePolicy):
             edge_map[(edge.from_node, edge.to_node)] = edge.id
             edge_map[(edge.to_node, edge.from_node)] = edge.id
         
-        return neighbors_map, edge_map, time_map, snow_map, importance_map
+        return neighbors_map, edge_map, time_map, snow_map, importance_map, length_map
     
     def _get_edges_from_graph(self, graph: GraphState) -> List[Edge]:
         """
@@ -160,7 +166,8 @@ class FiniteHorizonGreedyPolicy(BasePolicy):
         neighbors: Dict[str, List[Tuple[str, str]]],
         time: Dict[str, float],
         snow: Dict[str, float],
-        importance: Dict[str, float]
+        importance: Dict[str, float],
+        length: Dict[str, float]
     ) -> Tuple[float, List[str]]:
         """
         Find the path with the best reward-to-time ratio using DFS.
@@ -172,6 +179,7 @@ class FiniteHorizonGreedyPolicy(BasePolicy):
             time: Dict mapping edge_id to traversal time
             snow: Dict mapping edge_id to snow amount
             importance: Dict mapping edge_id to importance value
+            length: Dict mapping edge_id to edge length in meters
             
         Returns:
             A tuple of (best_ratio, best_path)
@@ -202,10 +210,11 @@ class FiniteHorizonGreedyPolicy(BasePolicy):
                     continue  # exceeds horizon
                 
                 # Only get reward first time we traverse this edge
+                # Reward = importance * snow_depth * length (meters of snow cleared)
                 if edge_id in used_edges:
                     extra_reward = 0.0
                 else:
-                    extra_reward = importance[edge_id] * snow[edge_id]
+                    extra_reward = importance[edge_id] * snow[edge_id] * length[edge_id]
                 
                 # Recurse
                 added = False
