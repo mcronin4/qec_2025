@@ -2,14 +2,12 @@
 
 import { useState, useEffect, useCallback, useRef } from 'react';
 import { Node, Edge, SnowplowState, StormState } from '@/lib/types';
-import { initialNodes, initialEdges } from '@/lib/graph';
+import { initialNodes, initialEdges, initialPlow } from '@/lib/graph';
 import {
   updateStorm,
   addSnowFromStorm,
-  movePlow,
-  plowReachedNode,
+  moveToNode,
   clearSnowOnEdge,
-  getCurrentNodeId,
 } from '@/lib/simulation';
 import GraphCanvas from './GraphCanvas';
 import ControlPanel from './ControlPanel';
@@ -26,12 +24,6 @@ const initialStorm: StormState = {
   vy: 0.012,
 };
 
-const initialPlow: SnowplowState = {
-  currentEdgeId: '0-1',
-  position: 0,
-  direction: 'forward',
-};
-
 export default function SnowplowSimulator() {
   const [nodes] = useState<Node[]>(initialNodes);
   const [edges, setEdges] = useState<Edge[]>(initialEdges);
@@ -39,6 +31,8 @@ export default function SnowplowSimulator() {
   const [storm, setStorm] = useState<StormState>(initialStorm);
   const [isRunning, setIsRunning] = useState(false);
   const [tick, setTick] = useState(0);
+  const [policy, setPolicy] = useState<string>('naive');
+  const [isWaitingForBackend, setIsWaitingForBackend] = useState(false);
   
   // Refs to track latest state values for use in effects
   const edgesRef = useRef(edges);
@@ -70,80 +64,91 @@ export default function SnowplowSimulator() {
   // Request next move from backend
   const requestNextMove = useCallback(
     async (currentPlow: SnowplowState, currentEdges: Edge[]) => {
-      const currentNodeId = getCurrentNodeId(currentPlow, currentEdges);
-      if (!currentNodeId) return;
-
+      if (isWaitingForBackend) return;
+      
+      setIsWaitingForBackend(true);
+      
       try {
-        const res = await fetch('/api/next-move', {
+        // Step 2: Send current snapshot to backend
+        const backendEdges = currentEdges.map(edge => ({
+          id: edge.id,
+          from_node: edge.from_node,
+          to_node: edge.to_node,
+          travel_time: edge.length,
+          snow_depth: edge.snowDepth,
+        }));
+
+        const res = await fetch('http://localhost:8000/next_node', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
-            graph: { nodes, edges: currentEdges },
-            plow: currentPlow,
+            plow: {
+              current_node_id: currentPlow.currentNodeId,
+            },
+            nodes: nodes,
+            edges: backendEdges,
+            policy: policy,
           }),
         });
 
+        if (!res.ok) {
+          throw new Error(`Backend returned ${res.status}`);
+        }
+
+        // Step 3: Backend returns decision
         const data = await res.json();
-        if (data.nextEdgeId) {
-          const nextEdge = currentEdges.find(e => e.id === data.nextEdgeId);
-          if (nextEdge) {
-            // Determine direction based on which node we're at
-            const isForward = nextEdge.from === currentNodeId;
-            setPlow({
-              currentEdgeId: data.nextEdgeId,
-              position: 0,
-              direction: isForward ? 'forward' : 'backward',
-            });
-          }
+        if (data.target_node_id) {
+          const oldNodeId = currentPlow.currentNodeId;
+          const newNodeId = data.target_node_id;
+          
+          // Step 4a: Move plow to target node
+          setPlow(moveToNode(currentPlow, newNodeId));
+          
+          // Step 4b: Clear snow on the edge that was just traversed
+          setEdges(prevEdges => clearSnowOnEdge(prevEdges, oldNodeId, newNodeId));
         }
       } catch (error) {
         console.error('Error requesting next move:', error);
+      } finally {
+        setIsWaitingForBackend(false);
       }
     },
-    [nodes]
+    [nodes, policy, isWaitingForBackend]
   );
 
-  // Simulation logic
+  // Simulation logic - correct order:
+  // 1. Add snow (if storm overlays the edge)
+  // 2. Send snapshot to backend
+  // 3. Backend decides next node
+  // 4. Simulate step (move plow + clear snow) - happens in requestNextMove callback
   useEffect(() => {
     if (!isRunning) return;
 
-    // Update storm
+    // Update storm position
     setStorm(prevStorm => {
       const updatedStorm = updateStorm(prevStorm);
       stormRef.current = updatedStorm;
       return updatedStorm;
     });
     
-    // Add snow from storm and clear snow from plow's current edge
+    // Step 1: Add snow from storm
     setEdges(prevEdges => {
-      // Use ref to get latest storm state
       const edgesWithSnow = addSnowFromStorm(prevEdges, stormRef.current, nodes);
-      
-      // Use ref to get latest plow state
-      if (plowRef.current.currentEdgeId) {
-        return clearSnowOnEdge(edgesWithSnow, plowRef.current.currentEdgeId);
-      }
       return edgesWithSnow;
     });
     
-    // Move plow
-    setPlow(prevPlow => {
-      const updatedPlow = movePlow(prevPlow, edgesRef.current);
-      plowRef.current = updatedPlow;
-      
-      if (plowReachedNode(updatedPlow)) {
-        // Call backend to choose next node/edge
-        requestNextMove(updatedPlow, edgesRef.current);
-      }
-      return updatedPlow;
-    });
-  }, [tick, isRunning, nodes, requestNextMove]);
+    // Step 2-4: Request next move (backend decides, then we simulate)
+    if (!isWaitingForBackend) {
+      requestNextMove(plowRef.current, edgesRef.current);
+    }
+  }, [tick, isRunning, nodes, requestNextMove, isWaitingForBackend]);
 
   const handleReset = () => {
     const resetEdges = initialEdges.map(e => ({ ...e, snowDepth: 0 }));
     setEdges(resetEdges);
     setPlow(initialPlow);
     setStorm(initialStorm);
+    setIsWaitingForBackend(false);
     edgesRef.current = resetEdges;
     plowRef.current = initialPlow;
     stormRef.current = initialStorm;
@@ -163,6 +168,8 @@ export default function SnowplowSimulator() {
             isRunning={isRunning}
             onToggle={() => setIsRunning(!isRunning)}
             onReset={handleReset}
+            policy={policy}
+            onPolicyChange={setPolicy}
           />
           <HeatmapLegend />
           <StatsPanel edges={edges} />

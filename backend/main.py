@@ -1,4 +1,5 @@
 from fastapi import FastAPI, HTTPException
+from fastapi.middleware.cors import CORSMiddleware
 
 from backend.models import NextNodeRequest, NextNodeResponse
 from backend.graph import GraphState
@@ -8,6 +9,15 @@ app = FastAPI(
     title="Snow Plow Routing API",
     description="API for snow plow routing decisions using pluggable policies",
     version="1.0.0"
+)
+
+# Add CORS middleware to allow requests from Next.js frontend
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["http://localhost:3000"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
 )
 
 

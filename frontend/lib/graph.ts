@@ -1,4 +1,4 @@
-import { Node, Edge } from './types';
+import { Node, Edge, SnowplowState } from './types';
 
 // 3x3 grid graph (9 nodes, 12 edges)
 // Layout:
@@ -21,22 +21,26 @@ export const initialNodes: Node[] = [
 
 export const initialEdges: Edge[] = [
   // Horizontal edges (top row)
-  { id: '0-1', from: '0', to: '1', length: 1.0, snowDepth: 0 },
-  { id: '1-2', from: '1', to: '2', length: 1.0, snowDepth: 0 },
+  { id: '0-1', from_node: '0', to_node: '1', length: 1.0, snowDepth: 0, streetName: 'North Ave' },
+  { id: '1-2', from_node: '1', to_node: '2', length: 1.0, snowDepth: 0, streetName: 'North Ave' },
   // Horizontal edges (middle row)
-  { id: '3-4', from: '3', to: '4', length: 1.0, snowDepth: 0 },
-  { id: '4-5', from: '4', to: '5', length: 1.0, snowDepth: 0 },
+  { id: '3-4', from_node: '3', to_node: '4', length: 1.0, snowDepth: 0, streetName: 'Central St' },
+  { id: '4-5', from_node: '4', to_node: '5', length: 1.0, snowDepth: 0, streetName: 'Central St' },
   // Horizontal edges (bottom row)
-  { id: '6-7', from: '6', to: '7', length: 1.0, snowDepth: 0 },
-  { id: '7-8', from: '7', to: '8', length: 1.0, snowDepth: 0 },
+  { id: '6-7', from_node: '6', to_node: '7', length: 1.0, snowDepth: 0, streetName: 'South Blvd' },
+  { id: '7-8', from_node: '7', to_node: '8', length: 1.0, snowDepth: 0, streetName: 'South Blvd' },
   // Vertical edges (left column)
-  { id: '0-3', from: '0', to: '3', length: 1.0, snowDepth: 0 },
-  { id: '3-6', from: '3', to: '6', length: 1.0, snowDepth: 0 },
+  { id: '0-3', from_node: '0', to_node: '3', length: 1.0, snowDepth: 0, streetName: 'West St' },
+  { id: '3-6', from_node: '3', to_node: '6', length: 1.0, snowDepth: 0, streetName: 'West St' },
   // Vertical edges (middle column)
-  { id: '1-4', from: '1', to: '4', length: 1.0, snowDepth: 0 },
-  { id: '4-7', from: '4', to: '7', length: 1.0, snowDepth: 0 },
+  { id: '1-4', from_node: '1', to_node: '4', length: 1.0, snowDepth: 0, streetName: 'Main St' },
+  { id: '4-7', from_node: '4', to_node: '7', length: 1.0, snowDepth: 0, streetName: 'Main St' },
   // Vertical edges (right column)
-  { id: '2-5', from: '2', to: '5', length: 1.0, snowDepth: 0 },
-  { id: '5-8', from: '5', to: '8', length: 1.0, snowDepth: 0 },
+  { id: '2-5', from_node: '2', to_node: '5', length: 1.0, snowDepth: 0, streetName: 'East Ave' },
+  { id: '5-8', from_node: '5', to_node: '8', length: 1.0, snowDepth: 0, streetName: 'East Ave' },
 ];
+
+export const initialPlow: SnowplowState = {
+  currentNodeId: '0',
+};
 

@@ -9,16 +9,15 @@ export interface Node {
 
 export interface Edge {
   id: EdgeId;
-  from: NodeId;
-  to: NodeId;
-  length: number; // for movement
-  snowDepth: number; // current snow amount on this edge
+  from_node: NodeId;
+  to_node: NodeId;
+  length: number; // road length (used as travel time / weight for backend)
+  snowDepth: number; // current snow amount on this edge (for visualization)
+  streetName: string;
 }
 
 export interface SnowplowState {
-  currentEdgeId: EdgeId | null;
-  position: number; // 0..1 along the edge
-  direction: "forward" | "backward";
+  currentNodeId: NodeId;
 }
 
 export interface StormState {

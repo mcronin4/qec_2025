@@ -17,16 +17,12 @@ export default function GraphCanvas({
 }: GraphCanvasProps) {
   const getNode = (id: string) => nodes.find(n => n.id === id)!;
 
-  // Get plow coordinates from its edge + position
+  // Get plow coordinates from its current node
   const plowPos = (() => {
-    if (!plow.currentEdgeId) return null;
-    const edge = edges.find(e => e.id === plow.currentEdgeId);
-    if (!edge) return null;
-    const from = getNode(edge.from);
-    const to = getNode(edge.to);
-    const x = from.x + (to.x - from.x) * plow.position;
-    const y = from.y + (to.y - from.y) * plow.position;
-    return { x, y };
+    if (!plow.currentNodeId) return null;
+    const node = getNode(plow.currentNodeId);
+    if (!node) return null;
+    return { x: node.x, y: node.y };
   })();
 
   return (
@@ -56,8 +52,8 @@ export default function GraphCanvas({
 
       {/* Heatmap edges with glow effect for high snow */}
       {edges.map(edge => {
-        const from = getNode(edge.from);
-        const to = getNode(edge.to);
+        const from = getNode(edge.from_node);
+        const to = getNode(edge.to_node);
 
         // map snowDepth → strokeWidth + color
         // Base width is thicker, and increases more with snow

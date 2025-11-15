@@ -1,7 +1,5 @@
 import { Node, Edge, SnowplowState, StormState, NodeId } from './types';
 
-const PLOW_SPEED = 0.15; // fraction of edge per tick
-
 export function updateStorm(storm: StormState): StormState {
   let { centerX, centerY, vx, vy, radius } = storm;
 
@@ -21,8 +19,8 @@ export function addSnowFromStorm(
   nodes: Node[]
 ): Edge[] {
   return edges.map(edge => {
-    const from = nodes.find(n => n.id === edge.from)!;
-    const to = nodes.find(n => n.id === edge.to)!;
+    const from = nodes.find(n => n.id === edge.from_node)!;
+    const to = nodes.find(n => n.id === edge.to_node)!;
 
     const midX = (from.x + to.x) / 2;
     const midY = (from.y + to.y) / 2;
@@ -53,41 +51,32 @@ export function addSnowFromStorm(
   });
 }
 
-export function movePlow(
+export function moveToNode(
   plow: SnowplowState,
-  edges: Edge[]
+  targetNodeId: NodeId
 ): SnowplowState {
-  if (!plow.currentEdgeId) return plow;
-
-  const edge = edges.find(e => e.id === plow.currentEdgeId);
-  if (!edge) return plow;
-
-  let position = plow.position + PLOW_SPEED;
-
-  if (position >= 1) {
-    position = 1;
-  }
-
-  return { ...plow, position };
+  return { currentNodeId: targetNodeId };
 }
 
-export function plowReachedNode(plow: SnowplowState): boolean {
-  return plow.position >= 1;
-}
-
-export function clearSnowOnEdge(edges: Edge[], edgeId: string): Edge[] {
-  return edges.map(e =>
-    e.id === edgeId ? { ...e, snowDepth: Math.max(e.snowDepth - 0.5, 0) } : e
-  );
-}
-
-export function getCurrentNodeId(
-  plow: SnowplowState,
-  edges: Edge[]
-): NodeId | null {
-  if (!plow.currentEdgeId) return null;
-  const edge = edges.find(e => e.id === plow.currentEdgeId);
-  if (!edge) return null;
-  return plow.direction === 'forward' ? edge.to : edge.from;
+export function clearSnowOnEdge(
+  edges: Edge[],
+  fromNodeId: NodeId,
+  toNodeId: NodeId
+): Edge[] {
+  return edges.map(edge => {
+    // Check if this edge connects the two nodes (undirected)
+    const isConnectingEdge = 
+      (edge.from_node === fromNodeId && edge.to_node === toNodeId) ||
+      (edge.from_node === toNodeId && edge.to_node === fromNodeId);
+    
+    if (isConnectingEdge) {
+      const newSnowDepth = Math.max(edge.snowDepth - 0.5, 0);
+      return { 
+        ...edge, 
+        snowDepth: newSnowDepth,
+      };
+    }
+    return edge;
+  });
 }
 
