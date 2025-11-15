@@ -2,9 +2,15 @@
 
 from typing import Dict, Tuple, List, Set
 
-from backend.policies.base import BasePolicy
-from backend.graph import GraphState
-from backend.models import PlowState, DecisionContext, Edge
+# Handle imports for both local development and Vercel deployment
+try:
+    from backend.policies.base import BasePolicy
+    from backend.graph import GraphState
+    from backend.models import PlowState, DecisionContext, Edge
+except ImportError:
+    from policies.base import BasePolicy
+    from graph import GraphState
+    from models import PlowState, DecisionContext, Edge
 
 
 class FiniteHorizonGreedyPolicy(BasePolicy):

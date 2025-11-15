@@ -2,9 +2,15 @@
 
 from typing import Dict
 
-from backend.policies.base import BasePolicy
-from backend.policies.naive import NaivePolicy
-from backend.policies.finite_horizon_greedy import FiniteHorizonGreedyPolicy
+# Handle imports for both local development and Vercel deployment
+try:
+    from backend.policies.base import BasePolicy
+    from backend.policies.naive import NaivePolicy
+    from backend.policies.finite_horizon_greedy import FiniteHorizonGreedyPolicy
+except ImportError:
+    from policies.base import BasePolicy
+    from policies.naive import NaivePolicy
+    from policies.finite_horizon_greedy import FiniteHorizonGreedyPolicy
 
 
 # Policy registry mapping policy names to instances
