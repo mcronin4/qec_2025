@@ -1,11 +1,21 @@
 import os
+import sys
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from dotenv import load_dotenv
 
-from backend.models import NextNodeRequest, NextNodeResponse
-from backend.graph import GraphState
-from backend.policies import get_policy
+# Handle imports for both local development and Vercel deployment
+# If backend is a package (local dev), import from backend.*
+# If backend is the root (Vercel), import directly
+try:
+    from backend.models import NextNodeRequest, NextNodeResponse
+    from backend.graph import GraphState
+    from backend.policies import get_policy
+except ImportError:
+    # Fallback for Vercel deployment where backend is the root
+    from models import NextNodeRequest, NextNodeResponse
+    from graph import GraphState
+    from policies import get_policy
 
 # Load environment variables from .env file (if it exists)
 load_dotenv()
