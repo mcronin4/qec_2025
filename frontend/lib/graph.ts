@@ -1,6 +1,6 @@
 import { Node, Edge, SnowplowState } from './types';
 import { calculateGeoBounds, createProjection } from './geoUtils';
-import graphData from '../../backend/geographic/graph.json';
+import graphData from '../geographic/graph.json';
 
 // Types for the raw geographic data
 interface RawGraphNode {

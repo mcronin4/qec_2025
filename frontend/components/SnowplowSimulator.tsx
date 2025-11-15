@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, useCallback, useRef } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { Node, Edge, SnowplowState, StormState } from '@/lib/types';
 import { initialNodes, initialEdges, initialPlow } from '@/lib/graph';
 import {
@@ -17,7 +17,7 @@ import HeatmapLegend from './HeatmapLegend';
 const initialStorm: StormState = {
   centerX: 0.4,
   centerY: 0.4,
-  radius: 0.25,
+  radius: 0.5,
   vx: 0.003,  // Reduced from 0.015 - slower movement
   vy: 0.002,  // Reduced from 0.012 - slower movement
 };
@@ -31,25 +31,7 @@ export default function SnowplowSimulator() {
   const [tick, setTick] = useState(0);
   const [policy, setPolicy] = useState<string>('naive');
   const [tickSpeedMs, setTickSpeedMs] = useState<number>(1000);
-  const [isWaitingForBackend, setIsWaitingForBackend] = useState(false);
-  
-  // Refs to track latest state values for use in effects
-  const edgesRef = useRef(edges);
-  const plowRef = useRef(plow);
-  const stormRef = useRef(storm);
-  
-  // Keep refs in sync with state
-  useEffect(() => {
-    edgesRef.current = edges;
-  }, [edges]);
-  
-  useEffect(() => {
-    plowRef.current = plow;
-  }, [plow]);
-  
-  useEffect(() => {
-    stormRef.current = storm;
-  }, [storm]);
+  const [isStepping, setIsStepping] = useState(false);
 
   // Game loop timer
   useEffect(() => {
@@ -62,95 +44,83 @@ export default function SnowplowSimulator() {
 
   // Request next move from backend
   const requestNextMove = useCallback(
-    async (currentPlow: SnowplowState, currentEdges: Edge[]) => {
-      if (isWaitingForBackend) return;
+    async (currentPlow: SnowplowState, currentEdges: Edge[]): Promise<string | null> => {
+      // Convert edge length (meters) to travel time (seconds)
+      // Snowplow speed: 20 km/h = 5.556 m/s
+      const SNOWPLOW_SPEED_MS = 20000 / 3600; // 20 km/h in m/s
       
-      setIsWaitingForBackend(true);
-      
-      try {
-        // Step 2: Send current snapshot to backend
-        const backendEdges = currentEdges.map(edge => ({
-          id: edge.id,
-          from_node: edge.from_node,
-          to_node: edge.to_node,
-          travel_time: edge.length,
-          snow_depth: edge.snowDepth,
-        }));
+      const backendEdges = currentEdges.map(edge => ({
+        id: edge.id,
+        from_node: edge.from_node,
+        to_node: edge.to_node,
+        travel_time: edge.length / SNOWPLOW_SPEED_MS, // Convert meters to seconds
+        snow_depth: edge.snowDepth,
+      }));
 
-        const res = await fetch('http://localhost:8000/next_node', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            plow: {
-              current_node_id: currentPlow.currentNodeId,
-            },
-            nodes: nodes,
-            edges: backendEdges,
-            policy: policy,
-          }),
-        });
+      const res = await fetch('http://localhost:8000/next_node', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          plow: {
+            current_node_id: currentPlow.currentNodeId,
+          },
+          nodes: nodes,
+          edges: backendEdges,
+          policy: policy,
+        }),
+      });
 
-        if (!res.ok) {
-          throw new Error(`Backend returned ${res.status}`);
-        }
-
-        // Step 3: Backend returns decision
-        const data = await res.json();
-        if (data.target_node_id) {
-          const oldNodeId = currentPlow.currentNodeId;
-          const newNodeId = data.target_node_id;
-          
-          // Step 4a: Move plow to target node
-          setPlow(moveToNode(currentPlow, newNodeId));
-          
-          // Step 4b: Clear snow on the edge that was just traversed
-          setEdges(prevEdges => clearSnowOnEdge(prevEdges, oldNodeId, newNodeId));
-        }
-      } catch (error) {
-        console.error('Error requesting next move:', error);
-      } finally {
-        setIsWaitingForBackend(false);
+      if (!res.ok) {
+        throw new Error(`Backend returned ${res.status}`);
       }
+
+      const data = await res.json();
+      return data.target_node_id || null;
     },
-    [nodes, policy, isWaitingForBackend]
+    [nodes, policy]
   );
 
-  // Simulation logic - correct order:
-  // 1. Add snow (if storm overlays the edge)
-  // 2. Send snapshot to backend
-  // 3. Backend decides next node
-  // 4. Simulate step (move plow + clear snow) - happens in requestNextMove callback
+  // Simulation step - runs on each tick
   useEffect(() => {
-    if (!isRunning) return;
-
-    // Update storm position
-    setStorm(prevStorm => {
-      const updatedStorm = updateStorm(prevStorm);
-      stormRef.current = updatedStorm;
-      return updatedStorm;
-    });
+    if (!isRunning || isStepping) return; // Guard: skip if not running or already stepping
     
-    // Step 1: Add snow from storm
-    setEdges(prevEdges => {
-      const edgesWithSnow = addSnowFromStorm(prevEdges, stormRef.current, nodes);
-      return edgesWithSnow;
-    });
+    const performStep = async () => {
+      setIsStepping(true); // Mark that we're processing this step
+      
+      try {
+        // 1. Update storm position
+        const updatedStorm = updateStorm(storm);
+        setStorm(updatedStorm);
+        
+        // 2. Add snow from storm
+        const edgesWithSnow = addSnowFromStorm(edges, updatedStorm, nodes);
+        setEdges(edgesWithSnow);
+        
+        // 3. Get backend decision
+        const nextNodeId = await requestNextMove(plow, edgesWithSnow);
+        
+        // 4. Move plow and clear snow on traversed edge
+        if (nextNodeId) {
+          setPlow(moveToNode(plow, nextNodeId));
+          setEdges(prev => clearSnowOnEdge(prev, plow.currentNodeId, nextNodeId));
+        }
+      } catch (error) {
+        console.error('Step error:', error);
+        // Skip this tick on error - next tick will retry from same state
+      } finally {
+        setIsStepping(false); // Always mark done, even on error
+      }
+    };
     
-    // Step 2-4: Request next move (backend decides, then we simulate)
-    if (!isWaitingForBackend) {
-      requestNextMove(plowRef.current, edgesRef.current);
-    }
-  }, [tick, isRunning, nodes, requestNextMove, isWaitingForBackend]);
+    performStep();
+  }, [tick, isRunning, isStepping, storm, edges, plow, nodes, requestNextMove]);
 
   const handleReset = () => {
     const resetEdges = initialEdges.map(e => ({ ...e, snowDepth: 0 }));
     setEdges(resetEdges);
     setPlow(initialPlow);
     setStorm(initialStorm);
-    setIsWaitingForBackend(false);
-    edgesRef.current = resetEdges;
-    plowRef.current = initialPlow;
-    stormRef.current = initialStorm;
+    setIsStepping(false);
     setTick(0);
     setIsRunning(false);
   };

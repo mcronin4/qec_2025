@@ -10,7 +10,9 @@ from backend.policies.finite_horizon_greedy import FiniteHorizonGreedyPolicy
 # Policy registry mapping policy names to instances
 POLICY_REGISTRY: Dict[str, BasePolicy] = {
     "naive": NaivePolicy(),
-    "finite_horizon_greedy": FiniteHorizonGreedyPolicy(),
+    "finite_horizon_greedy": FiniteHorizonGreedyPolicy(
+        T_max=120.0  # 2 minute lookahead horizon (in seconds)
+    ),
 }
 
 

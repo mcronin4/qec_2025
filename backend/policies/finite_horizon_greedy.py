@@ -17,7 +17,7 @@ class FiniteHorizonGreedyPolicy(BasePolicy):
     that maximizes total_reward / total_time.
     """
     
-    def __init__(self, T_max: float = 10.0, default_snow: float = 1.0, default_importance: float = 1.0):
+    def __init__(self, T_max: float = 60.0, default_snow: float = 1.0, default_importance: float = 1.0):
         """
         Initialize the finite horizon greedy policy.
         
