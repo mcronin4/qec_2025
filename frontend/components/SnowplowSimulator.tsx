@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback, useRef } from 'react';
 import { Node, Edge, SnowplowState, StormState } from '@/lib/types';
 import { initialNodes, initialEdges, initialPlow } from '@/lib/graph';
 import {
@@ -32,6 +32,16 @@ export default function SnowplowSimulator() {
   const [policy, setPolicy] = useState<string>('naive');
   const [tickSpeedMs, setTickSpeedMs] = useState<number>(1000);
   const [isStepping, setIsStepping] = useState(false);
+
+  // Refs to track latest state values without causing effect re-runs
+  const stormRef = useRef(storm);
+  const edgesRef = useRef(edges);
+  const plowRef = useRef(plow);
+
+  // Update refs whenever state changes
+  useEffect(() => { stormRef.current = storm; }, [storm]);
+  useEffect(() => { edgesRef.current = edges; }, [edges]);
+  useEffect(() => { plowRef.current = plow; }, [plow]);
 
   // Game loop timer
   useEffect(() => {
@@ -85,27 +95,28 @@ export default function SnowplowSimulator() {
 
   // Simulation step - runs on each tick
   useEffect(() => {
-    if (!isRunning || isStepping) return; // Guard: skip if not running or already stepping
+    if (!isRunning || isStepping || tick === 0) return; // Guard: skip if not running or already stepping
     
     const performStep = async () => {
       setIsStepping(true); // Mark that we're processing this step
       
       try {
+        // Use refs to get current values without adding dependencies
         // 1. Update storm position
-        const updatedStorm = updateStorm(storm);
+        const updatedStorm = updateStorm(stormRef.current);
         setStorm(updatedStorm);
         
         // 2. Add snow from storm
-        const edgesWithSnow = addSnowFromStorm(edges, updatedStorm, nodes);
+        const edgesWithSnow = addSnowFromStorm(edgesRef.current, updatedStorm, nodes);
         setEdges(edgesWithSnow);
         
         // 3. Get backend decision
-        const nextNodeId = await requestNextMove(plow, edgesWithSnow);
+        const nextNodeId = await requestNextMove(plowRef.current, edgesWithSnow);
         
         // 4. Move plow and clear snow on traversed edge
         if (nextNodeId) {
-          setPlow(moveToNode(plow, nextNodeId));
-          setEdges(prev => clearSnowOnEdge(prev, plow.currentNodeId, nextNodeId));
+          setPlow(moveToNode(plowRef.current, nextNodeId));
+          setEdges(prev => clearSnowOnEdge(prev, plowRef.current.currentNodeId, nextNodeId));
         }
       } catch (error) {
         console.error('Step error:', error);
@@ -116,7 +127,7 @@ export default function SnowplowSimulator() {
     };
     
     performStep();
-  }, [tick, isRunning, isStepping, storm, edges, plow, nodes, requestNextMove]);
+  }, [tick, isRunning, isStepping, nodes, requestNextMove]);
 
   const handleReset = () => {
     const resetEdges = initialEdges.map(e => ({ ...e, snowDepth: 0 }));
@@ -126,6 +137,11 @@ export default function SnowplowSimulator() {
     setIsStepping(false);
     setTick(0);
     setIsRunning(false);
+    
+    // Reset refs to match state
+    edgesRef.current = resetEdges;
+    plowRef.current = initialPlow;
+    stormRef.current = initialStorm;
   };
 
   return (

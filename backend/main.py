@@ -77,6 +77,7 @@ async def next_node(request: NextNodeRequest) -> NextNodeResponse:
     Raises:
         HTTPException: 400 for invalid policy, 404 for node not found, 422 for graph errors
     """
+    print(f"Request: {request}")
     try:
         # Build GraphState from request
         graph = GraphState(nodes=request.nodes, edges=request.edges)
