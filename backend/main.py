@@ -1,14 +1,87 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, HTTPException
 
-app = FastAPI()
+from backend.models import NextNodeRequest, NextNodeResponse
+from backend.graph import GraphState
+from backend.policies import get_policy
+
+app = FastAPI(
+    title="Snow Plow Routing API",
+    description="API for snow plow routing decisions using pluggable policies",
+    version="1.0.0"
+)
 
 
 @app.get("/")
 async def root():
-    return {"message": "Hello World"}
+    return {"message": "Snow Plow Routing API"}
 
 
 @app.get("/health")
 async def health():
     return {"status": "healthy"}
 
+
+@app.post("/next_node", response_model=NextNodeResponse)
+async def next_node(request: NextNodeRequest) -> NextNodeResponse:
+    """
+    Determine the next node for a snow plow to move toward.
+    
+    This endpoint receives the current plow state, graph structure, and optional context,
+    then uses the specified policy to choose the next node.
+    
+    Args:
+        request: NextNodeRequest containing plow state, nodes, edges, context, and policy
+        
+    Returns:
+        NextNodeResponse with target_node_id and debug_info
+        
+    Raises:
+        HTTPException: 400 for invalid policy, 404 for node not found, 422 for graph errors
+    """
+    try:
+        # Build GraphState from request
+        graph = GraphState(nodes=request.nodes, edges=request.edges)
+    except ValueError as e:
+        raise HTTPException(
+            status_code=422,
+            detail=f"Invalid graph structure: {str(e)}"
+        )
+    
+    # Verify plow's current node exists in the graph
+    if not graph.has_node(request.plow.current_node_id):
+        raise HTTPException(
+            status_code=404,
+            detail=f"Plow's current node '{request.plow.current_node_id}' not found in graph"
+        )
+    
+    # Get the policy
+    try:
+        policy = get_policy(request.policy)
+    except ValueError as e:
+        raise HTTPException(
+            status_code=400,
+            detail=str(e)
+        )
+    
+    # Call policy to choose next node
+    try:
+        target_node_id, debug_info = policy.choose_next_node(
+            graph=graph,
+            plow=request.plow,
+            context=request.context
+        )
+    except ValueError as e:
+        raise HTTPException(
+            status_code=422,
+            detail=f"Policy decision error: {str(e)}"
+        )
+    except KeyError as e:
+        raise HTTPException(
+            status_code=404,
+            detail=f"Node not found: {str(e)}"
+        )
+    
+    return NextNodeResponse(
+        target_node_id=target_node_id,
+        debug_info=debug_info
+    )
