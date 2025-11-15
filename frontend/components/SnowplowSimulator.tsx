@@ -13,6 +13,7 @@ import GraphCanvas from './GraphCanvas';
 import ControlPanel from './ControlPanel';
 import StatsPanel from './StatsPanel';
 import HeatmapLegend from './HeatmapLegend';
+import DriverNavigation from './DriverNavigation';
 
 const initialStorm: StormState = {
   centerX: 0.4,
@@ -32,6 +33,7 @@ export default function SnowplowSimulator() {
   const [policy, setPolicy] = useState<string>('naive');
   const [tickSpeedMs, setTickSpeedMs] = useState<number>(1000);
   const [isWaitingForBackend, setIsWaitingForBackend] = useState(false);
+  const [nextNodeId, setNextNodeId] = useState<string | null>(null);
   
   // Refs to track latest state values for use in effects
   const edgesRef = useRef(edges);
@@ -103,11 +105,16 @@ export default function SnowplowSimulator() {
           const oldNodeId = currentPlow.currentNodeId;
           const newNodeId = data.target_node_id;
           
+          // Update next node ID for navigation display
+          setNextNodeId(newNodeId);
+          
           // Step 4a: Move plow to target node
           setPlow(moveToNode(currentPlow, newNodeId));
           
           // Step 4b: Clear snow on the edge that was just traversed
           setEdges(prevEdges => clearSnowOnEdge(prevEdges, oldNodeId, newNodeId));
+        } else {
+          setNextNodeId(null);
         }
       } catch (error) {
         console.error('Error requesting next move:', error);
@@ -151,6 +158,7 @@ export default function SnowplowSimulator() {
     setPlow(initialPlow);
     setStorm(initialStorm);
     setIsWaitingForBackend(false);
+    setNextNodeId(null);
     edgesRef.current = resetEdges;
     plowRef.current = initialPlow;
     stormRef.current = initialStorm;
@@ -179,6 +187,12 @@ export default function SnowplowSimulator() {
           <StatsPanel edges={edges} />
         </div>
       </div>
+      <DriverNavigation
+        nodes={nodes}
+        edges={edges}
+        plow={plow}
+        nextNodeId={nextNodeId}
+      />
     </div>
   );
 }
