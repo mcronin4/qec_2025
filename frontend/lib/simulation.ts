@@ -70,10 +70,9 @@ export function clearSnowOnEdge(
       (edge.from_node === toNodeId && edge.to_node === fromNodeId);
     
     if (isConnectingEdge) {
-      const newSnowDepth = Math.max(edge.snowDepth - 0.5, 0);
       return { 
         ...edge, 
-        snowDepth: newSnowDepth,
+        snowDepth: 0,
       };
     }
     return edge;

@@ -16,6 +16,7 @@ class Edge(BaseModel):
     from_node: str
     to_node: str
     travel_time: float = Field(description="Time to traverse this edge")
+    length: float = Field(description="Length of the edge in meters")
     snow_depth: float = Field(default=0.0, description="Current snow amount on this edge")
 
 
