@@ -19,15 +19,19 @@ app = FastAPI(
 # Get allowed origins from environment variable
 # Format: comma-separated list of URLs (e.g., "http://localhost:3000,https://your-app.vercel.app")
 allowed_origins_str = os.getenv("ALLOWED_ORIGINS", "http://localhost:3000,http://127.0.0.1:3000")
-allowed_origins = [origin.strip() for origin in allowed_origins_str.split(",")]
+allowed_origins = [origin.strip() for origin in allowed_origins_str.split(",") if origin.strip()]
+
+# Log allowed origins for debugging (remove in production if sensitive)
+print(f"CORS allowed origins: {allowed_origins}")
 
 # Add CORS middleware to allow requests from Next.js frontend
 app.add_middleware(
     CORSMiddleware,
     allow_origins=allowed_origins,
     allow_credentials=True,
-    allow_methods=["*"],
+    allow_methods=["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     allow_headers=["*"],
+    expose_headers=["*"],
 )
 
 
